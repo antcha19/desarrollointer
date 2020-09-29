@@ -28,6 +28,7 @@ public class frasehijos extends JFrame {
     public frasehijos() {
 
         setTitle("frase");
+        setSize(300,300);
         setLayout(new FlowLayout());
         label = new JLabel();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -38,7 +39,7 @@ public class frasehijos extends JFrame {
         add(daugthersCheckBox);
         add(sonsCheckBox);
         add(noneCheckBox);
-        ListenerCheckBox manejador1 = new ListenerCheckBox();
+        Listener manejador1 = new Listener();
         daugthersCheckBox.addItemListener(manejador1);
         sonsCheckBox.addItemListener(manejador1);
         noneCheckBox.addItemListener(manejador1);
@@ -48,49 +49,62 @@ public class frasehijos extends JFrame {
         femaleJRadioButton = new JRadioButton("Female", false);
         add(maleJRadioButton);
         add(femaleJRadioButton);
-        maleJRadioButton.addItemListener(new ListenerCheckBox());
 
         //creo una relacion logica entre los objetos RadioButton
         optionsGroup = new ButtonGroup();
         optionsGroup.add(maleJRadioButton);
         optionsGroup.add(femaleJRadioButton);
-
+        femaleJRadioButton.addItemListener(manejador1);
+        maleJRadioButton.addItemListener(manejador1);
         add(label);
 
     }
 
-    private class ListenerCheckBox implements ItemListener {
+    private class Listener implements ItemListener {
 
-        private boolean dauthers;
-        private String dau;
-        private String sons;
         private String none;
-        private String male;
-        private String dos;
-        private String female;
+        private String result;
+        private String result1;
 
-        
         public void itemStateChanged(ItemEvent event) {
             if (event.getSource() == daugthersCheckBox) {
-                dau = "tengo hijas";
-                label.setText(dau);
+                result1 = "You have daugthers ";
+                label.setText(result1);
+            } else if (event.getSource() == sonsCheckBox) {
+                result1 = "You have sons ";
+                label.setText(result1);
             }
             if (event.getSource() == sonsCheckBox) {
-                sons = "you are sons";
-                label.setText(sons);
-            } else if (event.getSource() == sonsCheckBox && event.getSource() == daugthersCheckBox) {
-                dos = "You are sons and daugthers";
-                label.setText(dos);
-            } else if (event.getSource() == noneCheckBox) {
-                none = "no tengo hijos";
-                label.setText(none);
+                result1 = "You have sons ";
+                label.setText(result1);
+            } else if (event.getSource() == daugthersCheckBox) {
+                result1 = "You have daugthers ";
+                label.setText(result1);
             }
-            /*if(maleJRadioButton.isSelected()==true){
-                male = "and you are male";
-                label.setText(male);
-            }*/
+            if (event.getSource() == noneCheckBox) {
+                result1 = "I do not have ";
+                label.setText(result1);
+            }else if (event.getSource() == sonsCheckBox) {
+                result1 = "You have sons ";
+                label.setText(result1);
+            }else if(event.getSource() == daugthersCheckBox) {
+                result1 = "You have daugthers ";
+                label.setText(result1);
+            }
+
+           
+            if (maleJRadioButton.isSelected() == true) {
+                result = "and you are male ";
+                label.setText(result);
+            } else if (femaleJRadioButton.isSelected() == true) {
+                result = "and you are female ";
+                label.setText(result);
+            }
+            label.setText(result1 + result);
 
         }
+
+       
 
     }
 
