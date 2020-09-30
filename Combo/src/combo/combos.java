@@ -48,6 +48,7 @@ public class combos extends JFrame {
         
              
     }
+    //eleg la opcion correcta 
     private class Listenercombo implements ItemListener{
         public void itemStateChanged(ItemEvent e){
             int indice=combo.getSelectedIndex();

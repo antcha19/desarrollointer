@@ -62,18 +62,23 @@ public class frasehijos extends JFrame {
 
     private class Listener implements ItemListener {
 
-        private String none;
-        private String result;
+         private String result;
         private String result1;
+        private String dau;
+        
 
         public void itemStateChanged(ItemEvent event) {
-            if (event.getSource() == daugthersCheckBox) {
+            
+            
+            /*if (event.getSource() == daugthersCheckBox) {
+              
                 result1 = "You have daugthers ";
                 label.setText(result1);
             } else if (event.getSource() == sonsCheckBox) {
                 result1 = "You have sons ";
                 label.setText(result1);
-            }
+            }*/
+            
             if (event.getSource() == sonsCheckBox) {
                 result1 = "You have sons ";
                 label.setText(result1);
@@ -92,7 +97,7 @@ public class frasehijos extends JFrame {
                 label.setText(result1);
             }
 
-           
+           //radio botton
             if (maleJRadioButton.isSelected() == true) {
                 result = "and you are male ";
                 label.setText(result);
