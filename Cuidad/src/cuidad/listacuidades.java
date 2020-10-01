@@ -24,9 +24,9 @@ public class listacuidades extends JFrame {
     private JList listname;
     private JLabel label2, label3;
     private final String namecities[] = {"Bruselas", "Amsterdan", "Belfast", "Edimburgo",
-         "Madrid", "Granada"};
+        "Madrid", "Granada"};
     private final String names[] = {"Pepito", "Pepito2", "Pepito3", "Pepito4",
-         "Pepito5", "Pepito5"};
+        "Pepito5", "Pepito5"};
 
     public listacuidades() {
         setTitle("Cuidad");
@@ -52,7 +52,7 @@ public class listacuidades extends JFrame {
         //uso un objeto scrollopne
         panel.add(new JScrollPane(listname));
         listname.addListSelectionListener(new listlistenername());
-        
+
         //añadimos al panel
         panel.add(label);
         panel.add(label2);
@@ -69,11 +69,10 @@ public class listacuidades extends JFrame {
             label2.setText("Select " + namecities[listCuidad.getSelectedIndex()]);
         }
     }
-    
-    private class listlistenername implements ListSelectionListener {
 
+    private class listlistenername implements ListSelectionListener {
         public void valueChanged(ListSelectionEvent e) {
-            label3.setText( names[listname.getSelectedIndex()] );
+            label3.setText(names[listname.getSelectedIndex()]);
         }
     }
 }
