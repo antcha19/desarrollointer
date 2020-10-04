@@ -28,7 +28,7 @@ public class frasehijos extends JFrame {
     public frasehijos() {
 
         setTitle("frase");
-        setSize(300,300);
+        setSize(300, 300);
         setLayout(new FlowLayout());
         label = new JLabel();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -62,54 +62,50 @@ public class frasehijos extends JFrame {
 
     private class Listener implements ItemListener {
 
-         private String result;
+        private String result;
         private String result1;
         private String dau;
-        
 
         public void itemStateChanged(ItemEvent event) {
-            
-            
-            /*if (event.getSource() == daugthersCheckBox) {
-              
-                result1 = "You have daugthers ";
-                label.setText(result1);
-            } else if (event.getSource() == sonsCheckBox) {
-                result1 = "You have sons ";
-                label.setText(result1);
-            }*/
-            
-            if (event.getSource() == sonsCheckBox) {
-                result1 = "You have sons ";
-                label.setText(result1);
-            } else if (event.getSource() == daugthersCheckBox) {
-                result1 = "You have daugthers ";
-                label.setText(result1);
-            }
-            if (event.getSource() == noneCheckBox) {
-                result1 = "I do not have ";
-                label.setText(result1);
-            }else if (event.getSource() == sonsCheckBox) {
-                result1 = "You have sons ";
-                label.setText(result1);
-            }else if(event.getSource() == daugthersCheckBox) {
-                result1 = "You have daugthers ";
-                label.setText(result1);
-            }
 
-           //radio botton
+            if (event.getSource() == daugthersCheckBox) {
+                if (daugthersCheckBox.isSelected()) {
+                    result1 = "You have daugthers ";
+                    label.setText(result1);
+                } else {
+                    result1 = " ";
+                    label.setText(result1);
+                }
+
+            }else if (event.getSource() == sonsCheckBox){
+                if(sonsCheckBox.isSelected()){
+                    result1= "you have sons ";
+                    label.setText(result1);
+                }else{
+                    result1 = " ";
+                    label.setText(result1);
+                }
+            }else if (event.getSource() == noneCheckBox ){
+                if (noneCheckBox.isSelected()){
+                    result1="I don't have ";
+                    label.setText(result1);
+                }else{
+                    result1 = " ";
+                    label.setText(result1);
+                }
+            }
+            
+            //radio botton
             if (maleJRadioButton.isSelected() == true) {
-                result = "and you are male ";
+                result = " you are male ";
                 label.setText(result);
             } else if (femaleJRadioButton.isSelected() == true) {
-                result = "and you are female ";
+                result = " you are female ";
                 label.setText(result);
             }
             label.setText(result1 + result);
 
         }
-
-       
 
     }
 
