@@ -26,5 +26,7 @@ public class listShow implements Serializable{
     public int longuitud(){
         return serieslist.size();
     }
+
+    
     
 }

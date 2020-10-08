@@ -9,6 +9,7 @@ import model.access;
 import model.listShow;
 import model.show;
 import view.frame;
+import controller.controller;
 
 /**
  *
@@ -21,11 +22,14 @@ public class Series {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        frame f = new frame();
+        //instancio un controlador para pasarselo a la vista
+        controller c = new controller();
+        frame f = new frame(c);
         f.setVisible(true);
     
-             //instancia a list of series
-            listShow ls = new listShow();
+        
+    /*         //instancia a list of series
+           listShow ls = new listShow();
             //read the file
             ls=access.loadLS();
             //create a serie
@@ -36,12 +40,12 @@ public class Series {
             System.out.println(sh.getTitle());
             //obtengo el 2 elemento
             sh = ls.getShow(1);
-            System.out.println(sh.getTitle());
+            System.out.println(sh.getTitle());*/
     
     
     
     
-     /*   //creamios una instancia de una serie
+      /*  //creamios una instancia de una serie
         show sh=new show("Breaking bad", "Vicent",5,"drama",5);
         //creo a list
         listShow ls = new listShow();
