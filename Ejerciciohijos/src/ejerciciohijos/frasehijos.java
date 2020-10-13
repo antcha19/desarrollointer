@@ -68,7 +68,12 @@ public class frasehijos extends JFrame {
 
         public void itemStateChanged(ItemEvent event) {
 
-            if (event.getSource() == daugthersCheckBox) {
+            if (daugthersCheckBox.isSelected() && sonsCheckBox.isSelected()) {
+                result1 = "You have daugthers and sons ";
+                label.setText(result1);
+            }
+            
+            else if (event.getSource() == daugthersCheckBox) {
                 if (daugthersCheckBox.isSelected()) {
                     result1 = "You have daugthers ";
                     label.setText(result1);
@@ -77,24 +82,24 @@ public class frasehijos extends JFrame {
                     label.setText(result1);
                 }
 
-            }else if (event.getSource() == sonsCheckBox){
-                if(sonsCheckBox.isSelected()){
-                    result1= "you have sons ";
+            } else if (event.getSource() == sonsCheckBox) {
+                if (sonsCheckBox.isSelected()) {
+                    result1 = "you have sons ";
                     label.setText(result1);
-                }else{
+                } else {
                     result1 = " ";
                     label.setText(result1);
                 }
-            }else if (event.getSource() == noneCheckBox ){
-                if (noneCheckBox.isSelected()){
-                    result1="I don't have ";
+            } else if (event.getSource() == noneCheckBox) {
+                if (noneCheckBox.isSelected()) {
+                    result1 = "I don't have ";
                     label.setText(result1);
-                }else{
+                } else {
                     result1 = " ";
                     label.setText(result1);
                 }
             }
-            
+
             //radio botton
             if (maleJRadioButton.isSelected() == true) {
                 result = " you are male ";

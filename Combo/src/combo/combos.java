@@ -30,7 +30,7 @@ public class combos extends JFrame {
         combo=new JComboBox(images);
         panel.add(combo,BorderLayout.NORTH);
         combo.addItemListener(new Listenercombo());
-        
+        //ruta donde guardar las imagenes si no funciona
         System.out.println(System.getProperty("java.class.path"));
  
         img = new ImageIcon (getClass().getResource("images/Rabbit.gif"));

@@ -19,7 +19,7 @@ public class access {
             oss.writeObject(ls);
             oss.close();
         } catch (IOException e) {
-            System.out.println("failed to open file");
+            System.out.println("failed to open file saveLs");
         }
     }
 
@@ -32,7 +32,7 @@ public class access {
             ls = (listShow) ois.readObject();
             ois.close();
         } catch (IOException e) {
-            System.out.println("failed to open file");
+            System.out.println("failed to open file loadLS");
         }finally{
             return ls;
         }

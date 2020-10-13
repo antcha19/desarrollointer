@@ -18,6 +18,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import controller.controller;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import javax.swing.JComboBox;
 import model.show;
 
 /**
@@ -34,14 +37,19 @@ public class frame extends JFrame {
     private JButton boton1, boton2, boton3, boton4, boton5, boton6, boton7;
     //necesito un objeto para el controlador
     private controller c = null;
+    
+    //combo
+    private  JComboBox combo;
+    private String[] empresas={"Netflix", "Amazon", "HBO"};
+    
 
     public frame(controller control) {
         c = control;
         setTitle("my series");
-        setSize(500 ,300);
+        setSize(600 ,400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         panel.setLayout(new BorderLayout());
-        panel2.setLayout(new GridLayout(5, 2, 10, 10));
+        panel2.setLayout(new GridLayout(7, 2, 10, 10));
         panel3.setLayout(new FlowLayout());
         add(panel);
         panel.add(panel3, BorderLayout.NORTH);
@@ -80,17 +88,22 @@ public class frame extends JFrame {
         textf5 = new JTextField(50);
         panel2.add(label5);
         panel2.add(textf5);
-   /*     label6 = new JLabel("platform");
+        label6 = new JLabel("platform");
         textf6 = new JTextField(50);
         panel2.add(label6);
-        panel2.add(textf6);*/
+        panel2.add(textf6);
+        
+        //combo 
+        combo = new JComboBox(empresas);
+       
+        combo.addItemListener(new Listenercombo());
 
         textf1.setEditable(false);
         textf2.setEditable(false);
         textf3.setEditable(false);
         textf4.setEditable(false);
         textf5.setEditable(false);
-        //  textf6.setEditable(false);
+        textf6.setEditable(false);
         //  textf7.setEditable(false);
 
         //escuchar botones
@@ -124,13 +137,16 @@ public class frame extends JFrame {
             
            if (e.getSource() == boton5) {
                 if (boton5.getText().equals("+")) {
+                    //activar combo
+                    combo.setVisible(true);
+                    panel2.add(combo);
                     //vaciar textfield
                     textf1.setText("");
                     textf2.setText("");
                     textf3.setText("");
                     textf4.setText("");
                     textf5.setText("");
-                 //   textf6.setText("");
+                    textf6.setText("");
                     boton1.setEnabled(false);
                     boton2.setEnabled(false);
                     boton3.setEnabled(false);
@@ -145,7 +161,8 @@ public class frame extends JFrame {
                     textf4.setEditable(true);
                     textf5.setEditable(true);
                     textf6.setEditable(true);
-                }else{
+                }
+                else{
                     //habilitar botones
                     boton1.setEnabled(true);
                     boton2.setEnabled(true);
@@ -154,20 +171,31 @@ public class frame extends JFrame {
                     boton6.setEnabled(true);
                     boton7.setEnabled(true);
                     boton5.setText("+");
+                   // desactivar combo
+                    combo.setVisible(false);
                     //tomar los datos tecleados en los textfields
                     s=fillShow();
                     //llamar al metodo nuevo del controller
-                    c.nuevo(s);
+                    c.nuevo(s); 
                 }
             }
-
             updating(s);
         }
 
     }
+    
+    //escucha el combo
+    private class Listenercombo implements ItemListener{
+        public void itemStateChanged(ItemEvent e){
+            int indice=combo.getSelectedIndex();
+            String s = empresas[indice];
+            textf6.setText(s);
+        }
+        
+    }
     private show fillShow(){
         show s= new show(textf1.getText(),textf2.getText(),Integer.parseInt(textf3.getText()),
-        textf4.getText(),Integer.parseInt(textf5.getText()));
+        textf4.getText(),Integer.parseInt(textf5.getText()),textf6.getText());
         return s;
     }
     
@@ -178,7 +206,11 @@ public class frame extends JFrame {
         textf3.setText(String.valueOf(s.getSeasons()));
         textf4.setText(s.getGenre());
         textf5.setText(String.valueOf(s.getViews()));
+        textf6.setText(s.getPlataforma());
+        
     }
+    
+    
     
 
 }

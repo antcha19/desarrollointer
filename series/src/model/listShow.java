@@ -27,6 +27,8 @@ public class listShow implements Serializable{
         return serieslist.size();
     }
 
+   
+
     
     
 }
