@@ -28,8 +28,8 @@ public class Series {
         f.setVisible(true);
     
         
-    /*         //instancia a list of series
-           listShow ls = new listShow();
+            //instancia a list of series
+          listShow ls = new listShow();
             //read the file
             ls=access.loadLS();
             //create a serie
@@ -40,18 +40,18 @@ public class Series {
             System.out.println(sh.getTitle());
             //obtengo el 2 elemento
             sh = ls.getShow(1);
-            System.out.println(sh.getTitle());*/
+            System.out.println(sh.getTitle());
     
     
     
     
-      /*  //creamios una instancia de una serie
-        show sh=new show("Breaking bad", "Vicent",5,"drama",5);
+       //creamios una instancia de una serie
+      /*  show sh=new show("Breaking bad", "Vicent",5,"drama",5,"hbo");
         //creo a list
         listShow ls = new listShow();
                 //add the serie
         ls.setShow(sh);
-        sh=new show("games of trones", "Vicent2",6,"1",6);
+        sh=new show("games of trones", "Vicent2",6,"1",6,"Netflix");
         ls.setShow(sh);
         //guardo 
         access.saveLS(ls);

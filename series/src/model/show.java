@@ -18,6 +18,7 @@ public class show implements  Serializable{
     
     
     //constructor sin nada
+
     public show(){
         this.title="";
         this.scripwriter="";
@@ -26,6 +27,8 @@ public class show implements  Serializable{
         this.views=0;
         this.plataforma="";
     }
+
+    
     //constructor con todos los parametros
     public show(String title,String  scripwriter, int seasons, String genre,int views,String plataforma){
         this.title=title;
@@ -36,6 +39,9 @@ public class show implements  Serializable{
         this.plataforma=plataforma;
     }
 
+    public void setPlataforma(String plataforma) {
+        this.plataforma = plataforma;
+    }
     public String getPlataforma() {
         return plataforma;
     }

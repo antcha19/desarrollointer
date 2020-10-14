@@ -44,17 +44,23 @@ public class controller {
         return ls.getShow(position);
     }
     public show last(){
-        position++;
-        if (position==ls.longuitud()-1){
-            position--;
-        }
+       position=ls.longuitud()-1;
         return ls.getShow(position);
+    }
+    public show update(){
+         return ls.getShow(position);
     }
     public void nuevo(show s){
         ls.setShow(s);
         position=ls.longuitud()-1;
         acc.saveLS(ls);
     }
-
+    
+    public void delete(){
+        ls.removeShow(position);
+        //guardo la lista
+        access.saveLS(ls);
+       
+    }
 
 }

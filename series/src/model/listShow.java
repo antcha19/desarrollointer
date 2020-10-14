@@ -8,27 +8,29 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class listShow implements Serializable{
+public class listShow implements Serializable {
+
     private ArrayList<show> serieslist;
-    
-    
-    public listShow(){
+
+    public listShow() {
         serieslist = new ArrayList<>();
     }
-    
-    
-    public show getShow(int p){
+
+    public show getShow(int p) {
         return serieslist.get(p);
     }
-    public void setShow(show s){
-         serieslist.add(s);
+
+    public void setShow(show s) {
+        serieslist.add(s);
     }
-    public int longuitud(){
+
+    public int longuitud() {
         return serieslist.size();
     }
 
-   
+    public void removeShow(int position) {
+       serieslist.remove(position);
+    }
 
-    
     
 }

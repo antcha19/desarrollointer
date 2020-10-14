@@ -37,16 +37,15 @@ public class frame extends JFrame {
     private JButton boton1, boton2, boton3, boton4, boton5, boton6, boton7;
     //necesito un objeto para el controlador
     private controller c = null;
-    
+
     //combo
-    private  JComboBox combo;
-    private String[] empresas={"Netflix", "Amazon", "HBO"};
-    
+    private JComboBox combo;
+    private String[] empresas = {"Netflix", "Amazon", "HBO"};
 
     public frame(controller control) {
         c = control;
         setTitle("my series");
-        setSize(600 ,400);
+        setSize(600, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         panel.setLayout(new BorderLayout());
         panel2.setLayout(new GridLayout(7, 2, 10, 10));
@@ -92,10 +91,10 @@ public class frame extends JFrame {
         textf6 = new JTextField(50);
         panel2.add(label6);
         panel2.add(textf6);
-        
+
         //combo 
         combo = new JComboBox(empresas);
-       
+
         combo.addItemListener(new Listenercombo());
 
         textf1.setEditable(false);
@@ -114,7 +113,7 @@ public class frame extends JFrame {
         boton4.addActionListener(bl);
         boton5.addActionListener(bl);
         boton6.addActionListener(bl);
-        boton6.addActionListener(bl);
+        boton7.addActionListener(bl);
 
     }
 
@@ -134,8 +133,8 @@ public class frame extends JFrame {
             if (e.getSource() == boton4) {
                 s = c.last();
             }
-            
-           if (e.getSource() == boton5) {
+
+            if (e.getSource() == boton5) {
                 if (boton5.getText().equals("+")) {
                     //activar combo
                     combo.setVisible(true);
@@ -161,8 +160,7 @@ public class frame extends JFrame {
                     textf4.setEditable(true);
                     textf5.setEditable(true);
                     textf6.setEditable(true);
-                }
-                else{
+                } else {
                     //habilitar botones
                     boton1.setEnabled(true);
                     boton2.setEnabled(true);
@@ -171,34 +169,39 @@ public class frame extends JFrame {
                     boton6.setEnabled(true);
                     boton7.setEnabled(true);
                     boton5.setText("+");
-                   // desactivar combo
+                    // desactivar combo
                     combo.setVisible(false);
                     //tomar los datos tecleados en los textfields
-                    s=fillShow();
+                    s = fillShow();
                     //llamar al metodo nuevo del controller
-                    c.nuevo(s); 
+                    c.nuevo(s);
+                }
+                if (e.getSource() == boton6) {
+                    c.delete();
                 }
             }
             updating(s);
+
         }
 
     }
-    
+
     //escucha el combo
-    private class Listenercombo implements ItemListener{
-        public void itemStateChanged(ItemEvent e){
-            int indice=combo.getSelectedIndex();
+    private class Listenercombo implements ItemListener {
+
+        public void itemStateChanged(ItemEvent e) {
+            int indice = combo.getSelectedIndex();
             String s = empresas[indice];
             textf6.setText(s);
         }
-        
+
     }
-    private show fillShow(){
-        show s= new show(textf1.getText(),textf2.getText(),Integer.parseInt(textf3.getText()),
-        textf4.getText(),Integer.parseInt(textf5.getText()),textf6.getText());
+
+    private show fillShow() {
+        show s = new show(textf1.getText(), textf2.getText(), Integer.parseInt(textf3.getText()),
+                textf4.getText(), Integer.parseInt(textf5.getText()), textf6.getText());
         return s;
     }
-    
 
     private void updating(show s) {
         textf1.setText(s.getTitle());
@@ -207,10 +210,7 @@ public class frame extends JFrame {
         textf4.setText(s.getGenre());
         textf5.setText(String.valueOf(s.getViews()));
         textf6.setText(s.getPlataforma());
-        
+
     }
-    
-    
-    
 
 }
