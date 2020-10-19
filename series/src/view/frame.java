@@ -176,12 +176,18 @@ public class frame extends JFrame {
                     //llamar al metodo nuevo del controller
                     c.nuevo(s);
                 }
-                if (e.getSource() == boton6) {
-                    c.delete();
-                }
+            }
+            if (e.getSource() == boton6) {
+                c.delete();
+            }
+            if (e.getSource() == boton7) {
+
+                //tomar los datos tecleados en los textfields
+                s = fillShow();
+                combo.setVisible(true);
+                c.update(s);
             }
             updating(s);
-
         }
 
     }

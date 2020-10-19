@@ -33,7 +33,7 @@ public class access {
             ois.close();
         } catch (IOException e) {
             System.out.println("failed to open file loadLS");
-        }finally{
+        } finally {
             return ls;
         }
     }

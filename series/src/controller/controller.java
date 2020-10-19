@@ -14,53 +14,60 @@ import model.show;
  * @author antcha
  */
 public class controller {
+
     private int position;
-    private listShow ls ;
+    private listShow ls;
     private access acc = new access();
-    
-    
-    public controller(){
-        position=0;
-        ls=new listShow();
+
+    public controller() {
+        position = 0;
+        ls = new listShow();
         //cargar a la listaShow
-        ls=acc.loadLS();
+        ls = acc.loadLS();
     }
-    public show first(){
-        position=0;
-        return ls.getShow(position);
-    }
-    public show previous(){
-       if( position>0){
-           position--;
-       }
+
+    public show first() {
+        position = 0;
         return ls.getShow(position);
     }
 
-    public show next(){
-        position++;
-        if (position==ls.longuitud()){
+    public show previous() {
+        if (position > 0) {
             position--;
         }
         return ls.getShow(position);
     }
-    public show last(){
-       position=ls.longuitud()-1;
+
+    public show next() {
+        position++;
+        if (position == ls.longuitud()) {
+            position--;
+        }
         return ls.getShow(position);
     }
-    public show update(){
-         return ls.getShow(position);
+
+    public show last() {
+        position = ls.longuitud() - 1;
+        return ls.getShow(position);
     }
-    public void nuevo(show s){
+
+    public void nuevo(show s) {
         ls.setShow(s);
-        position=ls.longuitud()-1;
+        position = ls.longuitud() - 1;
         acc.saveLS(ls);
     }
-    
-    public void delete(){
+
+    public void delete() {
+        //elimino la posicion actual
         ls.removeShow(position);
-        //guardo la lista
-        access.saveLS(ls);
-       
+        //guardo la lista en el fichero
+        acc.saveLS(ls);
+    }
+
+    public void update(show s) {
+
+        ls.updateShow(s, position);
+        acc.saveLS(ls);
     }
 
 }
