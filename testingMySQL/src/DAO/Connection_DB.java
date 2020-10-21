@@ -16,7 +16,8 @@ public class Connection_DB {
         Connection con = null;
         try{
              String urlOdbc = "jdbc:mysql://localhost:3306/di?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-             con = (java.sql.DriverManager.getConnection (urlOdbc, "root", "serpis")); 
+             //con = (java.sql.DriverManager.getConnection (urlOdbc, "root", "serpis")); 
+              con = DriverManager.getConnection(urlOdbc, "root","serpis");
              return con;
         }catch(Exception e){
             e.printStackTrace();

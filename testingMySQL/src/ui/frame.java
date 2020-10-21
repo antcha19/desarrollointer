@@ -7,6 +7,7 @@ package ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.event.*;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
@@ -65,10 +66,10 @@ public class frame extends JFrame{
         panel4.add(search);
         panel4.add(all);
         // add listeners, this line will fail until the listener class is not created
-        myListener = new listener(id, notes, idSearch, backwards, forward, search, all);
-        backwards.addActionListener((ActionListener) myListener);
-        forward.addActionListener((ActionListener) myListener);
-        search.addActionListener((ActionListener) myListener);
+       myListener = new listener(id, notes, idSearch, backwards, forward, search, all);
+       backwards.addActionListener(myListener);
+        forward.addActionListener( myListener);
+        search.addActionListener( myListener);
         all.addActionListener((ActionListener) myListener);
         // initially motion buttons disabled
         forward.setEnabled(false);

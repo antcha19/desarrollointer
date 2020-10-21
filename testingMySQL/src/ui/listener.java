@@ -9,6 +9,8 @@ import DAO.ClientDAO;
 import DAO.Connection_DB;
 import DAO.client;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
 import java.util.List;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -18,7 +20,7 @@ import javax.swing.*;
  *
  * @author antcha
  */
-public class listener {
+public class listener implements  ActionListener{
 
     private JTextField id, idSearch;
     private JTextArea notes;
@@ -42,41 +44,62 @@ public class listener {
         client c = new client();
         // FIND A CLIENT
         if (e.getSource() == this.search) {
-            // in searches disabled movement buttons
+            // in searches disabled movement buttons<búsquedas botones de movimiento desactivados>
             forward.setEnabled(false);
             backwards.setEnabled(false);
-        }
-        try {
-            Connection_DB DB_Connection = new Connection_DB();
-            Connection with = DB_Connection.OpenConexion();
-            ClientDAO customerDAO = new ClientDAO();
-            c.setId(idSearch.getText());
-            c = customerDAO.findById(with, c);
-            DB_Connection.CerrarConexion(with);
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            try {
+                Connection_DB DB_Connection = new Connection_DB();
+                Connection con = DB_Connection.openConnection();
+                ClientDAO clientDAO = new ClientDAO();
+                c.setId(idSearch.getText());
+                c = clientDAO.findById(con, c);
+                DB_Connection.CloseConnection(con);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
         // LOAD ALL CLIENTS
 
         if (e.getSource() == this.all) {
-            // on all motion buttons enabled
+            // on all motion buttons enabled<todos los botones de movimiento habilitados>
             forward.setEnabled(true);
             backwards.setEnabled(true);
             position = 0;
             // All clients:
+            try {
+                Connection_DB DB_Connection = new Connection_DB();
+                Connection con = DB_Connection.openConnection();
+                ClientDAO clientDAO = new ClientDAO();
+                clients = clientDAO.findAll(con);
+                DB_Connection.CloseConnection(con);
+                // charge the first customer
+                position = 0;
+                c = clients.get(position);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
-        try {
-            Connection_DB DB_Connection = new Connection_DB();
-            Connection with = DB_Connection.OpenConexion();
-            ClientDAO customerDAO = new ClientDAO();
-            customers = customerDAO.findAll(with);
-            DB_Connection.CloseConexion(with);
-            // charge the first customer
-            position = 0;
-            c = customers.get(position);
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        //ahead,forward <adelante>
+        if(e.getSource()==this.forward){
+            position++;
+            if(position==clients.size()){
+                position--;
+            }
+            c = clients.get(position);
         }
+        //BEHIND <detras>
+        if(e.getSource()==this.backwards){
+            if(position>0){
+                position--;
+            }
+            c=clients.get(position);
+        }
+        update(c);
+    }
+    
+    private void update(client c){
+        this.id.setText(c.getId());
+        this.notes.setText(c.getNotes());
     }
 
 }
