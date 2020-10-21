@@ -28,11 +28,11 @@ public class frame extends JFrame{
     private listener myListener; // this line will fail until the listener class is created
 
     public frame() {
-        // usual properties of windows
+        // PROPIEDADES DE LA VENTA
         setSize(800, 200);
         setTitle("Access to MySQL");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        // instance of design panels
+        // INSTANCIA DE LOS PANELES DE DISEÑO
         panel1.setLayout(new BorderLayout());
         panel2.setLayout(new FlowLayout());
         panel3.setLayout(new FlowLayout());
@@ -41,13 +41,15 @@ public class frame extends JFrame{
         panel1.add(panel3, BorderLayout.SOUTH);
         panel1.add(panel2, BorderLayout.CENTER);
         panel1.add(panel4, BorderLayout.NORTH);
-        // south panel with scroll buttons
+        // PANEL SUR CON LOS BOTONES DESPLAZAMIENTO
+        //ATRAS
         backwards = new JButton("<");
+        //ADELANTE
         forward = new JButton(">");
         panel3.add(backwards);
         panel3.add(forward);
 
-        // central panel with data
+        // PANEL central con datoS
         e1 = new JLabel("ID");
         id = new JTextField(10);
         panel2.add(e1);
@@ -56,7 +58,8 @@ public class frame extends JFrame{
         notes = new JTextArea(5, 40);
         panel2.add(e2);
         panel2.add(notes);
-        // north panel with searches
+        
+        // PANEL NORTE CON BUSQUETAS
         e3 = new JLabel("ID to find:");
         idSearch = new JTextField(10);
         search = new JButton("Search");
@@ -65,9 +68,10 @@ public class frame extends JFrame{
         panel4.add(idSearch);
         panel4.add(search);
         panel4.add(all);
+        
         // add listeners, this line will fail until the listener class is not created
-       myListener = new listener(id, notes, idSearch, backwards, forward, search, all);
-       backwards.addActionListener(myListener);
+        myListener = new listener(id, notes, idSearch, backwards, forward, search, all);
+        backwards.addActionListener(myListener);
         forward.addActionListener( myListener);
         search.addActionListener( myListener);
         all.addActionListener((ActionListener) myListener);

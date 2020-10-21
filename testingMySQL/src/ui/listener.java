@@ -42,7 +42,7 @@ public class listener implements  ActionListener{
 
     public void actionPerformed(ActionEvent e) {
         client c = new client();
-        // FIND A CLIENT
+        // BUSCA UN CLIENTE
         if (e.getSource() == this.search) {
             // in searches disabled movement buttons<búsquedas botones de movimiento desactivados>
             forward.setEnabled(false);
@@ -58,21 +58,21 @@ public class listener implements  ActionListener{
                 ex.printStackTrace();
             }
         }
-        // LOAD ALL CLIENTS
+        // carga todos los CLIENTES
 
         if (e.getSource() == this.all) {
             // on all motion buttons enabled<todos los botones de movimiento habilitados>
             forward.setEnabled(true);
             backwards.setEnabled(true);
             position = 0;
-            // All clients:
+            // TODOS LOS CLIENTES:
             try {
                 Connection_DB DB_Connection = new Connection_DB();
                 Connection con = DB_Connection.openConnection();
                 ClientDAO clientDAO = new ClientDAO();
                 clients = clientDAO.findAll(con);
                 DB_Connection.CloseConnection(con);
-                // charge the first customer
+                // CARGA EL PRIMER CLIENTE
                 position = 0;
                 c = clients.get(position);
             } catch (Exception ex) {
@@ -87,7 +87,7 @@ public class listener implements  ActionListener{
             }
             c = clients.get(position);
         }
-        //BEHIND <detras>
+        //BEHIND <Atras>
         if(e.getSource()==this.backwards){
             if(position>0){
                 position--;

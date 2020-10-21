@@ -15,13 +15,13 @@ public class Connection_DB {
     public Connection openConnection() throws Exception{
         Connection con = null;
         try{
-             String urlOdbc = "jdbc:mysql://localhost:3306/di?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-             //con = (java.sql.DriverManager.getConnection (urlOdbc, "root", "serpis")); 
-              con = DriverManager.getConnection(urlOdbc, "root","serpis");
+             //String urlOdbc = "jdbc:mysql://localhost:3306/di?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+             String url="jdbc:mysql://localhost:3306/di";
+             con = (java.sql.DriverManager.getConnection (url, "root", "serpis"));
              return con;
         }catch(Exception e){
             e.printStackTrace();
-             throw new Exception ("Connection could not be established" + e.getMessage ());
+             throw new Exception ("Ha sido imposible establecer la conexion" + e.getMessage ());
         }
         
     }
@@ -30,7 +30,7 @@ public class Connection_DB {
             if (con!= null) con.close();   
         }catch(SQLException e){
             e.printStackTrace();
-            throw new Exception("it was impossible to close the Conecction " + e.getMessage());
+            throw new Exception("Ha sido imposible cerrar la conexion" + e.getMessage());
         }
     }
     
