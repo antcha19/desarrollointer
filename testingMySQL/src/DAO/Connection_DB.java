@@ -15,9 +15,9 @@ public class Connection_DB {
     public Connection openConnection() throws Exception{
         Connection con = null;
         try{
-             //String urlOdbc = "jdbc:mysql://localhost:3306/di?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-             String url="jdbc:mysql://localhost:3306/di";
-             con = (java.sql.DriverManager.getConnection (url, "root", "serpis"));
+             String urlOdbc = "jdbc:mysql://localhost:3306/di?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+            // String url="jdbc:mysql://localhost:3306/di";
+             con = (java.sql.DriverManager.getConnection (urlOdbc, "root", "serpis"));
              return con;
         }catch(Exception e){
             e.printStackTrace();
