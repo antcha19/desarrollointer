@@ -6,12 +6,20 @@
 package sleccioneimpresion;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridBagLayout;
+
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.*;
+import java.io.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -20,19 +28,19 @@ import javax.swing.*;
 public class frame extends JFrame {
 
     private JButton boton1, boton2, boton3;
-    private JList list;
+    private JList list, list2;
     private DefaultListModel listModel = new DefaultListModel();
+    private DefaultListModel listModel2 = new DefaultListModel();
     JPanel panel = new JPanel();
     JPanel panel2 = new JPanel();
-
     JPanel panel3 = new JPanel();
     JPanel panel4 = new JPanel();
-    private JTextField text;
-    
+    private JTextArea area;
+    private final String namescolours[] = {"Light grey", "magenta", "orange", "pink", "white", "yellow"};
+    private final String namescolours2[] = {"Black", "grey", "green",
+        "Light grey", "magenta", "orange", "pink", "white", "yellow"};
 
-    private final String namescolours[] = {"Black", "grey", "green", "Light grey", "magenta", "orange", "pink", "white", "yellow"};
-
-    public frame() {
+    public frame() throws SQLException {
         setTitle("seleccion e impresion");
         setSize(500, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -42,8 +50,8 @@ public class frame extends JFrame {
         //panel botones 
         panel3.setLayout(new GridLayout(3, 1, 10, 10));
 
-        boton1 = new JButton("<<<");
-        boton2 = new JButton(">>>");
+        boton1 = new JButton(">>>>");
+        boton2 = new JButton("<<<<");
         boton3 = new JButton("Imprimir");
         panel3.add(boton1);
         panel3.add(boton2);
@@ -52,11 +60,70 @@ public class frame extends JFrame {
         panel.add(panel3, BorderLayout.CENTER);
         panel.add(panel4, BorderLayout.EAST);
         add(panel);
-        list = new JList(namescolours);
-        panel2.add(list);
-        
-        
-        
+
+        String url = "jdbc:mysql://localhost:3306/di?useSSL=false&useTimezone="
+                + "true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+        try {
+            //puede ser que sea requerido lo siguiente
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conexion = DriverManager.getConnection(url, "root", "serpis");
+            Statement instruccion = (Statement) conexion.createStatement();
+            String sql = "Select id from clients";
+            ResultSet resultado = instruccion.executeQuery(sql);
+
+            while (resultado.next()) {
+                listModel.addElement(resultado.getString("id"));
+
+            }
+            list = new JList(listModel);
+            panel2.add(list);
+
+            resultado.close();
+            instruccion.close();
+            conexion.close();
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        }
+
+        list2 = new JList(listModel2);
+        panel4.add(list2);
+        boton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String s;
+                //toma el indice del elemnto seleccionado de la list
+                int index = list.getSelectedIndex();
+                if (index >= 0) {
+                    //devuelve el valor selecionado
+                    s = (String) listModel.get(index);
+                    listModel.remove(index);
+                    //anadira a la listamodel2
+                    listModel2.addElement(s);
+                }
+            }
+
+        });
+        boton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //toma el indice del elemnto seleccionado de la list
+                int index = list2.getSelectedIndex();
+                if (index >= 0) {
+                    String devuelve = (String) listModel2.get(index);
+                    //eliminara de la lista
+                    listModel2.remove(index);
+                    //anadira a la listamodel
+                    listModel.addElement(devuelve);
+                }
+            }
+
+        });
+        boton3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
 
     }
 
