@@ -10,6 +10,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.PrintWriter;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -20,6 +21,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.text.Document;
 
 /**
  *
@@ -36,9 +38,6 @@ public class frame extends JFrame {
     JPanel panel3 = new JPanel();
     JPanel panel4 = new JPanel();
     private JTextArea area;
-    private final String namescolours[] = {"Light grey", "magenta", "orange", "pink", "white", "yellow"};
-    private final String namescolours2[] = {"Black", "grey", "green",
-        "Light grey", "magenta", "orange", "pink", "white", "yellow"};
 
     public frame() throws SQLException {
         setTitle("seleccion e impresion");
@@ -49,10 +48,11 @@ public class frame extends JFrame {
         panel.setLayout(new BorderLayout());
         //panel botones 
         panel3.setLayout(new GridLayout(3, 1, 10, 10));
-
         boton1 = new JButton(">>>>");
         boton2 = new JButton("<<<<");
         boton3 = new JButton("Imprimir");
+
+        //botones
         panel3.add(boton1);
         panel3.add(boton2);
         panel3.add(boton3);
@@ -61,6 +61,7 @@ public class frame extends JFrame {
         panel.add(panel4, BorderLayout.EAST);
         add(panel);
 
+        //acceder a la base de datos , tambien tenemos  que selecionas el driver
         String url = "jdbc:mysql://localhost:3306/di?useSSL=false&useTimezone="
                 + "true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
         try {
@@ -76,6 +77,7 @@ public class frame extends JFrame {
 
             }
             list = new JList(listModel);
+
             panel2.add(list);
 
             resultado.close();
@@ -87,6 +89,7 @@ public class frame extends JFrame {
 
         list2 = new JList(listModel2);
         panel4.add(list2);
+
         boton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -118,13 +121,8 @@ public class frame extends JFrame {
             }
 
         });
-        boton3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
+       
 
     }
-
 }
+
