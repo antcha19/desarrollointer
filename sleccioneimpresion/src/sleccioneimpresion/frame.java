@@ -90,6 +90,9 @@ public class frame extends JFrame {
         list2 = new JList(listModel2);
         panel4.add(list2);
 
+        
+        
+        //boton uno
         boton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -106,6 +109,8 @@ public class frame extends JFrame {
             }
 
         });
+        
+       // boton dos
         boton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
