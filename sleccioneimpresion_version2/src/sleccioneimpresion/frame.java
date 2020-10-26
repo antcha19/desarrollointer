@@ -10,16 +10,13 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.*;
-import java.io.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+import DAO.all;
+import DAO.client;
+import java.util.*;
 
 /**
  *
@@ -35,7 +32,6 @@ public class frame extends JFrame {
     JPanel panel2 = new JPanel();
     JPanel panel3 = new JPanel();
     JPanel panel4 = new JPanel();
-    private JTextArea area;
 
     public frame() throws SQLException {
         setTitle("seleccion e impresion");
@@ -59,33 +55,18 @@ public class frame extends JFrame {
         panel.add(panel4, BorderLayout.EAST);
         add(panel);
 
-        //acceder a la base de datos , tambien tenemos  que selecionas el driver
-        String url = "jdbc:mysql://localhost:3306/di?useSSL=false&useTimezone="
-                + "true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-        try {
-            //puede ser que sea requerido lo siguiente
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection(url, "root", "serpis");
-            Statement instruccion = (Statement) conexion.createStatement();
-            //sentencia sql 
-            String sql = "Select id from clients";
-            ResultSet resultado = instruccion.executeQuery(sql);
-
-            while (resultado.next()) {
-                listModel.addElement(resultado.getString("id"));
-
-            }
-            //añadimos la listmodel a la Jlist
-            list = new JList(listModel);
-            panel2.add(list);
-
-            resultado.close();
-            instruccion.close();
-            conexion.close();
-        } catch (ClassNotFoundException ex) {
-            ex.printStackTrace(System.out);
+        ArrayList<client> listac = new ArrayList<>();
+        listac = all.obtainData();
+        //foreach para recorrer el arraylist
+        for (client cli : listac) {
+            String id = cli.getId();
+            String notas = cli.getNotes();
+            //añado la id a la listMOdel
+            listModel.addElement(id);
         }
 
+        list = new JList(listModel);
+        panel2.add(list);
         list2 = new JList(listModel2);
         panel4.add(list2);
 
@@ -107,7 +88,6 @@ public class frame extends JFrame {
 
         });
 
-        
         // boton dos
         boton2.addActionListener(new ActionListener() {
             @Override
