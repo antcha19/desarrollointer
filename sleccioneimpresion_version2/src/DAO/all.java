@@ -31,7 +31,6 @@ public class all {
             Connection conexion=(java.sql.DriverManager.getConnection(url0dbc, "root", "serpis"));
             Statement instruccion = conexion.createStatement();
             //sentencia sql 
-
             ResultSet resultado = instruccion.executeQuery("select * from clients");
 
             while (resultado.next()) {
