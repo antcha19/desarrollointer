@@ -16,7 +16,17 @@ import javax.swing.*;
 import java.sql.SQLException;
 import DAO.all;
 import DAO.client;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.*;
+
 
 /**
  *
@@ -24,6 +34,7 @@ import java.util.*;
  */
 public class frame extends JFrame {
 
+    private ArrayList<client> listclients = new ArrayList<>();
     private JButton boton1, boton2, boton3;
     private JList list, list2;
     private DefaultListModel listModel = new DefaultListModel();
@@ -55,14 +66,15 @@ public class frame extends JFrame {
         panel.add(panel4, BorderLayout.EAST);
         add(panel);
 
-        ArrayList<client> listac = new ArrayList<>();
-        listac = all.obtainData();
+        all todo = new all();
+
+        listclients = (ArrayList<client>) todo.obtainData();
         //foreach para recorrer el arraylist
-        for (client cli : listac) {
-            String id = cli.getId();
-            String notas = cli.getNotes();
-            //añado la id a la listMOdel
-            listModel.addElement(id);
+        String nombre;
+        for (client cli : listclients) {
+
+            //anado todo el cliente 
+            listModel.addElement(cli);
         }
 
         list = new JList(listModel);
@@ -79,10 +91,9 @@ public class frame extends JFrame {
                 int index = list.getSelectedIndex();
                 if (index >= 0) {
                     //devuelve el valor selecionado
-                    s = (String) listModel.get(index);
+                    client aux = (client) list.getSelectedValue();
+                    listModel2.addElement(aux);
                     listModel.remove(index);
-                    //anadira a la listamodel2
-                    listModel2.addElement(s);
                 }
             }
 
@@ -95,14 +106,43 @@ public class frame extends JFrame {
                 //toma el indice del elemnto seleccionado de la list
                 int index = list2.getSelectedIndex();
                 if (index >= 0) {
-                    String devuelve = (String) listModel2.get(index);
-                    //eliminara de la lista
-                    listModel2.remove(index);
+                    //devuelve el cliente
+                    client devuelve = (client) list2.getSelectedValue();
                     //anadira a la listamodel
                     listModel.addElement(devuelve);
+                    //eliminara de la lista
+                    listModel2.remove(index);
                 }
             }
 
+        });
+        boton3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                try {
+                    //crea el texto y lo inserta en la variable 'text'
+                    String text = "Lista de clientes:\n\n";
+                    for (Object o : listModel2.toArray()) {
+
+                        client c = (client) o;
+                        text = text + c.Muestra();
+                    }
+
+                    //esta parte es fija, no se cambia
+                    Document doc = new Document(PageSize.A4, 50, 50, 100, 72);
+                    PdfWriter.getInstance(doc,new FileOutputStream("clientes.pdf"));
+                    doc.open();
+                    Paragraph p = new Paragraph(text);
+                    p.setAlignment(Element.ALIGN_JUSTIFIED);
+
+                    doc.add(p);
+                    doc.close();
+                } catch (DocumentException | FileNotFoundException f) {
+                    f.printStackTrace();
+                }
+
+            }
         });
 
     }

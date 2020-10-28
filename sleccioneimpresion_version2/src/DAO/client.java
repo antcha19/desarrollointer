@@ -36,5 +36,9 @@ public class client {
     public String getNotes() {
         return notes;
     }
+
+    public String Muestra() {
+       return id + notes;
+    }
     
 }
