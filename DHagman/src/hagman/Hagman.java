@@ -3,20 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package example1;
+package hagman;
 
 /**
  *
- * @author antcha
+ * @author antonio
  */
-public class Example1 {
+public class Hagman {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("adfgadfg");
+        
+        frameHAgman fh = new frameHAgman();
+        fh.setVisible(true);
     }
     
 }
