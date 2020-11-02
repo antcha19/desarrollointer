@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.Arrays;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
@@ -32,6 +33,7 @@ class frameHAgman extends JFrame {
     JTextField textfield1, textfield2;
     JButton button;
     JButton button2;
+    JPasswordField password = new JPasswordField();
 
     //array de las imagenes
     private String[] imagenes = {"foto1", "foto2", "foto3", "foto4", "foto5"};
@@ -78,14 +80,12 @@ class frameHAgman extends JFrame {
         //texto 
         textojugador1 = new JLabel("word to guess");
         //creando password
-        JPasswordField p = new JPasswordField();
-        char[] vc;
-        vc = p.getPassword();
+
         textfield1 = new JTextField();
         button = new JButton("Accept");
-        
+
         panel4.add(textojugador1);
-        panel4.add(p);
+        panel4.add(password);
         panel4.add(button);
 
         //panel del jugador2 y su codigo
@@ -101,13 +101,40 @@ class frameHAgman extends JFrame {
         panel5.add(textojugador2);
         panel5.add(textfield2);
         //textfield y el boton descativado hasta que pulse el boton accetar
-      //  textfield2.setEnabled(false);
-      //  button2.setEnabled(false);
+        textfield2.setEnabled(false);
+        button2.setEnabled(false);
         panel5.add(button2);
+
+        //escuchar botones
+        buttonsescuchar bl = new buttonsescuchar();
+        button.addActionListener(bl);
+        button2.addActionListener(bl);
 
     }
 
-    
-    
+    class buttonsescuchar implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == button) {
+                //activar y desactivar botones
+                textfield2.setEnabled(true);
+                button2.setEnabled(true);
+                button.setEnabled(false);
+
+            }
+            if (e.getSource() == button2) {
+
+                /*     password = new JPasswordField();
+                char[] vc;
+                vc = password.getPassword();*/
+                img = new ImageIcon(getClass().getResource("imagenes/" + " .png"));
+                label.setIcon(img);
+                 
+
+            }
+        }
+
+    }
 
 }
