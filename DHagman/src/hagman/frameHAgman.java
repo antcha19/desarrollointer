@@ -128,8 +128,7 @@ class frameHAgman extends JFrame {
                 /*     password = new JPasswordField();
                 char[] vc;
                 vc = password.getPassword();*/
-                img = new ImageIcon(getClass().getResource("imagenes/" + " .png"));
-                label.setIcon(img);
+              
                  
 
             }

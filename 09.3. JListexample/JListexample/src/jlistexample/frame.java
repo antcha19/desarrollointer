@@ -41,7 +41,7 @@ public class frame extends JFrame {
                 if (index >= 0) { //si hay algún elemto seleccionado:
                     //antes de borrarlo muestro un mensaje al usuario con el elemento a borrar
                     JOptionPane.showMessageDialog(null,
-                            "Se borrará el siguiente elemento de la list:   "
+                            "has seleccionado   "
                             + listModel.get(index));
                     //borro el elemento de la list
                     listModel.remove(index);

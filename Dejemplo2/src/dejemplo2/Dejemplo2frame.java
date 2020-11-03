@@ -34,12 +34,12 @@ public class Dejemplo2frame extends JFrame {
         panelPre1.setLayout(new GridLayout(4, 1));
         TitledBorder titlepre1 = BorderFactory.createTitledBorder("Pregunta: 1");
         panelPre1.setBorder(titlepre1);
-        lblPre1 = new JLabel("¿Qué es la máquina Virtual de Java?");
+        lblPre1 = new JLabel("¿PRegunta1...................?");
         panelPre1.add(lblPre1);
         //false sirve para no seleccionar automaticamente
-        pre1a = new JRadioButton("Una máquina de cafés", false);
-        pre1b = new JRadioButton("El sw que se encarga de interpretar el código Java y ejecutarlo", false);
-        pre1c = new JRadioButton("Ambas son correctas", false);
+        pre1a = new JRadioButton("opcion1", false);
+        pre1b = new JRadioButton("opcion2", false);
+        pre1c = new JRadioButton("opcion3", false);
         grpre1 = new ButtonGroup();
         grpre1.add(pre1a);
         grpre1.add(pre1b);
@@ -54,11 +54,11 @@ public class Dejemplo2frame extends JFrame {
 
         TitledBorder titlepre2 = BorderFactory.createTitledBorder("Pregunta: 2");
         panelPre2.setBorder(titlepre2);
-        lblPre2 = new JLabel("Las clases Swing");
+        lblPre2 = new JLabel("pregunta 3.....................");
         panelPre2.add(lblPre2);
-        pre2a = new JRadioButton("Dan soporte a los GUI", false);
-        pre2b = new JRadioButton("Son clases de baile", false);
-        pre2c = new JRadioButton("Ambas son correctas", false);
+        pre2a = new JRadioButton("opcion1", false);
+        pre2b = new JRadioButton("opcion2", false);
+        pre2c = new JRadioButton("opcion3", false);
         grpre2 = new ButtonGroup();
         grpre2.add(pre2a);
         grpre2.add(pre2b);
@@ -73,11 +73,11 @@ public class Dejemplo2frame extends JFrame {
 
         TitledBorder titlepre3 = BorderFactory.createTitledBorder("Pregunta: 3");
         panelPre3.setBorder(titlepre3);
-        lblPre3 = new JLabel("JavaFX es:");
+        lblPre3 = new JLabel("pregunta 3 ................................");
         panelPre3.add(lblPre3);
-        pre3a = new JRadioButton("Los efectos especiales de Java", false);
-        pre3b = new JRadioButton("El nuevo soporte GUI de Java", false);
-        pre3c = new JRadioButton("Ambas son correctas", false);
+        pre3a = new JRadioButton("opcion1", false);
+        pre3b = new JRadioButton("opcion2", false);
+        pre3c = new JRadioButton("opcion3", false);
         grpre3 = new ButtonGroup();
         grpre3.add(pre3a);
         grpre3.add(pre3b);
@@ -92,11 +92,11 @@ public class Dejemplo2frame extends JFrame {
 
         TitledBorder titlepre4 = BorderFactory.createTitledBorder("Pregunta: 4");
         panelPre4.setBorder(titlepre4);
-        lblPre4 = new JLabel("¿NetBeans es peor que Eclipse?");
+        lblPre4 = new JLabel("¿pregunta4..................");
         panelPre4.add(lblPre4);
-        pre4a = new JRadioButton("Si, pero sólo se puede desarrollar en Java", false);
-        pre4b = new JRadioButton("No, pero Eclipse es de pago", false);
-        pre4c = new JRadioButton("A y B son incorrectas", false);
+        pre4a = new JRadioButton("opcion1", false);
+        pre4b = new JRadioButton("opcion2", false);
+        pre4c = new JRadioButton("opcion3", false);
         grpre4 = new ButtonGroup();
         grpre4.add(pre4a);
         grpre4.add(pre4b);
@@ -111,11 +111,11 @@ public class Dejemplo2frame extends JFrame {
 
         TitledBorder titlepre5 = BorderFactory.createTitledBorder("Pregunta: 5");
         panelPre5.setBorder(titlepre5);
-        lblPre5 = new JLabel("¿Oracle es la compañia propietaria de Java?");
+        lblPre5 = new JLabel("pregunta5....................");
         panelPre5.add(lblPre5);
-        pre5a = new JRadioButton("Si", false);
-        pre5b = new JRadioButton("No", false);
-        pre5c = new JRadioButton("Sólo del 50%", false);
+        pre5a = new JRadioButton("opcion1", false);
+        pre5b = new JRadioButton("opcion2", false);
+        pre5c = new JRadioButton("opcion3", false);
         grpre5 = new ButtonGroup();
         grpre5.add(pre5a);
         grpre5.add(pre5b);
