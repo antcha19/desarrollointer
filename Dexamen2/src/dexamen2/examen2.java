@@ -99,17 +99,17 @@ public class examen2 extends JFrame {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == radio1) {
 
-                img = new ImageIcon(getClass().getResource("images/Rabbit.gif"));
+                img = new ImageIcon(getClass().getResource("images/Dog.gif"));
                 label = new JLabel();
-                label.setText("Rabbit");
+               
                 label.setIcon(img);
                 panel2.add(label);
 
             }
             if (e.getSource() == radio1) {
-                img = new ImageIcon(getClass().getResource("images/Rabbit.gif"));
+                img = new ImageIcon(getClass().getResource("images/Cat.gif"));
                 label = new JLabel();
-                label.setText("Rabbit");
+           
                 label.setIcon(img);
                 panel2.add(label);
             }
