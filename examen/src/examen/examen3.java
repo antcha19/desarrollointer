@@ -84,7 +84,12 @@ public class examen3 extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-           listModel.addElement(text1);
+          listModel.addElement(text1.getText() +" "+ text2.getText());
+            //agregamos el listmodel a la lista
+            lista.setModel(listModel);
+            //borramos el textto
+            text1.setText("");
+            text2.setText("");
            
             
         }
@@ -93,11 +98,11 @@ public class examen3 extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-             int indice = lista.getSelectedIndex();
-           if(indice >= 0){
-               
-           }
-           
+            //toma el indice selecionado
+            int indice=(int) lista.getSelectedIndex();
+                if(indice>=0){
+                 combo.addItem(indice);
+                } 
             
         }
     }
