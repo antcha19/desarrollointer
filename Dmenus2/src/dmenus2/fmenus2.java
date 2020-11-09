@@ -1,25 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package MENU;
+package dmenus2;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
-import javax.swing.JMenuBar;
+import javax.swing.JMenu;
 import javax.swing.*;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 /**
  *
  * @author antcha
  */
-public class menu extends JFrame {
+public class fmenus2 extends JFrame {
 
-    public menu() {
-        setSize(800, 600);
+    public fmenus2() {
+
+        setSize(400, 400);
         setTitle("Modal and non-modal windows");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
@@ -39,15 +43,15 @@ public class menu extends JFrame {
         menu.add(menuItem);
         menu.addSeparator();
         menuItem = new JMenuItem("Option 2");
+      
         menu.add(menuItem);
         // Build second menu in the menu bar.
         menu = new JMenu("Second Menu");
         menuBar.add(menu);
         add(menuBar);
-
     }
-    // LISTEN OUT:
 
+    // LISTEN OUT:
     class em implements ActionListener {
 
         JFrame miFrame;
@@ -57,7 +61,7 @@ public class menu extends JFrame {
         }
 
         @Override
-        public void actionPerformed(ActionEvent ae) {
+        public void actionPerformed(ActionEvent e) {
             DialogoModal dialogoModal = new DialogoModal(miFrame);
             dialogoModal.pack();
             // to automatically resize the window.

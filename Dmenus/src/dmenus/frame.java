@@ -70,7 +70,10 @@ public class frame extends JFrame {
             }
             //error
             if (e.getSource() == berror) {
-                 
+                  JOptionPane.showMessageDialog(null, "Esto es un mensaje de UN ERROR",
+                        "eRROR",
+                        JOptionPane.ERROR_MESSAGE);
+            
             }
             //confirmacion
             if (e.getSource() == bconfirmacion) {
@@ -84,7 +87,11 @@ public class frame extends JFrame {
             }
             //texto
             if (e.getSource() == btexto) {
-                
+                int numero=Integer.parseInt(JOptionPane.showInputDialog("Ingrese un"+" numero para multiplicarlo por 2"));
+                if (numero >= 0){
+                  int  resultado = numero * 2;
+                    JOptionPane.showMessageDialog(null, "El resultado es: 2*" +numero+"="+resultado);
+                }
             }
             //combo
             if (e.getSource() == bcombo) {

@@ -3,15 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MENU;
+package dcasa;
 
 /**
  *
  * @author antcha
  */
-public class main {
+public class Dcasa {
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        menu me =  new menu();
-        me.setVisible(true);
+        // TODO code application logic here
+        framecasa fcasa = new framecasa();
+        fcasa.setVisible(true);
     }
+    
 }
