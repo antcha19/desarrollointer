@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import javax.swing.*;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
@@ -34,8 +35,12 @@ public class framecasa extends JFrame {
         //Menu
         JMenuBar menubar;
         JMenu menu, menuhabitacion;
-        JMenuItem menuItem;
-        
+        JMenuItem menuItem, menuItemG,menuItemT;
+        //Creamos el objeto(JPG de cualquier tamaño)
+        ImageIcon imagen1=new ImageIcon("imagenes"+File.separator+"indice.png");
+ 
+        //El metodo necesita un objeto Image, invocamos el metodo getImage
+        setIconImage(imagen1.getImage());
         
         
 
@@ -43,6 +48,7 @@ public class framecasa extends JFrame {
         menubar = new JMenuBar();
         //creo el primer menu;
         menu = new JMenu("Casa");
+        menu.setIcon(imagen1);
         menubar.add(menu);
         //menu habitaciones
         menuhabitacion = new JMenu("Habitaciones");
@@ -77,6 +83,10 @@ public class framecasa extends JFrame {
         //Menu extras
         menu = new JMenu("Extras");
         menubar.add(menu);
+        menuItemG = new JMenuItem("Garaje");
+        menuItemT = new JMenuItem("Trastero");
+        menu.add(menuItemG);
+        menu.add(menuItemT);
 
         add(menubar);
 
