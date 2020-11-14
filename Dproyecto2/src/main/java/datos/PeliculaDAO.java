@@ -5,6 +5,7 @@
  */
 package datos;
 
+import static datos.Conexion.close;
 import static datos.Conexion.getConnection;
 import domain.Pelicula;
 import java.sql.Connection;
@@ -22,9 +23,9 @@ public class PeliculaDAO {
 
     //sentencia para seleccionar en sql
     private static final String SQL_SELECT = "SELECT id, Nombre, Anyo, Tipo FROM pelicula";
-    private static final String SQL_INSERT = "INSERT INTO coches(Matricula, Marca, Precio,DNI) VALUES (?,?,?,?)";
-    private static final String SQL_DELETE = "DELETE FROM coches where Matricula=?";
-    private static final String SQL_UPDATE = "UPDATE coches SET Marca=?, Precio=? where  Matricula=?";
+    private static final String SQL_INSERT = "INSERT INTO pelicula( Nombre, Anyo,Tipo) VALUES (?,?,?)";
+    private static final String SQL_DELETE = "DELETE FROM pelicula where id=?";
+    private static final String SQL_UPDATE = "UPDATE pelicula SET Nombre=?, Anyo=?, Tipo=? where  id=?";
 
     public List<Pelicula> seleccionarpeli() throws SQLException {
         //llamamos a todas las conexiones
@@ -55,5 +56,83 @@ public class PeliculaDAO {
         }
         return lispeliculas;
     }
-
+    
+     public int borrar(Pelicula pelicula) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        int registros = 0;
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_DELETE);
+            stmt.setInt(1, pelicula.getId());
+            registros = stmt.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(stmt);
+            } catch (SQLException ex) {
+            }
+            try {
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return registros;
+     }
+     public int insertar(Pelicula pelicula) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        int registros = 0;
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_INSERT);
+            stmt.setString(1, pelicula.getNombre());
+            stmt.setInt(2, pelicula.getAnyo());
+            stmt.setString(3, pelicula.getTipo());
+            registros = stmt.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(stmt);
+            } catch (SQLException ex) {
+            }
+            try {
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return registros;
+    }
+     
+     public int actualizar(Pelicula pelicula) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        int registros = 0;
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_UPDATE);
+            stmt.setString(1, pelicula.getNombre());
+            stmt.setInt(2, pelicula.getAnyo());
+            stmt.setString(3, pelicula.getTipo());
+            stmt.setInt(4, pelicula.getId());
+            registros = stmt.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(stmt);
+            } catch (SQLException ex) {
+            }
+            try {
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return registros;
+    }
 }

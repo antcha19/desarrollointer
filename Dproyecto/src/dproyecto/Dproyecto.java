@@ -18,12 +18,19 @@ public class Dproyecto {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        //Controllador
+      //  ControllerPelicula controller = new ControllerPelicula();
+        
         // TODO code application logic here
 
-        Pelicula pelicula = new Pelicula("avatar", 2014, "cienca ficcion");
-        //Controllador
-        ControllerPelicula controller = new ControllerPelicula();
-        controller.registrar(pelicula);
+     //  Pelicula pelicula = new Pelicula("avatar", 2014, "cienca ficcion");
+       // controller.registrar(pelicula);
+        
+    //    controller.listarpeliculas();
+        
+        frameproyecto1 f = new frameproyecto1();
+        f.setVisible(true);
 
     }
 }

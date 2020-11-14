@@ -18,7 +18,7 @@ public class Conexion {
 
         String password = "root";
         String usuario = "serpis";
-        String url = "jdbc:mysql://localhost:3306/peliculas?user=" + usuario
+        String url = "jdbc:mysql://localhost:3306/test?user=" + usuario
                 + "&password=" + password;
         try {
             con = DriverManager.getConnection(url);
@@ -53,5 +53,6 @@ public class Conexion {
     public static void close(Connection conn) throws SQLException {
         conn.close();
     }
+
 
 }

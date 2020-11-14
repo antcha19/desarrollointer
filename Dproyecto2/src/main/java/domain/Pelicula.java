@@ -21,17 +21,23 @@ public class Pelicula {
     public Pelicula() {
     }
 
+    //constructor para modificar
     public Pelicula(int id, String nombre, int anyo, String tipo) {
         this.id = id;
         this.nombre = nombre;
         this.anyo = anyo;
         this.tipo = tipo;
     }
+    //para insertar un nuevo registro
     public Pelicula( String nombre, int anyo, String tipo) {
-       
         this.nombre = nombre;
         this.anyo = anyo;
         this.tipo = tipo;
+    }
+    
+    //para borra un registro
+    public Pelicula(int id){
+        this.id = id;
     }
 
     public int getId() {

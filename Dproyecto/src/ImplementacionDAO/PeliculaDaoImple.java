@@ -11,6 +11,7 @@ import com.connection.Conexion;
 import static com.connection.Conexion.close;
 import java.util.List;
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -30,25 +31,45 @@ public class PeliculaDaoImple implements IPeliculaDao {
             stm=conn.createStatement();
             stm.execute(sqlinsert);
             registar=true;
+            stm.close();
+            conn.close();
         }catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        } finally {
-            try {
-                close(stm);
-            } catch (SQLException ex) {
-            }
-            try {
-                close(conn);
-            } catch (SQLException ex) {
-                ex.printStackTrace(System.out);
-            }
-        }
+        } 
         return registar;
     }
 
     @Override
     public List<Pelicula> obtener() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      Connection conn = null;
+      Statement stmt = null;
+      ResultSet rs=null;
+		
+		String sql="SELECT * FROM pelicula ORDER BY ID";
+		
+		List<Pelicula> listaCliente= new ArrayList<Pelicula>();
+		
+		try {			
+			conn= Conexion.getConnection();
+			stmt=conn.createStatement();
+			rs=stmt.executeQuery(sql);
+			while (rs.next()) {
+				Pelicula c=new Pelicula();
+				c.setId(rs.getInt(1));
+				c.setNombre(rs.getString(2));
+				c.setAnyo(rs.getInt(3));
+				c.setTipo(rs.getString(4));
+				listaCliente.add(c);
+			}
+			stmt.close();
+			rs.close();
+			conn.close();
+		} catch (SQLException e) {
+			System.out.println("Error: Clase ClienteDaoImple, método obtener");
+			e.printStackTrace();
+		}
+		
+		return listaCliente;
     }
 
     @Override
