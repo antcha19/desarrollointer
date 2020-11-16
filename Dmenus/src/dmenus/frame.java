@@ -95,19 +95,17 @@ public class frame extends JFrame {
             }
             //combo
             if (e.getSource() == bcombo) {
-                Object selec = JOptionPane.showInputDialog(
-                        null,
+                Object selec = JOptionPane.showInputDialog(null,
                         "Select option",
                         "Options Selector",
                         JOptionPane.QUESTION_MESSAGE,
-                        null, // null for default icon
-                        new Object[]{"amarrillo", "azul", "verde"},
-                        "option 1");
+                        null,new Object[]{"amarrillo", "azul", "verde"},"option 1");
 
                 JOptionPane.showMessageDialog(null, "color seleccionado " + selec);
             }
             //varias ventanas
             if (e.getSource() == bmas) {
+                
                 // showOptionDialog
                 int selection = JOptionPane.showOptionDialog(
                         null, // parent component

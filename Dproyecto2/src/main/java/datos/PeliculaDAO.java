@@ -33,7 +33,7 @@ public class PeliculaDAO {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         Pelicula pelicula = null;
-        //array de coches
+        //array de listapeliculas
         List<Pelicula> lispeliculas = new ArrayList<>();
         try {
             conn = getConnection();

@@ -21,7 +21,6 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.SQLException;
-import java.util.*;
 
 /**
  *
@@ -40,7 +39,7 @@ public class frameproyecto2 extends JFrame {
     JButton bupdate = new JButton("UPDATE");
     JButton bborrar = new JButton("BORRAR");
     JButton binsert = new JButton("INSERTAR");
-    JButton bactualizar = new JButton("LISTAR");
+    JButton bactualizar = new JButton("SELECT");
 
     JLabel Id = new JLabel("ID");
     JLabel Name = new JLabel("NAME");
@@ -52,7 +51,7 @@ public class frameproyecto2 extends JFrame {
     JTextField yeartext = new JTextField();
     JTextField tipotext = new JTextField();
 
-    public frameproyecto2() {
+    public frameproyecto2() throws SQLException {
 
         setTitle(" proyecto2");
         setSize(500, 400);
@@ -71,42 +70,47 @@ public class frameproyecto2 extends JFrame {
         tags[2] = "Year";
         tags[3] = "Type";
         jTable1 = new JTable();
-         model.setColumnIdentifiers(tags);
-               
-           //añado el model a ala tabla
+        model.setColumnIdentifiers(tags);
+
+        //añado el model a ala tabla
         jTable1.setModel(model);
-         
-         jscrollPanel1 = new JScrollPane(jTable1);
+
+        jscrollPanel1 = new JScrollPane(jTable1);
         panel1.add(jscrollPanel1, BorderLayout.CENTER);
-       
-        
 
         TitledBorder title2;
         title2 = BorderFactory.createTitledBorder("Datos");
         panel2.setBorder(title2);
         panel2.setLayout(new GridLayout(4, 2));
+        //panel y textfiel de ID
         panel2.add(Id);
         panel2.add(idtext);
-        
+        idtext.setEnabled(false);
+        //panel y textfiel de Name
         panel2.add(Name);
         panel2.add(nametext);
-        ;
+        nametext.setEnabled(false);
+        //panel y textfiel del Ano
         panel2.add(Year);
         panel2.add(yeartext);
-       
+        yeartext.setEnabled(false);
+        //panel y textfiel del tipo
         panel2.add(Type);
         panel2.add(tipotext);
-        
+        tipotext.setEnabled(false);
 
         TitledBorder title3;
         title3 = BorderFactory.createTitledBorder("Botones");
         panel3.setBorder(title3);
+        //anado los botones
         panel3.add(binsert);
         panel3.add(bupdate);
         panel3.add(bborrar);
         panel3.add(bactualizar);
+
+        //prepararo todos los botones para que escuchen
         bborrar.addActionListener(new Butonborrar());
-       bactualizar.addActionListener(new Butonactualizar());
+        bactualizar.addActionListener(new Butonactualizar());
         binsert.addActionListener(new botoninsert());
         bupdate.addActionListener(new botonupdate());
 
@@ -122,7 +126,6 @@ public class frameproyecto2 extends JFrame {
     class Butonborrar implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-
                 String id = idtext.getText();
                 int id2 = Integer.parseInt(id);
                 PeliculaDAO peliculaDAO = new PeliculaDAO();
@@ -134,55 +137,61 @@ public class frameproyecto2 extends JFrame {
         }
 
     }
-    class botoninsert implements ActionListener{
+
+    class botoninsert implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
-            
-                String nombre = nametext.getText();
-                String anyo = yeartext.getText();
-                int anyo2 = Integer.parseInt(anyo);
-                String tipo = tipotext.getText();
-                PeliculaDAO peliculaDAO = new PeliculaDAO();
-                Pelicula insertarpeli = new Pelicula(nombre, anyo2, tipo);
-                peliculaDAO.insertar(insertarpeli);
-                limpiaTabla();
-                actualizarlista();
-                nametext.setText("");
-                yeartext.setText("");
-                tipotext.setText("");
+
+            String nombre = nametext.getText();
+            String anyo = yeartext.getText();
+            int anyo2 = Integer.parseInt(anyo);
+            String tipo = tipotext.getText();
+            PeliculaDAO peliculaDAO = new PeliculaDAO();
+            Pelicula insertarpeli = new Pelicula(nombre, anyo2, tipo);
+            peliculaDAO.insertar(insertarpeli);
+            limpiaTabla();
+            actualizarlista();
+            nametext.setText("");
+            yeartext.setText("");
+            tipotext.setText("");
         }
     }
-    class botonupdate implements ActionListener{
+
+    class botonupdate implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             //id
-                String id = idtext.getText();
-                int id2 = Integer.parseInt(id);
-                //nombre
-                String nombre = nametext.getText();
-                String anyo = yeartext.getText();
-                //anyo
-                int anyo2 = Integer.parseInt(anyo);
-                //tipo
-                String tipo = tipotext.getText();
-                PeliculaDAO peliculaDAO = new PeliculaDAO();
-                Pelicula actualizarpeli = new Pelicula(id2,nombre, anyo2, tipo);
-                peliculaDAO.actualizar(actualizarpeli);
-                limpiaTabla();
-                actualizarlista();
-                idtext.setText("");
-                nametext.setText("");
-                yeartext.setText("");
-                tipotext.setText("");
+            String id = idtext.getText();
+            int id2 = Integer.parseInt(id);
+            //nombre
+            String nombre = nametext.getText();
+            String anyo = yeartext.getText();
+            //anyo
+            int anyo2 = Integer.parseInt(anyo);
+            //tipo
+            String tipo = tipotext.getText();
+            PeliculaDAO peliculaDAO = new PeliculaDAO();
+            Pelicula actualizarpeli = new Pelicula(id2, nombre, anyo2, tipo);
+            peliculaDAO.actualizar(actualizarpeli);
+            limpiaTabla();
+            actualizarlista();
+            idtext.setText("");
+            nametext.setText("");
+            yeartext.setText("");
+            tipotext.setText("");
         }
     }
-      class Butonactualizar implements ActionListener{
+
+    class Butonactualizar implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             //añado el model a ala tabla
             actualizarlista();
         }
     }
-      
-      public void actualizarlista(){
-          limpiaTabla();
+
+    public void actualizarlista() {
+        limpiaTabla();
         try {
             Connection conn = Conexion.getConnection();
             Statement stmt = conn.createStatement();
@@ -204,12 +213,10 @@ public class frameproyecto2 extends JFrame {
         } catch (Exception e) {
             e.getMessage();
         }
-        
-         
 
-      }
-     
-    public void limpiaTabla(){
+    }
+
+    public void limpiaTabla() {
         model.setRowCount(0);
     }
 
