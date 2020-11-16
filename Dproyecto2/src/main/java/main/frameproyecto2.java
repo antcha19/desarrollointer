@@ -85,19 +85,19 @@ public class frameproyecto2 extends JFrame {
         //panel y textfiel de ID
         panel2.add(Id);
         panel2.add(idtext);
-        idtext.setEnabled(false);
+       
         //panel y textfiel de Name
         panel2.add(Name);
         panel2.add(nametext);
-        nametext.setEnabled(false);
+        
         //panel y textfiel del Ano
         panel2.add(Year);
         panel2.add(yeartext);
-        yeartext.setEnabled(false);
+       
         //panel y textfiel del tipo
         panel2.add(Type);
         panel2.add(tipotext);
-        tipotext.setEnabled(false);
+       
 
         TitledBorder title3;
         title3 = BorderFactory.createTitledBorder("Botones");
