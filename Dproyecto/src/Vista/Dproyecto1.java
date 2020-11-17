@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dproyecto;
+package Vista;
 
 import Controller.ControllerPelicula;
 import Modelo.Pelicula;
@@ -12,7 +12,7 @@ import Modelo.Pelicula;
  *
  * @author antonio
  */
-public class Dproyecto {
+public class Dproyecto1 {
 
     /**
      * @param args the command line arguments

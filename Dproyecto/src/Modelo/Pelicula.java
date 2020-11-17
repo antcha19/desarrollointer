@@ -32,6 +32,12 @@ public class Pelicula {
         this.tipo = tipo;
     }
 
+    //eliminar registro
+    public Pelicula(int id) {
+        this.id = id;
+    }
+    
+
     public int getId() {
         return id;
     }

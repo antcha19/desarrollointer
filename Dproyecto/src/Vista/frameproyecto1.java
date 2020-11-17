@@ -3,11 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dproyecto;
+package Vista;
 
+import Controller.ControllerPelicula;
+import Modelo.Pelicula;
 import com.connection.Conexion;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -25,9 +29,9 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author antonio
+ * @author antcha
  */
-public class frameproyecto1 extends JFrame {
+class frameproyecto1 extends JFrame {
 
     private DefaultTableModel model;
     private JTable jTable1;
@@ -40,7 +44,7 @@ public class frameproyecto1 extends JFrame {
     JButton bupdate = new JButton("UPDATE");
     JButton bborrar = new JButton("BORRAR");
     JButton binsert = new JButton("INSERTAR");
-
+    JButton bselect = new JButton("Select");
     JLabel Id = new JLabel("ID");
     JLabel Name = new JLabel("NAME");
     JLabel Year = new JLabel("YEAR");
@@ -52,6 +56,7 @@ public class frameproyecto1 extends JFrame {
     JTextField tipotext = new JTextField();
 
     public frameproyecto1() {
+
         setTitle(" proyecto1");
         setSize(500, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -73,7 +78,7 @@ public class frameproyecto1 extends JFrame {
         model.setColumnIdentifiers(tags);
         //añado el model a ala tabla
         jTable1.setModel(model);
-        
+
         try {
             Connection conn = Conexion.getConnection();
             Statement stmt = conn.createStatement();
@@ -116,8 +121,11 @@ public class frameproyecto1 extends JFrame {
         title3 = BorderFactory.createTitledBorder("Botones");
         panel3.setBorder(title3);
         panel3.add(binsert);
+    //    binsert.addActionListener(new botoninsert());
         panel3.add(bupdate);
         panel3.add(bborrar);
+          bborrar.addActionListener(new Butonborrar());
+        panel3.add(binsert);
 
         panel.add(panel1);
         panel.add(panel2);
@@ -125,5 +133,23 @@ public class frameproyecto1 extends JFrame {
 
         add(panel);
 
+        //        System.out.println("datos de la pelicula " + pelicula);
+//    }
+//    public void verPeliculas(List<Pelicula> peliculas){
+//        for (Pelicula pelicula : peliculas) {
+//			System.out.println("Datos del peliculas: "+pelicula);
+//		}
     }
+
+    class Butonborrar implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+          ControllerPelicula controller = new ControllerPelicula();
+            String id = idtext.getText();
+            int id2 = Integer.parseInt(id);
+            Pelicula borar = new Pelicula(id2);
+            controller.eliminar(borar);
+        }
+    }
+
 }
