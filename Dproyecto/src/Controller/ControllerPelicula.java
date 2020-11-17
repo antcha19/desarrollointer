@@ -12,6 +12,8 @@ import ImplementacionDAO.PeliculaDaoImple;
 import java.util.ArrayList;
 import java.util.List;
 import Vista.Dproyecto1;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,29 +21,29 @@ import Vista.Dproyecto1;
  */
 public class ControllerPelicula {
     
-    private  Dproyecto1 vista =  new Dproyecto1();
+    
 
     public ControllerPelicula() {
     }
     
     //llama al DAO para guardar una pelicula
-	public void registrar(Pelicula pelicula ) {
+	public void registrarcontroller(Pelicula pelicula ) {
 		PeliculaDaoImple dao= new  PeliculaDaoImple();
 		dao.registar(pelicula);
 	}
         
-        public void listarpeliculas(){
-            List<Pelicula> listapeliculas = new ArrayList<Pelicula>();
-            PeliculaDaoImple listadao = new PeliculaDaoImple();
-            listapeliculas=listadao.obtener();
-           
+        public DefaultTableModel selectcontroller() throws SQLException{
+            DefaultTableModel model = new DefaultTableModel();
+            PeliculaDaoImple dao= new  PeliculaDaoImple();
+            model= dao.select();
+           return model;
         }
         
-        public void eliminar(Pelicula pelicula ) {
+        public void eliminarcontroller(Pelicula pelicula ) {
 		PeliculaDaoImple dao= new  PeliculaDaoImple();
 		dao.eliminar(pelicula);
 	}
-        public void actualizar(Pelicula pelicula){
+        public void actualizarcontroller(Pelicula pelicula){
             PeliculaDaoImple dao= new  PeliculaDaoImple();
             dao.actualizar(pelicula);
         }

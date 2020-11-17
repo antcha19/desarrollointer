@@ -9,12 +9,16 @@ import Controller.ControllerPelicula;
 import Modelo.Pelicula;
 import com.connection.Conexion;
 import java.awt.BorderLayout;
+import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -67,39 +71,9 @@ class frameproyecto1 extends JFrame {
         panel1.setBorder(title);
 
         //tabla
-        model = new DefaultTableModel();
+        //  model = new DefaultTableModel();
         // configuration columns of the DefaultTableModel
-        Object[] tags = new Object[4];
-        tags[0] = "Id";
-        tags[1] = "Name";
-        tags[2] = "Year";
-        tags[3] = "Tipe";
         jTable1 = new JTable();
-        model.setColumnIdentifiers(tags);
-        //añado el model a ala tabla
-        jTable1.setModel(model);
-
-        try {
-            Connection conn = Conexion.getConnection();
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from pelicula");
-            int numerofila = 0;
-            while (rs.next()) {
-                // se crea y rellena la fila para el modelo de la tabla
-                Object[] rowData = new Object[model.getColumnCount()];
-                rowData[0] = rs.getObject(1);
-                rowData[1] = rs.getObject(2);
-                rowData[2] = rs.getObject(3);
-                rowData[3] = rs.getObject(4);
-                model.addRow(rowData);
-                numerofila++;
-            }
-            rs.close();
-            stmt.close();
-            conn.close();
-        } catch (Exception e) {
-            e.getMessage();
-        }
 
         jscrollPanel1 = new JScrollPane(jTable1);
         panel1.add(jscrollPanel1, BorderLayout.CENTER);
@@ -121,11 +95,13 @@ class frameproyecto1 extends JFrame {
         title3 = BorderFactory.createTitledBorder("Botones");
         panel3.setBorder(title3);
         panel3.add(binsert);
-    //    binsert.addActionListener(new botoninsert());
+        binsert.addActionListener(new botoninsertar());
         panel3.add(bupdate);
+        bupdate.addActionListener(new botonupdate());
         panel3.add(bborrar);
-          bborrar.addActionListener(new Butonborrar());
-        panel3.add(binsert);
+        bborrar.addActionListener(new Butonborrar());
+        panel3.add(bselect);
+        bselect.addActionListener(new botonselect());
 
         panel.add(panel1);
         panel.add(panel2);
@@ -133,23 +109,80 @@ class frameproyecto1 extends JFrame {
 
         add(panel);
 
-        //        System.out.println("datos de la pelicula " + pelicula);
-//    }
-//    public void verPeliculas(List<Pelicula> peliculas){
-//        for (Pelicula pelicula : peliculas) {
-//			System.out.println("Datos del peliculas: "+pelicula);
-//		}
+    }
+
+    class botonselect implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            ControllerPelicula controller = new ControllerPelicula();
+            try {
+                jTable1.setModel(controller.selectcontroller());
+            } catch (SQLException ex) {
+                Logger.getLogger(frameproyecto1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
+        }
+    }
+
+    class botonupdate implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            ControllerPelicula controller = new ControllerPelicula();
+            String id = idtext.getText();
+            int id2 = Integer.parseInt(id);
+            String nombre = nametext.getText();
+            String anyo = yeartext.getText();
+            int anyo2 = Integer.parseInt(anyo);
+            String tipo = tipotext.getText();
+            Pelicula insertarpeli = new Pelicula(id2,nombre, anyo2, tipo);
+            controller.actualizarcontroller(insertarpeli);
+            idtext.setText("");
+             nametext.setText("");
+            yeartext.setText("");
+            tipotext.setText("");
+        }
     }
 
     class Butonborrar implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-          ControllerPelicula controller = new ControllerPelicula();
+            ControllerPelicula controller = new ControllerPelicula();
             String id = idtext.getText();
             int id2 = Integer.parseInt(id);
-            Pelicula borar = new Pelicula(id2);
-            controller.eliminar(borar);
+            Pelicula borrar = new Pelicula(id2);
+            controller.eliminarcontroller(borrar);
+          
+            idtext.setText("");
+            nametext.setText("");
+            yeartext.setText("");
+            tipotext.setText("");
+             
         }
+    }
+
+    class botoninsertar implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            ControllerPelicula controller = new ControllerPelicula();
+            String nombre = nametext.getText();
+            String anyo = yeartext.getText();
+            int anyo2 = Integer.parseInt(anyo);
+            String tipo = tipotext.getText();
+
+            Pelicula insertarpeli = new Pelicula(nombre, anyo2, tipo);
+            controller.registrarcontroller(insertarpeli);
+           
+            nametext.setText("");
+            yeartext.setText("");
+            tipotext.setText("");
+            // limpiaTabla();
+           
+        }
+    }
+
+    public void limpiaTabla() {
+        model.setRowCount(0);
     }
 
 }

@@ -19,12 +19,14 @@ public class Pelicula {
     public Pelicula() {
     }
 
+    //update un registro
     public Pelicula(int id, String nombre, int anyo, String tipo) {
         this.id = id;
         this.nombre = nombre;
         this.anyo = anyo;
         this.tipo = tipo;
     }
+    //insertar un registro
     public Pelicula( String nombre, int anyo, String tipo) {
        
         this.nombre = nombre;

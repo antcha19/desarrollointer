@@ -12,6 +12,7 @@ import java.util.List;
 import java.sql.*;
 import java.util.ArrayList;
 import Controller.ControllerPelicula;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -24,7 +25,8 @@ public class PeliculaDaoImple extends ControllerPelicula {
         Statement stm = null;
         Connection conn = null;
 
-        String sqlinsert = "INSERT INTO pelicula values (NULL,'" + pelicula.getId() + "','" + pelicula.getNombre() + "','" + pelicula.getAnyo() + "','" + pelicula.getTipo() + "')";
+      
+         String sqlinsert = "INSERT INTO pelicula values ('" + pelicula.getId() + "','" + pelicula.getNombre()+ "','" + pelicula.getAnyo() +  "','" + pelicula.getTipo()+ "')";
         try {
             conn = Conexion.getConnection();
             stm = conn.createStatement();
@@ -35,77 +37,87 @@ public class PeliculaDaoImple extends ControllerPelicula {
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-      //  return registar;
+        //  return registar;
     }
 
-    public List<Pelicula> obtener() {
+    public DefaultTableModel select() throws SQLException{
+        DefaultTableModel model = new DefaultTableModel();
+
+        String sqlselect = "SELECT id,Nombre,Anyo,Tipo FROM pelicula ";
+        //conexiones
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-
-        String sql = "SELECT * FROM pelicula ORDER BY ID";
-
-        List<Pelicula> listaCliente = new ArrayList<Pelicula>();
+     
+         int rowNumber = 0;
+        Object[] tags = new Object[4];
+        tags[0] = "id";
+        tags[1] = "Nombre";
+        tags[2] = "Anyo";
+        tags[3] = "Tipo";
+        
+        model.setColumnIdentifiers(tags);
 
         try {
             conn = Conexion.getConnection();
             stmt = conn.createStatement();
-            rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                Pelicula c = new Pelicula();
-                c.setId(rs.getInt(1));
-                c.setNombre(rs.getString(2));
-                c.setAnyo(rs.getInt(3));
-                c.setTipo(rs.getString(4));
-                listaCliente.add(c);
-            }
-            stmt.close();
-            rs.close();
-            conn.close();
-        } catch (SQLException e) {
-            System.out.println("Error: Clase ClienteDaoImple, método obtener");
-            e.printStackTrace();
-        }
+            rs = stmt.executeQuery(sqlselect);
 
-        return listaCliente;
+            while (rs.next()) {
+                // se crea y rellena la fila para el modelo de la tabla
+                Object[] rowData = new Object[model.getColumnCount()];
+                rowData[0] = rs.getObject(1);
+                rowData[1] = rs.getObject(2);
+                rowData[2] = rs.getObject(3);
+                rowData[3] = rs.getObject(4);
+                model.addRow(rowData);
+                rowNumber++;
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return model;
+
     }
 
-    public void actualizar(Pelicula pelicula) {
-      		Connection connect= null;
-		Statement stm= null;
-		
-		
-				
-		String sql="UPDATE pelicula SET Nombre='"+pelicula.getNombre()+"', Anyo='"+pelicula.getAnyo()+"', Tipo='"+pelicula.getTipo()+"'" +" WHERE id="+pelicula.getId();
-		try {
-			connect=Conexion.getConnection();
-			stm=connect.createStatement();
-			stm.execute(sql);
-			
-		} catch (SQLException e) {
-			System.out.println("Error: Clase ClienteDaoImple, método actualizar");
-			e.printStackTrace();
-		}		
+    public boolean actualizar(Pelicula pelicula) {
+          String SQL_UPDATE = "UPDATE pelicula SET Nombre='" + pelicula.getNombre() + "', Anyo='" + pelicula.getAnyo() + "', Tipo='" + pelicula.getTipo()  + " WHERE id=" + pelicula.getId();
+        Connection connect = null;
+        Statement stm = null;
+        boolean update = false;
+ 
+        try {
+            connect = Conexion.getConnection();
+            stm = connect.createStatement();
+            stm.execute(SQL_UPDATE);
+            update = true;
+        } catch (SQLException e) {
+            System.out.println("Error: peliculaDaoImple, método actualizar");
+            e.printStackTrace();
+        }
+        return  update;
     }
 
     public void eliminar(Pelicula pelicula) {
-      			Connection connect= null;
-		Statement stm= null;
-		
-		boolean eliminar=false;
-				
-		String sql="DELETE FROM pelicula WHERE ID="+pelicula.getId();
-		try {
-			connect=Conexion.getConnection();
-			stm=connect.createStatement();
-			stm.execute(sql);
-			eliminar=true;
-		} catch (SQLException e) {
-			System.out.println("Error: Clase ClienteDaoImple, método eliminar");
-			e.printStackTrace();
-		}		
-		//return eliminar;
-	}	
-		
-    
+        Connection connect = null;
+        Statement stm = null;
+
+        boolean eliminar = false;
+
+        String sql = "DELETE FROM pelicula WHERE ID=" + pelicula.getId();
+        try {
+            connect = Conexion.getConnection();
+            stm = connect.createStatement();
+            stm.execute(sql);
+            eliminar = true;
+        } catch (SQLException e) {
+            System.out.println("Error:  ClienteDaoImple, método eliminar");
+            e.printStackTrace();
+        }
+        //return eliminar;
+    }
+
 }
