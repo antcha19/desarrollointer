@@ -47,5 +47,10 @@ public class ControllerPelicula {
             PeliculaDaoImple dao= new  PeliculaDaoImple();
             dao.actualizar(pelicula);
         }
+        
+        public void searchIDcontroller(Pelicula pelicula){
+            PeliculaDaoImple dao= new  PeliculaDaoImple();
+            dao.searchID(pelicula);
+        }
     
 }

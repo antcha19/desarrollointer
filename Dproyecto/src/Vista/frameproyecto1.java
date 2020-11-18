@@ -23,6 +23,10 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -45,34 +49,40 @@ class frameproyecto1 extends JFrame {
     JPanel panel1 = new JPanel();
     JPanel panel2 = new JPanel();
     JPanel panel3 = new JPanel();
+    
     JButton bupdate = new JButton("UPDATE");
     JButton bborrar = new JButton("BORRAR");
     JButton binsert = new JButton("INSERTAR");
     JButton bselect = new JButton("Select");
+   
+
     JLabel Id = new JLabel("ID");
     JLabel Name = new JLabel("NAME");
     JLabel Year = new JLabel("YEAR");
-    JLabel Tipe = new JLabel("TIPE");
+    JLabel Tipe = new JLabel("TYPE");
 
     JTextField idtext = new JTextField();
     JTextField nametext = new JTextField();
     JTextField yeartext = new JTextField();
     JTextField tipotext = new JTextField();
-
+       
     public frameproyecto1() {
 
         setTitle(" proyecto1");
-        setSize(500, 400);
+        setSize(500, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+        
+        
 
         panel.setLayout(new GridLayout(3, 1));
         TitledBorder title;
         title = BorderFactory.createTitledBorder("tabla");
         panel1.setBorder(title);
-
+         
         //tabla
         //  model = new DefaultTableModel();
-        // configuration columns of the DefaultTableModel
+       
         jTable1 = new JTable();
 
         jscrollPanel1 = new JScrollPane(jTable1);
@@ -94,6 +104,7 @@ class frameproyecto1 extends JFrame {
         TitledBorder title3;
         title3 = BorderFactory.createTitledBorder("Botones");
         panel3.setBorder(title3);
+         panel3.setLayout(new GridLayout(2, 2));
         panel3.add(binsert);
         binsert.addActionListener(new botoninsertar());
         panel3.add(bupdate);
@@ -102,7 +113,9 @@ class frameproyecto1 extends JFrame {
         bborrar.addActionListener(new Butonborrar());
         panel3.add(bselect);
         bselect.addActionListener(new botonselect());
+        
 
+    
         panel.add(panel1);
         panel.add(panel2);
         panel.add(panel3);
@@ -121,68 +134,106 @@ class frameproyecto1 extends JFrame {
             } catch (SQLException ex) {
                 Logger.getLogger(frameproyecto1.class.getName()).log(Level.SEVERE, null, ex);
             }
-           
+
         }
     }
 
     class botonupdate implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            ControllerPelicula controller = new ControllerPelicula();
-            String id = idtext.getText();
-            int id2 = Integer.parseInt(id);
-            String nombre = nametext.getText();
-            String anyo = yeartext.getText();
-            int anyo2 = Integer.parseInt(anyo);
-            String tipo = tipotext.getText();
-            Pelicula insertarpeli = new Pelicula(id2,nombre, anyo2, tipo);
-            controller.actualizarcontroller(insertarpeli);
-            idtext.setText("");
-             nametext.setText("");
-            yeartext.setText("");
-            tipotext.setText("");
+            if (e.getSource() == bupdate) {
+
+                int confirmar = JOptionPane.showConfirmDialog(null, "Do you confirm this?");
+                if (JOptionPane.OK_OPTION == confirmar) {
+                    ControllerPelicula controller = new ControllerPelicula();
+                    String id = idtext.getText();
+                    int id2 = Integer.parseInt(id);
+                    String nombre = nametext.getText();
+                    String anyo = yeartext.getText();
+                    int anyo2 = Integer.parseInt(anyo);
+                    String tipo = tipotext.getText();
+                    Pelicula insertarpeli = new Pelicula(id2, nombre, anyo2, tipo);
+                    controller.actualizarcontroller(insertarpeli);
+                    idtext.setText("");
+                    nametext.setText("");
+                    yeartext.setText("");
+                    tipotext.setText("");
+                   
+                } else {
+                    JOptionPane.showMessageDialog(null, "you have selected no");
+                }
+            }
+
         }
     }
 
     class Butonborrar implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            ControllerPelicula controller = new ControllerPelicula();
-            String id = idtext.getText();
-            int id2 = Integer.parseInt(id);
-            Pelicula borrar = new Pelicula(id2);
-            controller.eliminarcontroller(borrar);
-          
-            idtext.setText("");
-            nametext.setText("");
-            yeartext.setText("");
-            tipotext.setText("");
-             
+            //confirmacion
+            if (e.getSource() == bborrar) {
+
+                int confirmar = JOptionPane.showConfirmDialog(null, "Do you confirm this?");
+                if (JOptionPane.OK_OPTION == confirmar) {
+                    ControllerPelicula controller = new ControllerPelicula();
+                    String id = idtext.getText();
+                    int id2 = Integer.parseInt(id);
+                    Pelicula borrar = new Pelicula(id2);
+                    controller.eliminarcontroller(borrar);
+
+                    idtext.setText("");
+                    
+                    actulizarlista();
+                } else {
+                    JOptionPane.showMessageDialog(null, "you have selected no");
+                }
+            }
+
         }
     }
+    
+    
 
     class botoninsertar implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            ControllerPelicula controller = new ControllerPelicula();
-            String nombre = nametext.getText();
-            String anyo = yeartext.getText();
-            int anyo2 = Integer.parseInt(anyo);
-            String tipo = tipotext.getText();
+            //confirmacion
+            if (e.getSource() == binsert) {
 
-            Pelicula insertarpeli = new Pelicula(nombre, anyo2, tipo);
-            controller.registrarcontroller(insertarpeli);
-           
-            nametext.setText("");
-            yeartext.setText("");
-            tipotext.setText("");
-            // limpiaTabla();
-           
+                int confirmar = JOptionPane.showConfirmDialog(null, "Do you confirm this?");
+                if (JOptionPane.OK_OPTION == confirmar) {
+                    ControllerPelicula controller = new ControllerPelicula();
+                    String nombre = nametext.getText();
+                    String anyo = yeartext.getText();
+                    int anyo2 = Integer.parseInt(anyo);
+                    String tipo = tipotext.getText();
+
+                    Pelicula insertarpeli = new Pelicula(nombre, anyo2, tipo);
+                    controller.registrarcontroller(insertarpeli);
+                    idtext.setText("");
+                    nametext.setText("");
+                    yeartext.setText("");
+                    tipotext.setText("");
+                    actulizarlista();
+                     limpiaTabla();
+                } else {
+                    JOptionPane.showMessageDialog(null, "you have selected no");
+                }
+            }
+
         }
     }
 
     public void limpiaTabla() {
         model.setRowCount(0);
+    }
+    public void actulizarlista() {
+        ControllerPelicula controller = new ControllerPelicula();
+            try {
+                jTable1.setModel(controller.selectcontroller());
+            } catch (SQLException ex) {
+                Logger.getLogger(frameproyecto1.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
 
 }

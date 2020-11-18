@@ -84,21 +84,23 @@ public class PeliculaDaoImple extends ControllerPelicula {
     }
 
     public boolean actualizar(Pelicula pelicula) {
-          String SQL_UPDATE = "UPDATE pelicula SET Nombre='" + pelicula.getNombre() + "', Anyo='" + pelicula.getAnyo() + "', Tipo='" + pelicula.getTipo()  + " WHERE id=" + pelicula.getId();
-        Connection connect = null;
+        Connection conn = null;
         Statement stm = null;
         boolean update = false;
- 
+        String SQL_UPDATE = "UPDATE pelicula SET Nombre='" + pelicula.getNombre() + "', Anyo='" + pelicula.getAnyo() + "', Tipo='" + pelicula.getTipo() + "'" + " WHERE id=" + pelicula.getId();
+
         try {
-            connect = Conexion.getConnection();
-            stm = connect.createStatement();
+            conn = Conexion.getConnection();
+            stm = conn.createStatement();
             stm.execute(SQL_UPDATE);
             update = true;
+
         } catch (SQLException e) {
-            System.out.println("Error: peliculaDaoImple, método actualizar");
+            System.out.println("Error Clase SongDAO, metodo actulizar");
             e.printStackTrace();
         }
-        return  update;
+
+        return update;
     }
 
     public void eliminar(Pelicula pelicula) {
@@ -113,6 +115,25 @@ public class PeliculaDaoImple extends ControllerPelicula {
             stm = connect.createStatement();
             stm.execute(sql);
             eliminar = true;
+        } catch (SQLException e) {
+            System.out.println("Error:  ClienteDaoImple, método eliminar");
+            e.printStackTrace();
+        }
+        //return eliminar;
+    }
+    
+     public void searchID(Pelicula pelicula) {
+        Connection connect = null;
+        Statement stm = null;
+
+        boolean searchID = false;
+        String sqlID = "SELECT id FROM pelicula  WHERE ID=" + pelicula.getId();
+        
+        try {
+            connect = Conexion.getConnection();
+            stm = connect.createStatement();
+            stm.execute(sqlID);
+            searchID = true;
         } catch (SQLException e) {
             System.out.println("Error:  ClienteDaoImple, método eliminar");
             e.printStackTrace();
