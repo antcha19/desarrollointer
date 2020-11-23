@@ -15,25 +15,21 @@ public class Producto {
     private String nombreproduto;
     private int precioproducto;
     private int puntosproducto;
-    private int stock;
 
     public Producto() {
-
     }
 
-    public Producto(String nombreproduto, int precioproducto, int puntosproducto, int stock) {
-        this.nombreproduto = nombreproduto;
-        this.precioproducto = precioproducto;
-        this.puntosproducto = puntosproducto;
-        this.stock = stock;
-    }
-
-    public Producto(int idproducto, String nombreproduto, int precioproducto, int puntosproducto, int stock) {
+    public Producto(int idproducto, String nombreproduto, int precioproducto, int puntosproducto) {
         this.idproducto = idproducto;
         this.nombreproduto = nombreproduto;
         this.precioproducto = precioproducto;
         this.puntosproducto = puntosproducto;
-        this.stock = stock;
+    }
+
+    public Producto(String nombreproduto, int precioproducto, int puntosproducto) {
+        this.nombreproduto = nombreproduto;
+        this.precioproducto = precioproducto;
+        this.puntosproducto = puntosproducto;
     }
 
     public int getIdproducto() {
@@ -52,10 +48,6 @@ public class Producto {
         return puntosproducto;
     }
 
-    public int getStock() {
-        return stock;
-    }
-
     public void setIdproducto(int idproducto) {
         this.idproducto = idproducto;
     }
@@ -72,10 +64,6 @@ public class Producto {
         this.puntosproducto = puntosproducto;
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-    
     
 
 }

@@ -5,6 +5,7 @@
  */
 package Domain;
 
+import java.sql.Date;
 /**
  *
  * @author antonio
@@ -12,39 +13,35 @@ package Domain;
 public class Compra {
     
     private int idcompra;
-    private String fechacompra;
+    private Date fechacompra;
     private int idwallet;
     private int idproducto;
-    
-    //constructor vacio
-    public Compra(){
+
+    public Compra() {
     }
-    //constructor para elimiar un registro
-    public Compra(int idcompra){
-        this.idcompra=idcompra;
-    }
-    
-     //constructor para insertar un nuevo registro
-    public Compra(int idcompra, String fechacompra) {
-        this.idcompra = idcompra;
-        this.fechacompra = fechacompra;
-    }
-    
-     //para modificar un registro 
-    public Compra(int idcompra, String fechacompra, int idwallet, int idproducto) {
+
+    public Compra(int idcompra, Date fechacompra, int idwallet, int idproducto) {
         this.idcompra = idcompra;
         this.fechacompra = fechacompra;
         this.idwallet = idwallet;
         this.idproducto = idproducto;
     }
-    
-    //getters
+
+    public Compra(Date fechacompra, int idwallet, int idproducto) {
+        this.fechacompra = fechacompra;
+        this.idwallet = idwallet;
+        this.idproducto = idproducto;
+    }
+
+    public Compra(int idcompra) {
+        this.idcompra = idcompra;
+    }
 
     public int getIdcompra() {
         return idcompra;
     }
 
-    public String getFechacompra() {
+    public Date getFechacompra() {
         return fechacompra;
     }
 
@@ -55,14 +52,12 @@ public class Compra {
     public int getIdproducto() {
         return idproducto;
     }
-    
-    //setters
 
     public void setIdcompra(int idcompra) {
         this.idcompra = idcompra;
     }
 
-    public void setFechacompra(String fechacompra) {
+    public void setFechacompra(Date fechacompra) {
         this.fechacompra = fechacompra;
     }
 
@@ -73,6 +68,9 @@ public class Compra {
     public void setIdproducto(int idproducto) {
         this.idproducto = idproducto;
     }
+    
+    
+   
     
     
     
