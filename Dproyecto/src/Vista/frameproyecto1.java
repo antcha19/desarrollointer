@@ -50,6 +50,7 @@ class frameproyecto1 extends JFrame {
     JPanel panel2 = new JPanel();
     JPanel panel3 = new JPanel();
     JPanel panel4 = new JPanel();
+    JPanel panel5 = new JPanel();
     JButton bupdate = new JButton("UPDATE");
     JButton bborrar = new JButton("DELETE");
     JButton binsert = new JButton("INSERTAR");
@@ -96,15 +97,18 @@ class frameproyecto1 extends JFrame {
         panel4.setLayout(new GridLayout(5, 1));
         panel4.add(opciones);
         panel4.add(binsert2);
+        binsert2.setEnabled(false);
         binsert2.addActionListener(new botonopciones());
         panel4.add(bupdate2);
+        bupdate2.setEnabled(false);
         bupdate2.addActionListener(new botonopciones());
         panel4.add(bborrar2);
+        bborrar2.setEnabled(false);
         bborrar2.addActionListener(new botonopciones());
         /// panel4.add(bselect2);
         //bselect2.addActionListener(new botonopciones());
         panel4.add(bselect);
-        bselect.setEnabled(true);
+        // bselect.setEnabled(true);
         bselect.addActionListener(new botonselect());
 
         TitledBorder title2;
@@ -137,7 +141,6 @@ class frameproyecto1 extends JFrame {
         panel3.add(bborrar);
         bborrar.setEnabled(false);
         bborrar.addActionListener(new Butonborrar());
-        
 
         panel.add(panel1);
         panel.add(panel4);
@@ -193,7 +196,11 @@ class frameproyecto1 extends JFrame {
     class botonselect implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "updated list");
+            JOptionPane.showMessageDialog(null, "A partir de ahora la lista se actuliza automaticamente");
+            binsert2.setEnabled(true);
+            bupdate2.setEnabled(true);
+            bborrar2.setEnabled(true);
+            bselect.setEnabled(false);
             ControllerPelicula controller = new ControllerPelicula();
             try {
                 jTable1.setModel(controller.selectcontroller());
@@ -314,7 +321,7 @@ class frameproyecto1 extends JFrame {
 
     //actualizara la Tabla
     public void actulizarlista() {
-        
+
         ControllerPelicula controller = new ControllerPelicula();
         try {
             jTable1.setModel(controller.selectcontroller());
