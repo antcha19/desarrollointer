@@ -51,43 +51,45 @@ class frameproyecto1 extends JFrame {
     JPanel panel3 = new JPanel();
     
     JButton bupdate = new JButton("UPDATE");
-    JButton bborrar = new JButton("BORRAR");
+    JButton bborrar = new JButton("DELETE");
     JButton binsert = new JButton("INSERTAR");
-    JButton bselect = new JButton("Select");
+    JButton bselect = new JButton("SELECT");
+    
    
 
-    JLabel Id = new JLabel("ID");
-    JLabel Name = new JLabel("NAME");
-    JLabel Year = new JLabel("YEAR");
-    JLabel Tipe = new JLabel("TYPE");
+    JLabel Id = new JLabel("ID-int");
+    JLabel Name = new JLabel("NAME-vachar");
+    JLabel Year = new JLabel("YEAR-int");
+    JLabel Tipe = new JLabel("TYPE-vachar");
 
     JTextField idtext = new JTextField();
     JTextField nametext = new JTextField();
     JTextField yeartext = new JTextField();
     JTextField tipotext = new JTextField();
+    
+    
        
     public frameproyecto1() {
+        
+        
+        
 
         setTitle(" proyecto1");
         setSize(500, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        
-        
-
         panel.setLayout(new GridLayout(3, 1));
+        //panel uno de la lista
         TitledBorder title;
         title = BorderFactory.createTitledBorder("tabla");
         panel1.setBorder(title);
          
         //tabla
-        //  model = new DefaultTableModel();
-       
         jTable1 = new JTable();
 
         jscrollPanel1 = new JScrollPane(jTable1);
         panel1.add(jscrollPanel1, BorderLayout.CENTER);
-
+        
         TitledBorder title2;
         title2 = BorderFactory.createTitledBorder("Datos");
         panel2.setBorder(title2);
@@ -113,6 +115,7 @@ class frameproyecto1 extends JFrame {
         bborrar.addActionListener(new Butonborrar());
         panel3.add(bselect);
         bselect.addActionListener(new botonselect());
+       
         
 
     
@@ -123,7 +126,7 @@ class frameproyecto1 extends JFrame {
         add(panel);
 
     }
-
+    //selecciona todos los campos de la tabla y los insertar en un jTabla
     class botonselect implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
@@ -137,7 +140,7 @@ class frameproyecto1 extends JFrame {
 
         }
     }
-
+    //se tiene  que insertar un campo ID existente
     class botonupdate implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
@@ -158,7 +161,7 @@ class frameproyecto1 extends JFrame {
                     nametext.setText("");
                     yeartext.setText("");
                     tipotext.setText("");
-                   
+                   actulizarlista();
                 } else {
                     JOptionPane.showMessageDialog(null, "you have selected no");
                 }
@@ -166,11 +169,10 @@ class frameproyecto1 extends JFrame {
 
         }
     }
-
+    //se tiene  que insertar un campo ID existente
     class Butonborrar implements ActionListener {
-
+       
         public void actionPerformed(ActionEvent e) {
-            //confirmacion
             if (e.getSource() == bborrar) {
 
                 int confirmar = JOptionPane.showConfirmDialog(null, "Do you confirm this?");
@@ -179,10 +181,10 @@ class frameproyecto1 extends JFrame {
                     String id = idtext.getText();
                     int id2 = Integer.parseInt(id);
                     Pelicula borrar = new Pelicula(id2);
-                    controller.eliminarcontroller(borrar);
-
+                    if (borrar != null){
+                        controller.eliminarcontroller(borrar);
+                    } 
                     idtext.setText("");
-                    
                     actulizarlista();
                 } else {
                     JOptionPane.showMessageDialog(null, "you have selected no");
@@ -193,7 +195,7 @@ class frameproyecto1 extends JFrame {
     }
     
     
-
+    //para insertar se tiene que insertar todos los cambios menos la ID
     class botoninsertar implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
@@ -215,7 +217,7 @@ class frameproyecto1 extends JFrame {
                     yeartext.setText("");
                     tipotext.setText("");
                     actulizarlista();
-                     limpiaTabla();
+                    
                 } else {
                     JOptionPane.showMessageDialog(null, "you have selected no");
                 }
@@ -224,9 +226,7 @@ class frameproyecto1 extends JFrame {
         }
     }
 
-    public void limpiaTabla() {
-        model.setRowCount(0);
-    }
+    //actualizara la Tabla
     public void actulizarlista() {
         ControllerPelicula controller = new ControllerPelicula();
             try {
