@@ -64,6 +64,9 @@ public class Producto {
         this.puntosproducto = puntosproducto;
     }
 
-    
+     @Override
+    public String toString() {
+        return "Producto{" + "idproducto=" + idproducto + ", nombreprodcuto=" + nombreproduto + ", precioproducto=" + precioproducto + ", puntosproducto=" + puntosproducto  + '}';
+    }
 
 }

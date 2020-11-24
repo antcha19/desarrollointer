@@ -25,6 +25,13 @@ public class Ewallet {
     public Ewallet() {
     }
 
+    public Ewallet(int idwallet, int saldoeuros) {
+        this.idwallet = idwallet;
+        this.saldoeuros = saldoeuros;
+    }
+    
+    
+
     public Ewallet(String nombre, String apellidos, String dni, Date fechanacimento, String email, int saldopuntos, int saldoeuros) {
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -110,6 +117,11 @@ public class Ewallet {
 
     public void setSaldoeuros(int saldoeuros) {
         this.saldoeuros = saldoeuros;
+    }
+
+    @Override
+    public String toString() {
+        return "Ewallet{" + "idwallet=" + idwallet + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", fechanacimento=" + fechanacimento + ", email=" + email + ", saldopuntos=" + saldopuntos + ", saldoeuros=" + saldoeuros + '}';
     }
 
     

@@ -5,6 +5,9 @@
  */
 package Domain;
 
+
+import java.sql.Date;
+
 /**
  *
  * @author antonio
@@ -12,25 +15,25 @@ package Domain;
 public class Devolucion {
     
     private int iddevolucion;
-    private String fechadevolucion;
+    private Date fechadevolucion;
     private int idwallet;
     private int idproducto;
-    
-     //constructor vacio
-    public Devolucion(){  
+
+    public Devolucion() {
     }
-    
-    //constructor para elimiar un registro
+
     public Devolucion(int iddevolucion) {
         this.iddevolucion = iddevolucion;
     }
 
-    public Devolucion(int iddevolucion, String fechadevolucion) {
-        this.iddevolucion = iddevolucion;
+    public Devolucion(Date fechadevolucion, int idwallet, int idproducto) {
         this.fechadevolucion = fechadevolucion;
+        this.idwallet = idwallet;
+        this.idproducto = idproducto;
     }
 
-    public Devolucion( String fechadevolucion, int idwallet, int idproducto) {
+    public Devolucion(int iddevolucion, Date fechadevolucion, int idwallet, int idproducto) {
+        this.iddevolucion = iddevolucion;
         this.fechadevolucion = fechadevolucion;
         this.idwallet = idwallet;
         this.idproducto = idproducto;
@@ -40,7 +43,7 @@ public class Devolucion {
         return iddevolucion;
     }
 
-    public String getFechadevolucion() {
+    public Date getFechadevolucion() {
         return fechadevolucion;
     }
 
@@ -56,7 +59,7 @@ public class Devolucion {
         this.iddevolucion = iddevolucion;
     }
 
-    public void setFechadevolucion(String fechadevolucion) {
+    public void setFechadevolucion(Date fechadevolucion) {
         this.fechadevolucion = fechadevolucion;
     }
 
@@ -67,9 +70,11 @@ public class Devolucion {
     public void setIdproducto(int idproducto) {
         this.idproducto = idproducto;
     }
-    
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Devolucion{" + "iddevolucion=" + iddevolucion + ", fechadevolucion=" + fechadevolucion + ", idwallet=" + idwallet + ", idproducto=" + idproducto + '}';
+    }
+   
     
 }

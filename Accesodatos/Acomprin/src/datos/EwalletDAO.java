@@ -28,8 +28,8 @@ public class EwalletDAO {
     //  sentencias de acceso a la BD
     private static final String SQL_SELECT = "SELECT * FROM ewallet";
     private static final String SQL_INSERT = "INSERT INTO ewallet(Nombre, Apellidos, Dni ,Fechanacimiento,Email, Saldopuntos, Saldoeuros) VALUES (?,?,?,?,?,?,?)";
-    private static final String SQL_DELETE = "DELETE FROM ewallet WHERE id-wallet=?";
-    private static final String SQL_UPDATE = "UPDATE ewallet SET Nombre=?, Apellidos=?, Dni=? Fechanacimiento=?, Saldopuntos=?,Saldoeuros=? where id-wallet=?";
+    private static final String SQL_DELETE = "DELETE FROM ewallet WHERE Id-wallet=?";
+    private static final String SQL_UPDATE = "UPDATE ewallet SET Nombre=?, Apellidos=?, Dni=? Fechanacimiento=?,Email=?, Saldopuntos=?,Saldoeuros=? where Id-wallet=?";
 
     //constructor vacio
     //Para recibir el objeto conexión desde dentro de la clase. Sola para manejar una transaccion interna
@@ -42,7 +42,7 @@ public class EwalletDAO {
         this.conexionTransaccional = conexionTransaccional;
     }
 
-    public List<Ewallet> seleccionar() throws SQLException {
+    public List<Ewallet> seleccionarwallet() throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -54,7 +54,7 @@ public class EwalletDAO {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int idPersona = rs.getInt("id-wallet");
+                int idPersona = rs.getInt("Id-wallet");
                 String nombre = rs.getString("Nombre");
                 String apellidos = rs.getString("Apellidos");
                 Date fechanacimento;
@@ -78,7 +78,7 @@ public class EwalletDAO {
         return walletlista;
     }
 
-    public int insertar(Ewallet wallet) throws SQLException {
+    public int insertarwallet(Ewallet wallet) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
         int registros = 0;
@@ -107,7 +107,7 @@ public class EwalletDAO {
         return registros;
     }
 
-    public int actualizar(Ewallet wallet) throws SQLException {
+    public int actualizarwallet(Ewallet wallet) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
         int registros = 0;
@@ -138,7 +138,7 @@ public class EwalletDAO {
         return registros;
     }
 
-    public int borrar(Ewallet wallet) throws SQLException {
+    public int borrarwallet(Ewallet wallet) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
         int registros = 0;
