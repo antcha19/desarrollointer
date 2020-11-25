@@ -30,6 +30,7 @@ public class EwalletDAO {
     private static final String SQL_INSERT = "INSERT INTO ewallet(Nombre, Apellidos, Dni ,Fechanacimiento,Email, Saldopuntos, Saldoeuros) VALUES (?,?,?,?,?,?,?)";
     private static final String SQL_DELETE = "DELETE FROM ewallet WHERE Id-wallet=?";
     private static final String SQL_UPDATE = "UPDATE ewallet SET Nombre=?, Apellidos=?, Dni=? Fechanacimiento=?,Email=?, Saldopuntos=?,Saldoeuros=? where Id-wallet=?";
+    
 
     //constructor vacio
     //Para recibir el objeto conexión desde dentro de la clase. Sola para manejar una transaccion interna

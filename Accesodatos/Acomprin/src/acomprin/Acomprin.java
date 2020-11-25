@@ -29,7 +29,7 @@ public class Acomprin {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws ParseException, SQLException {
-
+        
         Connection conexion = null;
         Scanner teclado = new Scanner(System.in);
 
@@ -49,10 +49,10 @@ public class Acomprin {
                 case 2:
                     selecwallet();
                     break;
-
+                
                 case 3:
                     recargarwallet();
-
+                    
                     break;
                 case 4:
                     insertarProducto();
@@ -60,27 +60,27 @@ public class Acomprin {
                 case 5:
                     selecproducto();
                     break;
-
+                
                 case 6:
-
+                    
                     break;
-
+                
                 case 7:
-
+                    
                     break;
-
+                
                 case 8:
-
+                
                 case 9:
                     salir = true;
                     System.out.println("adios ");
                     break;
             }
-
+            
         }
-
+        
     }
-
+    
     public static void menu() {
         System.out.println("1.agregar cliente a wallet");
         System.out.println("2.- consultar wallet");
@@ -92,7 +92,7 @@ public class Acomprin {
         System.out.println("8-Listar propietarios y muestra sus coches");
         System.out.println("9-salir");
     }
-
+    
     public static Date fechaintroducir() throws ParseException {
         Scanner teclado = new Scanner(System.in);
         String dateInString = "";
@@ -104,9 +104,9 @@ public class Acomprin {
         Date fecha = sdf.parse(dateInString);
         System.out.println(fecha);
         return fecha;
-
+        
     }
-
+    
     public static void insertarwallet() throws SQLException, ParseException {
         Connection conexion = null;
         Scanner teclado = new Scanner(System.in);
@@ -115,12 +115,12 @@ public class Acomprin {
         String fechanacimiento;
         String dni = "";
         String email = "";
-
+        
         try {
-
+            
             Ewallet nuevawallet = new Ewallet();
             conexion = Conexion.getConnection();
-
+            
             if (conexion.getAutoCommit()) {
                 conexion.setAutoCommit(false);
             }
@@ -158,7 +158,7 @@ public class Acomprin {
             System.out.println();
             conexion.commit();
             System.out.println("e ha hecho commit de la transaccion");
-
+            
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
             System.out.println("entramos al rollback");
@@ -169,15 +169,15 @@ public class Acomprin {
             }
         }
     }
-
+    
     public static void selecwallet() throws SQLException, ParseException {
         Connection conexion = null;
         Scanner teclado = new Scanner(System.in);
-
+        
         try {
-
+            
             conexion = Conexion.getConnection();
-
+            
             if (conexion.getAutoCommit()) {
                 conexion.setAutoCommit(false);
             }
@@ -189,7 +189,7 @@ public class Acomprin {
             });
             conexion.commit();
             System.out.println("e ha hecho commit de la transaccion");
-
+            
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
             System.out.println("entramos al rollback");
@@ -206,12 +206,12 @@ public class Acomprin {
         Connection conexion = null;
         Scanner teclado = new Scanner(System.in);
         java.util.Date fechaactual = new Date();
-
+        
         if (fechaactual.getDay() > 1 & fechaactual.getDay() < 5) {
             try {
-
+                
                 conexion = Conexion.getConnection();
-
+                
                 if (conexion.getAutoCommit()) {
                     conexion.setAutoCommit(false);
                 }
@@ -221,32 +221,21 @@ public class Acomprin {
                 ewallet.forEach(Ewallet -> {
                     System.out.println("ewallet = " + Ewallet.toString());
                 });
-
+                
                 System.out.println("cual id quieres actualizar");
                 int id = teclado.nextInt();
+                System.out.println("cual id quieres actualizar");
+                int cantidadrecargar = teclado.nextInt();
                 System.out.println("");
-
-                boolean existe = false;
-                for (Ewallet auxmodi : ewallet) {
-                    if (auxmodi.getIdwallet() ==  id) {
-                        existe = true;
-                        System.out.println("introduce la cantidad");
-                        int cantidadrecargar = teclado.nextInt();
-                        System.out.println(cantidadrecargar);
-                        Ewallet aux = ewallet.get(id);
-                        aux.setSaldoeuros(cantidadrecargar);
-                        walletdao.actualizarwallet(aux);
-                        break;
-                    }
-                }
-                if (existe == false) {
-                    System.out.println("no existe");
-                    
-                }
-
+               Ewallet aux = ewallet.get(id);
+               aux.setSaldoeuros(cantidadrecargar);
+               walletdao.actualizarwallet(aux);
+                 
+                
+                
                 conexion.commit();
                 System.out.println("se ha hecho commit de la transaccion");
-
+                
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
                 System.out.println("entramos al rollback");
@@ -257,19 +246,18 @@ public class Acomprin {
                 }
             }
         }
-
+        
     }
     
     public static void insertarProducto() throws SQLException, ParseException {
         Connection conexion = null;
         Scanner teclado = new Scanner(System.in);
         
-
         try {
-
+            
             Producto productonuevo = new Producto();
             conexion = Conexion.getConnection();
-
+            
             if (conexion.getAutoCommit()) {
                 conexion.setAutoCommit(false);
             }
@@ -279,12 +267,12 @@ public class Acomprin {
             System.out.println("introduce precio prodcuto");
             int precioproducto = teclado.nextInt();
             System.out.println("puntos producto");
-            int puntosproducto = teclado.nextInt() ;
+            int puntosproducto = teclado.nextInt();
             productonuevo = new Producto(nombre, precioproducto, puntosproducto);
             productodao.insertarproducto(productonuevo);
             conexion.commit();
             System.out.println("e ha hecho commit de la transaccion");
-
+            
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
             System.out.println("entramos al rollback");
@@ -296,14 +284,14 @@ public class Acomprin {
         }
     }
     
-     public static void selecproducto() throws SQLException, ParseException {
+    public static void selecproducto() throws SQLException, ParseException {
         Connection conexion = null;
         Scanner teclado = new Scanner(System.in);
-
+        
         try {
-
+            
             conexion = Conexion.getConnection();
-
+            
             if (conexion.getAutoCommit()) {
                 conexion.setAutoCommit(false);
             }
@@ -315,7 +303,7 @@ public class Acomprin {
             });
             conexion.commit();
             System.out.println("e ha hecho commit de la transaccion");
-
+            
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
             System.out.println("entramos al rollback");
@@ -326,5 +314,5 @@ public class Acomprin {
             }
         }
     }
-
+    
 }

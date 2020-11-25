@@ -25,10 +25,6 @@ public class Ewallet {
     public Ewallet() {
     }
 
-    public Ewallet(int idwallet, int saldoeuros) {
-        this.idwallet = idwallet;
-        this.saldoeuros = saldoeuros;
-    }
     
     
 
