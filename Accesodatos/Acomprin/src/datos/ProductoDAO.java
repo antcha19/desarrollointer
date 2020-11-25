@@ -61,7 +61,7 @@ public class ProductoDAO {
                 productolista.add(producto);
             }
         } finally {
-            //   Conexion.close(conn);
+           
             Conexion.close(stmt);
             Conexion.close(rs);
             if (this.conexionTransaccional == null) {

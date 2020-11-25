@@ -47,7 +47,7 @@ public class EwalletDAO {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Ewallet wallet = null;
+        Ewallet wallet;
         List<Ewallet> walletlista = new ArrayList<>();
 
         try {
@@ -66,10 +66,8 @@ public class EwalletDAO {
 
                 wallet = new Ewallet(idPersona, nombre, apellidos, email, fechanacimento, email, saldopuntos, saldoeuros);
                 walletlista.add(wallet);
-
             }
         } finally {
-            //   Conexion.close(conn);
             Conexion.close(stmt);
             Conexion.close(rs);
             if (this.conexionTransaccional == null) {

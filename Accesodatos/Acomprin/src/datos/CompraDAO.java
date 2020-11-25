@@ -22,7 +22,7 @@ public class CompraDAO {
 
     //  sentencias de acceso a la BD
     private static final String SQL_SELECT = "SELECT * FROM compra";
-    private static final String SQL_INSERT = "INSERT INTO compra(FechaCompra,Id-wallet,Id_producto) VALUES (?,?,?)";
+    private static final String SQL_INSERT = "INSERT INTO compra (FechaCompra, Id-wallet, Id_producto) VALUES (?,?,?)";
     private static final String SQL_DELETE = "DELETE FROM compra WHERE Id_compra=?";
     private static final String SQL_UPDATE = "UPDATE compra SET FechaCompra=?, Id_wallet=?, Id_producto=? where Id_compra=?";
 
@@ -142,3 +142,5 @@ public class CompraDAO {
     }
 
 }
+
+

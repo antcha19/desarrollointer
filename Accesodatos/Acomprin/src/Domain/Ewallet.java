@@ -21,23 +21,9 @@ public class Ewallet {
     private int saldopuntos;
     private int saldoeuros;
 
-    
     public Ewallet() {
     }
 
-    
-    
-
-    public Ewallet(String nombre, String apellidos, String dni, Date fechanacimento, String email, int saldopuntos, int saldoeuros) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.dni = dni;
-        this.fechanacimento = fechanacimento;
-        this.email = email;
-        this.saldopuntos = saldopuntos;
-        this.saldoeuros = saldoeuros;
-    }
-    //constructor con todo
     public Ewallet(int idwallet, String nombre, String apellidos, String dni, Date fechanacimento, String email, int saldopuntos, int saldoeuros) {
         this.idwallet = idwallet;
         this.nombre = nombre;
@@ -48,6 +34,19 @@ public class Ewallet {
         this.saldopuntos = saldopuntos;
         this.saldoeuros = saldoeuros;
     }
+
+    public Ewallet(String nombre, String apellidos, String dni, Date fechanacimento, String email, int saldopuntos, int saldoeuros) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.dni = dni;
+        this.fechanacimento = fechanacimento;
+        this.email = email;
+        this.saldopuntos = saldopuntos;
+        this.saldoeuros = saldoeuros;
+    }
+
+    
+   
     
 
     public int getIdwallet() {
