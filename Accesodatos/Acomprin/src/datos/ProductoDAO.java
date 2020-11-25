@@ -26,9 +26,9 @@ public class ProductoDAO {
 
     //  sentencias de acceso a la BD
     private static final String SQL_SELECT = "SELECT * FROM producto";
-    private static final String SQL_INSERT = "INSERT INTO producto( NombreProducto, PrecioProducto ,PuntosProducto) VALUES (?,?,?)";
-    private static final String SQL_DELETE = "DELETE FROM producto WHERE Id_producto=?";
-    private static final String SQL_UPDATE = "UPDATE producto SET NombreProducto=?, PrecioProducto=?, PuntosProducto=?  where Id_producto=?";
+    private static final String SQL_INSERT = "INSERT INTO producto( nombreproducto, precioproducto ,puntosproducto) VALUES (?,?,?)";
+    private static final String SQL_DELETE = "DELETE FROM producto WHERE idproducto=?";
+    private static final String SQL_UPDATE = "UPDATE producto SET nombreproducto=?, precioproducto=?, puntosproducto=?  where idproducto=?";
 
     //constructor vacio
     //Para recibir el objeto conexión desde dentro de la clase. Sola para manejar una transaccion interna
@@ -53,10 +53,10 @@ public class ProductoDAO {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int idproducto = rs.getInt("Id_producto");
-                String nombreproducto = rs.getString("NombreProducto");
-                int precioproducto = rs.getInt("PrecioProducto");
-                int puntosproducto = rs.getInt("PuntosProducto");
+                int idproducto = rs.getInt("idproducto");
+                String nombreproducto = rs.getString("nombreproducto");
+                int precioproducto = rs.getInt("precioproducto");
+                int puntosproducto = rs.getInt("puntosproducto");
                 producto = new Producto(idproducto, nombreproducto, precioproducto, puntosproducto);
                 productolista.add(producto);
             }
@@ -144,9 +144,7 @@ public class ProductoDAO {
 
         }
         return registros;
-    }
-
-    
-    
-    
+    }    
 }
+
+

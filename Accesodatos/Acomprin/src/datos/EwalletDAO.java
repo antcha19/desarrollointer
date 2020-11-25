@@ -27,9 +27,9 @@ public class EwalletDAO {
 
     //  sentencias de acceso a la BD
     private static final String SQL_SELECT = "SELECT * FROM ewallet";
-    private static final String SQL_INSERT = "INSERT INTO ewallet(Nombre, Apellidos, Dni ,Fechanacimiento,Email, Saldopuntos, Saldoeuros) VALUES (?,?,?,?,?,?,?)";
-    private static final String SQL_DELETE = "DELETE FROM ewallet WHERE Id-wallet=?";
-    private static final String SQL_UPDATE = "UPDATE ewallet SET Nombre=?, Apellidos=?, Dni=? Fechanacimiento=?,Email=?, Saldopuntos=?,Saldoeuros=? where Id-wallet=?";
+    private static final String SQL_INSERT = "INSERT INTO ewallet(nombre, apellidos, dni ,fechanacimiento,email, saldopuntos, saldoeuros) VALUES (?,?,?,?,?,?,?)";
+    private static final String SQL_DELETE = "DELETE FROM ewallet WHERE idwallet=?";
+    private static final String SQL_UPDATE = "UPDATE ewallet SET nombre=?, apellidos=?, dni=?, fechanacimiento=?,email=?, saldopuntos=?,saldoeuros=? where idwallet=?";
     
 
     //constructor vacio
@@ -55,14 +55,14 @@ public class EwalletDAO {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int idPersona = rs.getInt("Id-wallet");
-                String nombre = rs.getString("Nombre");
-                String apellidos = rs.getString("Apellidos");
+                int idPersona = rs.getInt("idwallet");
+                String nombre = rs.getString("nombre");
+                String apellidos = rs.getString("apellidos");
                 Date fechanacimento;
-                fechanacimento = rs.getDate("Fechanacimiento");
-                String email = rs.getString("Email");
-                int saldopuntos = rs.getInt("Saldopuntos");
-                int saldoeuros = rs.getInt("Saldoeuros");
+                fechanacimento = rs.getDate("fechanacimiento");
+                String email = rs.getString("email");
+                int saldopuntos = rs.getInt("saldopuntos");
+                int saldoeuros = rs.getInt("saldoeuros");
 
                 wallet = new Ewallet(idPersona, nombre, apellidos, email, fechanacimento, email, saldopuntos, saldoeuros);
                 walletlista.add(wallet);

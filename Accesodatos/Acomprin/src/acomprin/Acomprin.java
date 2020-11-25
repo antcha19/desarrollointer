@@ -203,8 +203,8 @@ public class Acomprin {
         Connection conexion = null;
         Scanner teclado = new Scanner(System.in);
         java.util.Date fechaactual = new Date();
-
-        if (fechaactual.getDay() > 1 & fechaactual.getDay() < 5) {
+        System.out.println("lo siento solo podras recargar del 1 al 5");
+       // if (fechaactual.getTime() > 1 & fechaactual.getTime() < 5) {
             try {
 
                 conexion = Conexion.getConnection();
@@ -214,20 +214,32 @@ public class Acomprin {
                 }
                 //recorro la lista para sacartodos los ewallet introducidos
                 EwalletDAO walletdao = new EwalletDAO(conexion);
-                List<Ewallet> ewallet = walletdao.seleccionarwallet();
-                ewallet.forEach(Ewallet -> {
+                List<Ewallet> ewalletlista = walletdao.seleccionarwallet();
+                ewalletlista.forEach(Ewallet -> {
                     System.out.println("ewallet = " + Ewallet.toString());
                 });
 
-                System.out.println("cual id quieres actualizar");
-                int id = teclado.nextInt();
-                System.out.println("cual id quieres actualizar");
-                int cantidadrecargar = teclado.nextInt();
-                System.out.println("");
-                Ewallet aux = ewallet.get(id - 1);
-                aux.setSaldoeuros(cantidadrecargar);
-                walletdao.actualizarwallet(aux);
+                System.out.println("selecciona cliente ewallet");
+                int idwallet = teclado.nextInt();
 
+                //comprueba si existe el cliente wallet y me quedo con su id
+                boolean idexiste = false;
+                int idcomprueba = 0;
+                int cantidadrecargar = 0;
+                for (Ewallet aux : ewalletlista) {
+                    idcomprueba = aux.getIdwallet();
+                    
+                    if (aux.getIdwallet() == idwallet) {
+                        idexiste = true;
+                        System.out.println(aux.toString());
+                        System.out.println("introduce la cantidad a recargar");
+                        cantidadrecargar = teclado.nextInt();
+                        aux.setSaldoeuros(cantidadrecargar);
+                        walletdao.actualizarwallet(aux);
+                        break;
+                    }
+
+                }
                 conexion.commit();
                 System.out.println("se ha hecho commit de la transaccion");
 
@@ -240,7 +252,7 @@ public class Acomprin {
                     ex1.printStackTrace(System.out);
                 }
             }
-        }
+       // }
 
     }
 
@@ -343,59 +355,84 @@ public class Acomprin {
             int idcomprueba = 0;
             int saldoeuroswallet = 0;
             int puntoswallet = 0;
+           
+            Ewallet walletaux = null;
             for (Ewallet aux : ewalletlista) {
                 idcomprueba = aux.getIdwallet();
-                saldoeuroswallet = aux.getSaldoeuros();
-                puntoswallet = aux.getSaldopuntos();
-                if (idcomprueba == idwallet) {
-                    idexiste = true;
-                    System.out.println(aux.toString());
-                    break;
-                }
-                if (idexiste == false) {
-                    System.out.println("el cliente ewallet no existe");
-                    break;
-                }
-            }
 
+                puntoswallet = aux.getSaldopuntos();
+                //si existe y meguarda los valores y sale con el break;
+                if (idcomprueba == idwallet) {
+                    saldoeuroswallet = aux.getSaldoeuros();
+                    saldoeuroswallet = aux.getSaldoeuros();
+                    idexiste = true;
+                    //comprobar si es menos es correcto
+                    walletaux = ewalletlista.get(idwallet-1);
+                    System.out.println(aux.toString());
+                    
+                    //   System.out.println("saldoeuroswallet" + saldoeuroswallet);
+                    break;
+                }
+
+            }
+ 
             //producto
             System.out.println("selecciona producto");
             int idproducto = teclado.nextInt();
 
             //compruebo datos del productos
             int auxpro;
+            Producto auxiliar;
             int eurosproducto = 0;
             int puntosproducto = 0;
             boolean existe = false;
             for (Producto aux : productoslistas) {
                 auxpro = aux.getIdproducto();
-                eurosproducto = aux.getPrecioproducto();
-                puntosproducto = aux.getPuntosproducto();
+
                 if (aux.getIdproducto() == idproducto) {
                     existe = true;
+                    eurosproducto = aux.getPrecioproducto();
+                    puntosproducto = aux.getPuntosproducto();
                     System.out.println(aux.toString());
-                    break;
+
                 }
-                if (existe == false) {
+                if (aux.getIdproducto() != idproducto) {
                     System.out.println("no existe el producto");
                     break;
                 }
 
             }
+            System.out.println("euroswallet" + saldoeuroswallet);
+            System.out.println("eeuroproducto" + eurosproducto);
+            System.out.println("puntosrpoducto " + puntosproducto);
+            System.out.println("puntoswallet " + puntoswallet);
             //resto el saldoprecio y puntossaldo 
             int resultadoeuros = saldoeuroswallet - eurosproducto;
+             System.out.println("resultado euros" + resultadoeuros);
+
             int resultadopuntos = puntoswallet + puntosproducto;
+            System.out.println(resultadopuntos);
 
-            //inserto compra
-            java.util.Date fecha = new Date();
-            //fecha sql
-            java.sql.Date sqlfecha = new java.sql.Date(fecha.getTime());
-            CompraDAO compradao = new CompraDAO(conexion);
-            Compra nuevacompra = new Compra(idcomprueba,  sqlfecha, idwallet, idproducto);
-            compradao.insertarcompra(nuevacompra);
+            //si saldoeuros es mejor que preciodel producto no hace la operacion
+            if (saldoeuroswallet < eurosproducto) {
+                System.out.println("no tiene  saldo suficiente para la compra");
 
-            conexion.commit();
-            System.out.println("e ha hecho commit de la transaccion");
+            } else {
+                //resto el el precioproducto al saldoeuroswallet
+                walletaux.setSaldoeuros(resultadoeuros);
+                walletaux.setSaldopuntos(resultadopuntos);
+                walletdao.actualizarwallet(walletaux);
+                //fecha java
+                java.util.Date fecha = new Date();
+                //paso fechajava a fecha sql
+                java.sql.Date sqlfecha = new java.sql.Date(fecha.getTime());
+                //inserto compra
+                CompraDAO compradao = new CompraDAO(conexion);
+                Compra nuevacompra = new Compra(idcomprueba, sqlfecha, idwallet, idproducto);
+                compradao.insertarcompra(nuevacompra);
+                conexion.commit();
+                System.out.println("e ha hecho commit de la transaccion");
+            }
 
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);

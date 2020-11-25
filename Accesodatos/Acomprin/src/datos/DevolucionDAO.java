@@ -21,9 +21,9 @@ public class DevolucionDAO {
 
     //  sentencias de acceso a la BD
     private static final String SQL_SELECT = "SELECT * FROM devolucion";
-    private static final String SQL_INSERT = "INSERT INTO devolucion(FechaDevolucion,Id-wallet,Id_producto) VALUES (?,?,?)";
-    private static final String SQL_DELETE = "DELETE FROM devolucion WHERE Id_devolucion=?";
-    private static final String SQL_UPDATE = "UPDATE devolucion SET FechaDevolucion=?, Id-wallet=?, Id_producto=? where Id_devolucion=?";
+    private static final String SQL_INSERT = "INSERT INTO devolucion(fechadevolucion,idwallet,idproducto) VALUES (?,?,?)";
+    private static final String SQL_DELETE = "DELETE FROM devolucion WHERE iddevolucion=?";
+    private static final String SQL_UPDATE = "UPDATE devolucion SET fechadevolucion=?, idwallet=?, idproducto=? where iddevolucion=?";
 
     //constructor vacio
     //Para recibir el objeto conexión desde dentro de la clase. Sola para manejar una transaccion interna
@@ -48,10 +48,10 @@ public class DevolucionDAO {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int iddevolucion = rs.getInt("Id_devolucion");
-                Date fechadevolucion = rs.getDate("FechaDevolucion");
-                int idwallet = rs.getInt("Id-wallet");
-                int idproducto = rs.getInt("Id_producto");
+                int iddevolucion = rs.getInt("iddevolucion");
+                Date fechadevolucion = rs.getDate("fechadevolucion");
+                int idwallet = rs.getInt("idwallet");
+                int idproducto = rs.getInt("idproducto");
                 devolu =  new Devolucion(iddevolucion, fechadevolucion, idwallet, idproducto);
                 devolucionlista.add(devolu);
             }

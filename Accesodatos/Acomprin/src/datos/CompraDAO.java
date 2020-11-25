@@ -22,9 +22,9 @@ public class CompraDAO {
 
     //  sentencias de acceso a la BD
     private static final String SQL_SELECT = "SELECT * FROM compra";
-    private static final String SQL_INSERT = "INSERT INTO compra (FechaCompra, Id-wallet, Id_producto) VALUES (?,?,?)";
-    private static final String SQL_DELETE = "DELETE FROM compra WHERE Id_compra=?";
-    private static final String SQL_UPDATE = "UPDATE compra SET FechaCompra=?, Id_wallet=?, Id_producto=? where Id_compra=?";
+    private static final String SQL_INSERT = "INSERT INTO compra (fechacompra, idwallet, idproducto) VALUES (?,?,?)";
+    private static final String SQL_DELETE = "DELETE FROM compra WHERE idcompra=?";
+    private static final String SQL_UPDATE = "UPDATE compra SET fechacompra=?, idwallet=?, idproducto=? where idcompra=?";
 
     //constructor vacio
     //Para recibir el objeto conexión desde dentro de la clase. Sola para manejar una transaccion interna
@@ -49,10 +49,10 @@ public class CompraDAO {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int idcompra = rs.getInt("Id_compra");
-                Date fechacompra = rs.getDate("Fechacompra");
-                int idwallet = rs.getInt("Id-wallet");
-                int idproducto = rs.getInt("Id_producto");
+                int idcompra = rs.getInt("idcompra");
+                Date fechacompra = rs.getDate("fechacompra");
+                int idwallet = rs.getInt("idwallet");
+                int idproducto = rs.getInt("idproducto");
                 compra = new Compra(idcompra, fechacompra, idwallet, idproducto);
                 compralista.add(compra);
             }
