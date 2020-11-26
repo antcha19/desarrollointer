@@ -66,12 +66,16 @@ public class Acomprin {
                     break;
 
                 case 7:
-
+                    devolucion();
                     break;
 
                 case 8:
-
-                case 9:
+                    canjearpuntos();
+                    break;
+                    case 9:
+                   selectcompra();
+                    break;
+                case 10:
                     salir = true;
                     System.out.println("adios ");
                     break;
@@ -82,15 +86,16 @@ public class Acomprin {
     }
 
     public static void menu() {
-        System.out.println("1.agregar cliente a wallet");
-        System.out.println("2.- consultar wallet");
-        System.out.println("3-recargarwallet");
-        System.out.println("4.-insertarproducto");
-        System.out.println("5-select producto");
-        System.out.println("6-compraproducto");
-        System.out.println("7-Actualizar coche");
-        System.out.println("8-Listar propietarios y muestra sus coches");
-        System.out.println("9-salir");
+        System.out.println("1.- Agregar cliente a wallet");
+        System.out.println("2.- Consultar wallet");
+        System.out.println("3.- Recargar wallet");
+        System.out.println("4.- Insertar producto");
+        System.out.println("5.- Select producto");
+        System.out.println("6.- Comprar producto");
+        System.out.println("7.- Devolver producto");
+        System.out.println("8.- Canjear puntos");
+        System.out.println("9.- Consulta compras");
+        System.out.println("10-salir");
     }
 
     public static Date fechaintroducir() throws ParseException {
@@ -204,55 +209,55 @@ public class Acomprin {
         Scanner teclado = new Scanner(System.in);
         java.util.Date fechaactual = new Date();
         System.out.println("lo siento solo podras recargar del 1 al 5");
-       // if (fechaactual.getTime() > 1 & fechaactual.getTime() < 5) {
-            try {
+        // if (fechaactual.getTime() > 1 & fechaactual.getTime() < 5) {
+        try {
 
-                conexion = Conexion.getConnection();
+            conexion = Conexion.getConnection();
 
-                if (conexion.getAutoCommit()) {
-                    conexion.setAutoCommit(false);
-                }
-                //recorro la lista para sacartodos los ewallet introducidos
-                EwalletDAO walletdao = new EwalletDAO(conexion);
-                List<Ewallet> ewalletlista = walletdao.seleccionarwallet();
-                ewalletlista.forEach(Ewallet -> {
-                    System.out.println("ewallet = " + Ewallet.toString());
-                });
-
-                System.out.println("selecciona cliente ewallet");
-                int idwallet = teclado.nextInt();
-
-                //comprueba si existe el cliente wallet y me quedo con su id
-                boolean idexiste = false;
-                int idcomprueba = 0;
-                int cantidadrecargar = 0;
-                for (Ewallet aux : ewalletlista) {
-                    idcomprueba = aux.getIdwallet();
-                    
-                    if (aux.getIdwallet() == idwallet) {
-                        idexiste = true;
-                        System.out.println(aux.toString());
-                        System.out.println("introduce la cantidad a recargar");
-                        cantidadrecargar = teclado.nextInt();
-                        aux.setSaldoeuros(cantidadrecargar);
-                        walletdao.actualizarwallet(aux);
-                        break;
-                    }
-
-                }
-                conexion.commit();
-                System.out.println("se ha hecho commit de la transaccion");
-
-            } catch (SQLException ex) {
-                ex.printStackTrace(System.out);
-                System.out.println("entramos al rollback");
-                try {
-                    conexion.rollback();
-                } catch (SQLException ex1) {
-                    ex1.printStackTrace(System.out);
-                }
+            if (conexion.getAutoCommit()) {
+                conexion.setAutoCommit(false);
             }
-       // }
+            //recorro la lista para sacartodos los ewallet introducidos
+            EwalletDAO walletdao = new EwalletDAO(conexion);
+            List<Ewallet> ewalletlista = walletdao.seleccionarwallet();
+            ewalletlista.forEach(Ewallet -> {
+                System.out.println("ewallet = " + Ewallet.toString());
+            });
+
+            System.out.println("selecciona cliente ewallet");
+            int idwallet = teclado.nextInt();
+
+            //comprueba si existe el cliente wallet y me quedo con su id
+            boolean idexiste = false;
+            int idcomprueba = 0;
+            int cantidadrecargar = 0;
+            for (Ewallet aux : ewalletlista) {
+                idcomprueba = aux.getIdwallet();
+
+                if (aux.getIdwallet() == idwallet) {
+                    idexiste = true;
+                    System.out.println(aux.toString());
+                    System.out.println("introduce la cantidad a recargar");
+                    cantidadrecargar = teclado.nextInt();
+                    aux.setSaldoeuros(cantidadrecargar);
+                    walletdao.actualizarwallet(aux);
+                    break;
+                }
+
+            }
+            conexion.commit();
+            System.out.println("se ha hecho commit de la transaccion");
+
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+            System.out.println("entramos al rollback");
+            try {
+                conexion.rollback();
+            } catch (SQLException ex1) {
+                ex1.printStackTrace(System.out);
+            }
+        }
+        // }
 
     }
 
@@ -355,7 +360,7 @@ public class Acomprin {
             int idcomprueba = 0;
             int saldoeuroswallet = 0;
             int puntoswallet = 0;
-           
+
             Ewallet walletaux = null;
             for (Ewallet aux : ewalletlista) {
                 idcomprueba = aux.getIdwallet();
@@ -367,15 +372,15 @@ public class Acomprin {
                     saldoeuroswallet = aux.getSaldoeuros();
                     idexiste = true;
                     //comprobar si es menos es correcto
-                    walletaux = ewalletlista.get(idwallet-1);
+                    walletaux = ewalletlista.get(idwallet - 1);
                     System.out.println(aux.toString());
-                    
+
                     //   System.out.println("saldoeuroswallet" + saldoeuroswallet);
                     break;
                 }
 
             }
- 
+
             //producto
             System.out.println("selecciona producto");
             int idproducto = teclado.nextInt();
@@ -408,7 +413,7 @@ public class Acomprin {
             System.out.println("puntoswallet " + puntoswallet);
             //resto el saldoprecio y puntossaldo 
             int resultadoeuros = saldoeuroswallet - eurosproducto;
-             System.out.println("resultado euros" + resultadoeuros);
+            System.out.println("resultado euros" + resultadoeuros);
 
             int resultadopuntos = puntoswallet + puntosproducto;
             System.out.println(resultadopuntos);
@@ -445,4 +450,208 @@ public class Acomprin {
         }
     }
 
+    public static void devolucion() {
+
+        Connection conexion = null;
+        Scanner teclado = new Scanner(System.in);
+        //variales
+        int comprueba = 0;
+
+        try {
+
+            Devolucion nuevadevolucion = new Devolucion();
+            conexion = Conexion.getConnection();
+
+            if (conexion.getAutoCommit()) {
+                conexion.setAutoCommit(false);
+            }
+            //recorro la lista para sacar todos los datos necesarios de  ewallet 
+            EwalletDAO walletdao = new EwalletDAO(conexion);
+            List<Ewallet> walletlista = walletdao.seleccionarwallet();
+            //recorro la lista para sacar todos los datos necesarios de los compra 
+            CompraDAO compradao = new CompraDAO(conexion);
+            List<Compra> compralistas = compradao.seleccionarcompra();
+            //recorro la lista para sacar todos los datos necesarios de devolucion
+            DevolucionDAO devoluciondao = new DevolucionDAO(conexion);
+            List<Devolucion> devolucionlista = devoluciondao.seleccionardevolucion();
+            //recorro la lista para sacar todos los datos necesarios de producto
+            ProductoDAO productodao = new ProductoDAO(conexion);
+            List<Producto> productoslistas = productodao.seleccionarproducto();
+
+            //compruebo todos los si el cliente wallet tiene compras
+            System.out.println("introduce  idwallet del cliente");
+            int idwallet = teclado.nextInt();
+            for (Ewallet auxwallet : walletlista) {
+                comprueba = auxwallet.getIdwallet();
+                if (comprueba == idwallet) {
+                    System.out.println(auxwallet);
+                }
+            }
+            System.out.println("Compras realizadas");
+            for (Compra auxcompra : compralistas) {
+                comprueba = auxcompra.getIdwallet();
+                if (comprueba == idwallet) {
+                    System.out.println(auxcompra);
+                }
+            }
+            System.out.println("productos realizados");
+
+            System.out.println("");
+
+            /*   DevolucionDAO devoluciondao = new DevolucionDAO(conexion);
+            //fecha devolucion
+            String nombre = teclado.nextLine();
+            
+          
+            conexion.commit();
+            System.out.println("se ha hecho commit de la transaccion");*/
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+            System.out.println("entramos al rollback");
+            try {
+                conexion.rollback();
+            } catch (SQLException ex1) {
+                ex1.printStackTrace(System.out);
+            }
+        }
+    }
+
+    public static void canjearpuntos() {
+        Connection conexion = null;
+        Scanner teclado = new Scanner(System.in);
+
+        try {
+
+            conexion = Conexion.getConnection();
+
+            if (conexion.getAutoCommit()) {
+                conexion.setAutoCommit(false);
+            }
+            //recorro la lista para sacartodos los ewallet introducidos
+            ProductoDAO productodao = new ProductoDAO(conexion);
+            List<Producto> productoslistas = productodao.seleccionarproducto();
+            productoslistas.forEach(Producto -> {
+                System.out.println("Productos = " + Producto);
+            });
+            System.out.println("---------------------------EWALLET----------------------");
+
+            //recorro la lista para sacartodos los ewallet introducidos
+            EwalletDAO walletdao = new EwalletDAO(conexion);
+            List<Ewallet> ewalletlista = walletdao.seleccionarwallet();
+            ewalletlista.forEach(Ewallet -> {
+                System.out.println("ewallet = " + Ewallet.toString());
+            });
+            System.out.println("selecciona cliente ewallet");
+            int idwallet = teclado.nextInt();
+
+            int idcomprueba = 0;
+
+            int puntoswallet = 0;
+
+            Ewallet walletaux = null;
+            for (Ewallet aux : ewalletlista) {
+                idcomprueba = aux.getIdwallet();
+
+                puntoswallet = aux.getSaldopuntos();
+                //si existe y meguarda los valores y sale con el break;
+                if (idcomprueba == idwallet) {
+                    //guardopuntos wallet
+                    puntoswallet = aux.getSaldopuntos();
+                    //comprobar si es menos es correcto
+                    walletaux = ewalletlista.get(idwallet - 1);
+                    System.out.println(aux.toString());
+
+                    break;
+                }
+
+            }
+
+            //producto
+            System.out.println("selecciona producto");
+            int idproducto = teclado.nextInt();
+
+            //compruebo datos del productos
+            int auxpro;
+            Producto auxiliar;
+
+            int puntosproducto = 0;
+            int eurosproducto = 0;
+            for (Producto aux : productoslistas) {
+                auxpro = aux.getIdproducto();
+                if (aux.getIdproducto() == idproducto) {
+                    //guardo puntos productos
+                    puntosproducto = aux.getPuntosproducto();
+                    eurosproducto = aux.getPrecioproducto();
+                    System.out.println(aux.toString());
+
+                }
+            }
+
+            System.out.println("puntosrpoducto " + puntosproducto);
+            System.out.println("puntoswallet " + puntoswallet);
+            System.out.println("euros productos " + eurosproducto);
+
+            int resultadopuntos = puntosproducto - puntoswallet;
+            System.out.println(resultadopuntos);
+
+            //si saldoeuros es mejor que preciodel producto no hace la operacion
+            if (eurosproducto < 5 & puntoswallet < puntosproducto) {
+               System.out.println("no tiene  puntos  suficiente para la compra");
+
+            } else {
+                
+                 //resto el el precioproducto al saldoeuroswallet
+
+                walletaux.setSaldopuntos(resultadopuntos);
+                walletdao.actualizarwallet(walletaux);
+                //fecha java
+                java.util.Date fecha = new Date();
+                //paso fechajava a fecha sql
+                java.sql.Date sqlfecha = new java.sql.Date(fecha.getTime());
+                //inserto compra
+                CompraDAO compradao = new CompraDAO(conexion);
+                Compra nuevacompra = new Compra(idcomprueba, sqlfecha, idwallet, idproducto);
+                compradao.insertarcompra(nuevacompra);
+                conexion.commit();
+                System.out.println("e ha hecho commit de la transaccion");
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+            System.out.println("entramos al rollback");
+            try {
+                conexion.rollback();
+            } catch (SQLException ex1) {
+                ex1.printStackTrace(System.out);
+            }
+        }
+    }
+    
+    public static void selectcompra() {
+         Connection conexion = null;
+        try {
+            conexion = Conexion.getConnection();
+            if (conexion.getAutoCommit()) {
+                conexion.setAutoCommit(false);
+            }
+            //recorro la lista para sacartodos los ewallet introducidos
+            CompraDAO compradao = new CompraDAO(conexion);
+            List<Compra> compralista = compradao.seleccionarcompra();
+            for (Compra compra : compralista) {
+                System.out.println(compra.toString());
+            }
+            conexion.commit();
+            System.out.println("se ha hecho commit de la transaccion");
+
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+            System.out.println("entramos al rollback");
+            try {
+                conexion.rollback();
+            } catch (SQLException ex1) {
+                ex1.printStackTrace(System.out);
+            }
+        }
+        
+    }
 }

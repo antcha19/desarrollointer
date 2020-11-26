@@ -68,6 +68,11 @@ public class Compra {
     public void setIdproducto(int idproducto) {
         this.idproducto = idproducto;
     }
+
+    @Override
+    public String toString() {
+        return "Compra{" + "idcompra=" + idcompra + ", fechacompra=" + fechacompra + ", idwallet=" + idwallet + ", idproducto=" + idproducto + '}';
+    }
     
     
    
