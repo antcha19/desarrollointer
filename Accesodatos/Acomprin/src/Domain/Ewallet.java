@@ -53,6 +53,8 @@ public class Ewallet {
         return idwallet;
     }
 
+     
+
     public String getNombre() {
         return nombre;
     }
@@ -119,6 +121,7 @@ public class Ewallet {
         return "Ewallet{" + "idwallet=" + idwallet + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", fechanacimento=" + fechanacimento + ", email=" + email + ", saldopuntos=" + saldopuntos + ", saldoeuros=" + saldoeuros + '}';
     }
 
+   
     
     
 }
