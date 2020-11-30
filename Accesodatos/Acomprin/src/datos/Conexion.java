@@ -18,7 +18,7 @@ import java.sql.Statement;
 public class Conexion {
     
     //esta clase enlace con el driver jdbc con la base datos 
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/super?useSSL=false&useTimezone="
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/comprin?useSSL=false&useTimezone="
             + "true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "serpis";
