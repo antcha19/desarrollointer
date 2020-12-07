@@ -22,12 +22,27 @@ public class ClienteEntidadPersona {
         
         tx.begin();
         Persona persona1 = new Persona("antonio", "yepez", "antonio@yepez");
-        log.debug("objeto a persistir " +persona1);
+       // log.debug("objeto a persistir " +persona1);
+        System.out.println(persona1);
         //persistimos el objeto
         em.persist(persona1);
+        //select por primary key
+        Persona personakey = new Persona();
+        personakey=em.find(Persona.class,28 );
+        System.out.println("la persona encontrada es: " +personakey);
+        
+        //actualizar 
+        personakey.setNombre("juaan");
+        em.merge(personakey);
+        System.out.println("la persona actualizada" + personakey);
+        
+        //borrar
+        Persona personadelete = new Persona();
+        personadelete=em.find(Persona.class, 32);
+        em.remove(personadelete);
         //terminamos la transaccion
         tx.commit();
-        log.debug("objeto persistido " +persona1);
-        em.clear();
+       
+        
     }
 }
