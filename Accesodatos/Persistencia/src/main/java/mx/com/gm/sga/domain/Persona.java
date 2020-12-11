@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 //la clase es una entidad 
 @Entity
+
 public class Persona  implements  Serializable{
     private static final long SerialVersionUID=1L;
     //la clave primary jey es la id

@@ -42,6 +42,7 @@ public class ClienteEntidadPersona {
         em.remove(personadelete);
         //terminamos la transaccion
         tx.commit();
+        em.clear();
        
         
     }
