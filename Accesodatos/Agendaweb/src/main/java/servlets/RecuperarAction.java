@@ -25,9 +25,9 @@ public class RecuperarAction extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		GestionContactos gcontacto=new GestionContactos();
-		//List<Contacto> contactos=gcontacto.recuperarContactos();
+		List<Contacto> contactos=gcontacto.recuperarcontactos();
 		//guardamos contactos en un atributo de petici�n
-		//request.setAttribute("contactos", contactos);
+		request.setAttribute("contactos", contactos);
 		//trasnferencia de la petici�n
 		request.getRequestDispatcher("contactos.jsp").forward(request, response);
 	}

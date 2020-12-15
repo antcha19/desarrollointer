@@ -44,16 +44,18 @@ public class GestionContactos {
         
     } 
     
-    public List<Contacto>listacontactos (){
+    public List<Contacto>recuperarcontactos (){
          EntityManagerFactory emf = Persistence.createEntityManagerFactory("ContactoPU");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         String jpql ="Select c from Contacto c";
         Query qr = em.createQuery(jpql);
-         
+         List<Contacto> listacontactos = qr.getResultList();
+        em.clear();
+        
      
-        return listacontactos();
+        return listacontactos;
     }
 
     
