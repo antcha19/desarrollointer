@@ -6,11 +6,10 @@
 package test;
 
 import org.apache.logging.log4j.LogManager;
-
-
 import javax.persistence.*;
 import mx.com.gm.sga.domain.Persona;
 import org.apache.logging.log4j.*;
+
 public class ClienteEntidadPersona {
     
     static Logger log =LogManager.getFormatterLogger();
@@ -26,10 +25,12 @@ public class ClienteEntidadPersona {
         System.out.println(persona1);
         //persistimos el objeto
         em.persist(persona1);
-        //select por primary key
+        //select por primary key----------------hacemos una busqueda
         Persona personakey = new Persona();
         personakey=em.find(Persona.class,28 );
         System.out.println("la persona encontrada es: " +personakey);
+        
+      
         
         //actualizar 
         personakey.setNombre("juaan");
@@ -42,7 +43,7 @@ public class ClienteEntidadPersona {
         em.remove(personadelete);
         //terminamos la transaccion
         tx.commit();
-        em.clear();
+        em.close();
        
         
     }

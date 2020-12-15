@@ -33,6 +33,11 @@ public class Contacto  implements Serializable{
     public Contacto() {
     }
 
+    public Contacto(int idcontacto) {
+        this.idcontacto = idcontacto;
+    }
+    
+
     public Contacto(String nombre, String email, int telefono) {
         this.nombre = nombre;
         this.email = email;
