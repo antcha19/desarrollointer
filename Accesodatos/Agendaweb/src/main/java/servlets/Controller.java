@@ -34,7 +34,7 @@ public class Controller extends HttpServlet {
 				url="nuevo.html";
 				break;
 			case "toMenu":
-				url="menu.html";
+				url="index.html";
 				break;
 			
 			

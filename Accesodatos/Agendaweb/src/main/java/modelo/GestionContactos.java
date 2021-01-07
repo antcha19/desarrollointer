@@ -6,61 +6,75 @@
 package modelo;
 
 import java.util.List;
-import javax.persistence.*; 
+import javax.persistence.*;
 import mx.com.gm.sga.domain.Contacto;
 import org.apache.logging.log4j.*;
-
 
 /**
  *
  * @author antcha
  */
 public class GestionContactos {
-    //static Logger log = LogManager.getFormatterLogger();
+    //metodo para obtener el objeto EntityManager
+    private EntityManager getEntityManager() {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("ContactoPU");
+        return factory.createEntityManager();
+    }
 
-    public void altacontacto(String nombre, String email, int telefono){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ContactoPU");
-        EntityManager em = emf.createEntityManager();
+    //Alta de contacto
+    public void altacontacto(String nombre, String email, int telefono) {
+        Contacto c = new Contacto(nombre, email, telefono);
+        EntityManager em = getEntityManager();
+        //la operacion la incluimos en una transaccion
         EntityTransaction tx = em.getTransaction();
-
         tx.begin();
-        Contacto contactoalta = new Contacto(nombre, email, telefono);
-        em.persist(contactoalta);
-        //terminamos la transaccion
+        em.persist(c);
         tx.commit();
         em.clear();
     }
-    
-    public void borrarcontacto(int id){
-         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ContactoPU");
-        EntityManager em = emf.createEntityManager();
+
+    //Borrar un contacto
+    public void borrarcontacto(int idContacto) {
+        Contacto c = new Contacto();
+        EntityManager em = getEntityManager();
+        //La operacion la incluimos en una transaccion
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        Contacto contactoborrar  = new Contacto();
-        contactoborrar=em.find(Contacto.class, id);
-        em.remove(contactoborrar);
+        c = em.find(Contacto.class, idContacto);
+        em.remove(c);
         tx.commit();
-        em.close();
-        
-    } 
-    
-    public List<Contacto>recuperarcontactos (){
-         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ContactoPU");
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        tx.begin();
-        String jpql ="Select c from Contacto c";
-        Query qr = em.createQuery(jpql);
-         List<Contacto> listacontactos = qr.getResultList();
         em.clear();
-        
-     
-        return listacontactos;
     }
 
-    
-    
-       
-    
+    //Recuperar contactos
+    public List<Contacto> recuperarcontactos() {
+        EntityManager em = getEntityManager();
+        String select = "SELECT c from Contacto c";
+        Query qr = em.createQuery(select);
+        List<Contacto> listacont = qr.getResultList();
+        em.clear();
+        return listacont;
+    }
+
+    //Buscar contacto mismo email
+    public List<Contacto> buscarEmails(String email) {
+        EntityManager em = getEntityManager();
+        String find = "SELECT c from Contacto c WHERE email=" + email;
+        Query qr = em.createQuery(find);
+        List<Contacto> listaemail = qr.getResultList();
+        em.clear();
+        return listaemail;
+    }
+
+    //Buscar un solo contacto con el email
+    public Contacto buscaContacto(String email) {
+        Contacto c = new Contacto();
+        EntityManager em = getEntityManager();
+        String find = "SELECT c from Contacto c WHERE email=" + email;
+        Query qr = em.createQuery(find);
+        c = (Contacto) qr.getSingleResult();
+        em.clear();
+        return c;
+    }
 
 }

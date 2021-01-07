@@ -25,7 +25,7 @@ public class Contacto  implements Serializable{
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     //nombre de la tabla
    // @Column(name="idContacto")
-    private int idcontacto;
+    private int idContacto;
     private String nombre;
     private String email;
     private int telefono;
@@ -33,8 +33,8 @@ public class Contacto  implements Serializable{
     public Contacto() {
     }
 
-    public Contacto(int idcontacto) {
-        this.idcontacto = idcontacto;
+    public Contacto(int idContacto) {
+        this.idContacto = idContacto;
     }
     
 
@@ -48,8 +48,8 @@ public class Contacto  implements Serializable{
         return SerialVersionUID;
     }
 
-    public int getIdcontacto() {
-        return idcontacto;
+    public int getIdContacto() {
+        return idContacto;
     }
 
     public String getNombre() {
@@ -64,8 +64,8 @@ public class Contacto  implements Serializable{
         return telefono;
     }
 
-    public void setIdcontacto(int idcontacto) {
-        this.idcontacto = idcontacto;
+    public void setIdContacto(int idContacto) {
+        this.idContacto = idContacto;
     }
 
     public void setNombre(String nombre) {
@@ -82,8 +82,10 @@ public class Contacto  implements Serializable{
 
     @Override
     public String toString() {
-        return "Contacto{" + "idcontacto=" + idcontacto + ", nombre=" + nombre + ", email=" + email + ", telefono=" + telefono + '}';
+        return "Contacto{" + "idcontacto=" + idContacto + ", nombre=" + nombre + ", email=" + email + ", telefono=" + telefono + '}';
     }
+    
+    
     
     
     
