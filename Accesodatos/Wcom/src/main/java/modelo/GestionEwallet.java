@@ -26,7 +26,7 @@ public class GestionEwallet {
     //Recuperar wallet
     public List<Ewallet> recuperarwallet() {
         EntityManager em = getEntityManager();
-        String select = "SELECT c from ewallet c";
+        String select = "SELECT c from Ewallet c";
         Query qr = em.createQuery(select);  
        // List<Ewallet> listawall = qr.getResultList();
         List<Ewallet> listawall = (List<Ewallet>) qr.getResultList();
