@@ -15,7 +15,6 @@ import javax.persistence.*;
  */
 
 @Entity
-
 @Table (name="ewallet")
 public class Ewallet implements Serializable{
     
@@ -24,13 +23,12 @@ public class Ewallet implements Serializable{
     @Id
      //la id es auto incrementable
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    //columnas de la tabla
-    
+    //columnas de la tabla  
     private int idwallet;
     private String nombre;
     private String apellidos;
     private String dni;
-     private Date fechanacimento;
+    private Date fechanacimento;
     private String email;
     private int saldopuntos;
     private int saldoeuros;
@@ -52,6 +50,17 @@ public class Ewallet implements Serializable{
         this.saldopuntos = saldopuntos;
         this.saldoeuros = saldoeuros;
     }
+
+    public Ewallet(String nombre, String apellidos, String dni, Date fechanacimento, String email, int saldopuntos, int saldoeuros) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.dni = dni;
+        this.fechanacimento = fechanacimento;
+        this.email = email;
+        this.saldopuntos = saldopuntos;
+        this.saldoeuros = saldoeuros;
+    }
+    
 
     public static long getSerialVersionUID() {
         return SerialVersionUID;
