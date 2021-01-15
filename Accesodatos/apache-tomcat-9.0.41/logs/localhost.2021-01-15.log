@@ -1,12 +1,21 @@
-13-Jan-2021 15:04:08.205 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
-13-Jan-2021 15:04:08.205 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
-13-Jan-2021 15:04:08.207 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@60cc749d')
-13-Jan-2021 15:05:22.126 SEVERE [http-nio-8084-exec-11] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
-	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
-Exception Description: Problem compiling [SELECT w from Ewallet w]. 
-[14, 21] The abstract schema type 'Ewallet' is unknown.
-		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallet(GestionEwallet.java:30)
+15-Jan-2021 11:40:08.324 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+15-Jan-2021 11:40:08.324 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+15-Jan-2021 11:40:08.326 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5ed4c87')
+15-Jan-2021 12:24:16.646 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+15-Jan-2021 12:24:16.646 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+15-Jan-2021 12:30:06.540 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+15-Jan-2021 12:30:06.540 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+15-Jan-2021 12:30:06.543 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@7655dc27')
+15-Jan-2021 12:39:20.251 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+15-Jan-2021 12:39:20.251 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+15-Jan-2021 14:19:16.561 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+15-Jan-2021 14:19:16.561 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+15-Jan-2021 14:19:16.564 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2640f5ea')
+15-Jan-2021 14:19:58.893 SEVERE [http-nio-8084-exec-9] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
+	javax.persistence.PersistenceException: No Persistence provider for EntityManager named comweb
+		at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:86)
+		at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:58)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -18,7 +27,7 @@ Exception Description: Problem compiling [SELECT w from Ewallet w].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:34)
+		at servlets.Controller.service(Controller.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -42,25 +51,11 @@ Exception Description: Problem compiling [SELECT w from Ewallet w].
 		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 		at java.base/java.lang.Thread.run(Thread.java:834)
-	Caused by: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.JPQLException
-Exception Description: Problem compiling [SELECT w from Ewallet w]. 
-[14, 21] The abstract schema type 'Ewallet' is unknown.
-		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildException(HermesParser.java:157)
-		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.validate(HermesParser.java:349)
-		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.populateQueryImp(HermesParser.java:280)
-		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildQuery(HermesParser.java:165)
-		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:142)
-		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:118)
-		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:104)
-		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
-		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
-		... 36 more
-13-Jan-2021 15:05:22.127 SEVERE [http-nio-8084-exec-11] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
-	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
-Exception Description: Problem compiling [SELECT w from Ewallet w]. 
-[14, 21] The abstract schema type 'Ewallet' is unknown.
-		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallet(GestionEwallet.java:30)
+15-Jan-2021 14:19:58.894 SEVERE [http-nio-8084-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
+	javax.persistence.PersistenceException: No Persistence provider for EntityManager named comweb
+		at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:86)
+		at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:58)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -72,7 +67,7 @@ Exception Description: Problem compiling [SELECT w from Ewallet w].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:34)
+		at servlets.Controller.service(Controller.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -96,30 +91,12 @@ Exception Description: Problem compiling [SELECT w from Ewallet w].
 		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 		at java.base/java.lang.Thread.run(Thread.java:834)
-	Caused by: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.JPQLException
-Exception Description: Problem compiling [SELECT w from Ewallet w]. 
-[14, 21] The abstract schema type 'Ewallet' is unknown.
-		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildException(HermesParser.java:157)
-		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.validate(HermesParser.java:349)
-		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.populateQueryImp(HermesParser.java:280)
-		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildQuery(HermesParser.java:165)
-		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:142)
-		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:118)
-		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:104)
-		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
-		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
-		... 36 more
-13-Jan-2021 15:07:36.062 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
-13-Jan-2021 15:07:36.062 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
-13-Jan-2021 15:07:47.651 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
-13-Jan-2021 15:07:47.651 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
-13-Jan-2021 15:07:47.653 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@10c0d39d')
-13-Jan-2021 15:08:09.715 SEVERE [http-nio-8084-exec-8] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
+15-Jan-2021 14:32:33.369 SEVERE [http-nio-8084-exec-12] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
 	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
 Exception Description: Problem compiling [Select c from Ewallet c]. 
 [14, 21] The abstract schema type 'Ewallet' is unknown.
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallet(GestionEwallet.java:35)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -131,7 +108,7 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:34)
+		at servlets.Controller.service(Controller.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -168,12 +145,12 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
 		... 36 more
-13-Jan-2021 15:08:09.715 SEVERE [http-nio-8084-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
+15-Jan-2021 14:32:33.370 SEVERE [http-nio-8084-exec-12] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
 	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
 Exception Description: Problem compiling [Select c from Ewallet c]. 
 [14, 21] The abstract schema type 'Ewallet' is unknown.
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallet(GestionEwallet.java:35)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -185,7 +162,7 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:34)
+		at servlets.Controller.service(Controller.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -222,12 +199,17 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
 		... 36 more
-13-Jan-2021 15:10:46.485 SEVERE [http-nio-8084-exec-12] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
+15-Jan-2021 14:38:59.670 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+15-Jan-2021 14:38:59.671 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+15-Jan-2021 14:40:34.249 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+15-Jan-2021 14:40:34.249 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+15-Jan-2021 14:40:34.251 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@667ce5fa')
+15-Jan-2021 14:53:53.999 SEVERE [http-nio-8084-exec-37] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
 	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
 Exception Description: Problem compiling [Select c from Ewallet c]. 
 [14, 21] The abstract schema type 'Ewallet' is unknown.
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallet(GestionEwallet.java:35)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -239,7 +221,7 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:34)
+		at servlets.Controller.service(Controller.java:36)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -276,12 +258,12 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
 		... 36 more
-13-Jan-2021 15:10:46.485 SEVERE [http-nio-8084-exec-12] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
+15-Jan-2021 14:53:53.999 SEVERE [http-nio-8084-exec-37] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
 	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
 Exception Description: Problem compiling [Select c from Ewallet c]. 
 [14, 21] The abstract schema type 'Ewallet' is unknown.
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallet(GestionEwallet.java:35)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -293,7 +275,7 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:34)
+		at servlets.Controller.service(Controller.java:36)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -330,12 +312,12 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
 		... 36 more
-13-Jan-2021 15:56:17.549 SEVERE [http-nio-8084-exec-92] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
+15-Jan-2021 14:53:56.941 SEVERE [http-nio-8084-exec-34] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
 	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
 Exception Description: Problem compiling [Select c from Ewallet c]. 
 [14, 21] The abstract schema type 'Ewallet' is unknown.
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:64)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -347,7 +329,7 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:41)
+		at servlets.Controller.service(Controller.java:36)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -384,12 +366,12 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
 		... 36 more
-13-Jan-2021 15:56:17.549 SEVERE [http-nio-8084-exec-92] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
+15-Jan-2021 14:53:56.941 SEVERE [http-nio-8084-exec-34] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
 	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
 Exception Description: Problem compiling [Select c from Ewallet c]. 
 [14, 21] The abstract schema type 'Ewallet' is unknown.
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:64)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -401,7 +383,7 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:41)
+		at servlets.Controller.service(Controller.java:36)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -438,12 +420,12 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
 		... 36 more
-13-Jan-2021 15:58:52.877 SEVERE [http-nio-8084-exec-101] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
+15-Jan-2021 14:54:06.696 SEVERE [http-nio-8084-exec-31] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
 	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
 Exception Description: Problem compiling [Select c from Ewallet c]. 
 [14, 21] The abstract schema type 'Ewallet' is unknown.
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:64)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -455,7 +437,7 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:39)
+		at servlets.Controller.service(Controller.java:36)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -492,12 +474,12 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
 		... 36 more
-13-Jan-2021 15:58:52.877 SEVERE [http-nio-8084-exec-101] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
+15-Jan-2021 14:54:06.696 SEVERE [http-nio-8084-exec-31] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
 	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
 Exception Description: Problem compiling [Select c from Ewallet c]. 
 [14, 21] The abstract schema type 'Ewallet' is unknown.
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:64)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -509,7 +491,7 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:39)
+		at servlets.Controller.service(Controller.java:36)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -546,17 +528,17 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
 		... 36 more
-13-Jan-2021 16:02:44.061 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
-13-Jan-2021 16:02:44.061 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
-13-Jan-2021 16:06:15.556 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
-13-Jan-2021 16:06:15.556 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
-13-Jan-2021 16:06:15.560 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@39b265c9')
-13-Jan-2021 16:06:37.507 SEVERE [http-nio-8084-exec-3] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
+15-Jan-2021 14:54:45.901 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+15-Jan-2021 14:54:45.901 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+15-Jan-2021 17:27:08.237 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+15-Jan-2021 17:27:08.237 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+15-Jan-2021 17:27:08.240 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@6d98bf7')
+15-Jan-2021 17:27:46.841 SEVERE [http-nio-8084-exec-4] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
 	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
 Exception Description: Problem compiling [Select c from Ewallet c]. 
 [14, 21] The abstract schema type 'Ewallet' is unknown.
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:64)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -568,7 +550,7 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:39)
+		at servlets.Controller.service(Controller.java:36)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -605,12 +587,12 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
 		... 36 more
-13-Jan-2021 16:06:37.507 SEVERE [http-nio-8084-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
+15-Jan-2021 17:27:46.843 SEVERE [http-nio-8084-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
 	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
 Exception Description: Problem compiling [Select c from Ewallet c]. 
 [14, 21] The abstract schema type 'Ewallet' is unknown.
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
-		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:64)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
 		at servlets.RecuperarAction.service(RecuperarAction.java:28)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -622,7 +604,7 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
 		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
 		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
-		at servlets.Controller.service(Controller.java:39)
+		at servlets.Controller.service(Controller.java:36)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
@@ -659,5 +641,446 @@ Exception Description: Problem compiling [Select c from Ewallet c].
 		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
 		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
 		... 36 more
-13-Jan-2021 16:09:06.539 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
-13-Jan-2021 16:09:06.539 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+15-Jan-2021 17:30:07.707 SEVERE [http-nio-8084-exec-16] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
+	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
+Exception Description: Problem compiling [Select c from Ewallet c]. 
+[14, 21] The abstract schema type 'Ewallet' is unknown.
+		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
+		at servlets.RecuperarAction.service(RecuperarAction.java:28)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+		at servlets.Controller.service(Controller.java:36)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+	Caused by: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.JPQLException
+Exception Description: Problem compiling [Select c from Ewallet c]. 
+[14, 21] The abstract schema type 'Ewallet' is unknown.
+		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildException(HermesParser.java:157)
+		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.validate(HermesParser.java:349)
+		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.populateQueryImp(HermesParser.java:280)
+		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildQuery(HermesParser.java:165)
+		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:142)
+		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:118)
+		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:104)
+		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
+		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
+		... 36 more
+15-Jan-2021 17:30:07.707 SEVERE [http-nio-8084-exec-16] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
+	java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
+Exception Description: Problem compiling [Select c from Ewallet c]. 
+[14, 21] The abstract schema type 'Ewallet' is unknown.
+		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1746)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:65)
+		at servlets.RecuperarAction.service(RecuperarAction.java:28)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+		at servlets.Controller.service(Controller.java:36)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+	Caused by: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.JPQLException
+Exception Description: Problem compiling [Select c from Ewallet c]. 
+[14, 21] The abstract schema type 'Ewallet' is unknown.
+		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildException(HermesParser.java:157)
+		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.validate(HermesParser.java:349)
+		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.populateQueryImp(HermesParser.java:280)
+		at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildQuery(HermesParser.java:165)
+		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:142)
+		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:118)
+		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:104)
+		at org.eclipse.persistence.internal.jpa.EJBQueryImpl.<init>(EJBQueryImpl.java:88)
+		at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1744)
+		... 36 more
+15-Jan-2021 17:37:19.827 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+15-Jan-2021 17:37:19.827 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+15-Jan-2021 18:54:48.684 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+15-Jan-2021 18:54:48.684 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+15-Jan-2021 18:54:48.688 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@727210eb')
+15-Jan-2021 18:55:19.854 SEVERE [http-nio-8084-exec-7] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
+	javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+Error Code: 1054
+Call: SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet
+Query: ReadAllQuery(referenceClass=Ewallet sql="SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet")
+		at org.eclipse.persistence.internal.jpa.QueryImpl.getDetailedException(QueryImpl.java:391)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:264)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:482)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:66)
+		at servlets.RecuperarAction.service(RecuperarAction.java:28)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+		at servlets.Controller.service(Controller.java:36)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+	Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+Error Code: 1054
+Call: SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet
+Query: ReadAllQuery(referenceClass=Ewallet sql="SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet")
+		at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:691)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+		at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeSelectCall(DatasourceCallQueryMechanism.java:332)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.selectAllRows(DatasourceCallQueryMechanism.java:728)
+		at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRowsFromTable(ExpressionQueryMechanism.java:2773)
+		at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRows(ExpressionQueryMechanism.java:2726)
+		at org.eclipse.persistence.queries.ReadAllQuery.executeObjectLevelReadQuery(ReadAllQuery.java:584)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeDatabaseQuery(ObjectLevelReadQuery.java:1224)
+		at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1183)
+		at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:485)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1271)
+		at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2981)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1842)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:262)
+		... 37 more
+	Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeSelect(DatabaseAccessor.java:1015)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:651)
+		... 57 more
+15-Jan-2021 18:55:19.854 SEVERE [http-nio-8084-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
+	javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+Error Code: 1054
+Call: SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet
+Query: ReadAllQuery(referenceClass=Ewallet sql="SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet")
+		at org.eclipse.persistence.internal.jpa.QueryImpl.getDetailedException(QueryImpl.java:391)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:264)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:482)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:66)
+		at servlets.RecuperarAction.service(RecuperarAction.java:28)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+		at servlets.Controller.service(Controller.java:36)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+	Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+Error Code: 1054
+Call: SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet
+Query: ReadAllQuery(referenceClass=Ewallet sql="SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet")
+		at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:691)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+		at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeSelectCall(DatasourceCallQueryMechanism.java:332)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.selectAllRows(DatasourceCallQueryMechanism.java:728)
+		at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRowsFromTable(ExpressionQueryMechanism.java:2773)
+		at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRows(ExpressionQueryMechanism.java:2726)
+		at org.eclipse.persistence.queries.ReadAllQuery.executeObjectLevelReadQuery(ReadAllQuery.java:584)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeDatabaseQuery(ObjectLevelReadQuery.java:1224)
+		at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1183)
+		at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:485)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1271)
+		at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2981)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1842)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:262)
+		... 37 more
+	Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeSelect(DatabaseAccessor.java:1015)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:651)
+		... 57 more
+15-Jan-2021 18:59:30.392 SEVERE [http-nio-8084-exec-19] org.apache.catalina.core.ApplicationDispatcher.invoke El Servlet.service() para servlet [servlets.RecuperarAction] lanzó una excepción
+	javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+Error Code: 1054
+Call: SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet
+Query: ReadAllQuery(referenceClass=Ewallet sql="SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet")
+		at org.eclipse.persistence.internal.jpa.QueryImpl.getDetailedException(QueryImpl.java:391)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:264)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:482)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:66)
+		at servlets.RecuperarAction.service(RecuperarAction.java:28)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+		at servlets.Controller.service(Controller.java:36)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+	Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+Error Code: 1054
+Call: SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet
+Query: ReadAllQuery(referenceClass=Ewallet sql="SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet")
+		at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:691)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+		at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeSelectCall(DatasourceCallQueryMechanism.java:332)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.selectAllRows(DatasourceCallQueryMechanism.java:728)
+		at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRowsFromTable(ExpressionQueryMechanism.java:2773)
+		at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRows(ExpressionQueryMechanism.java:2726)
+		at org.eclipse.persistence.queries.ReadAllQuery.executeObjectLevelReadQuery(ReadAllQuery.java:584)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeDatabaseQuery(ObjectLevelReadQuery.java:1224)
+		at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1183)
+		at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:485)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1271)
+		at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2981)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1842)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:262)
+		... 37 more
+	Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeSelect(DatabaseAccessor.java:1015)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:651)
+		... 57 more
+15-Jan-2021 18:59:30.393 SEVERE [http-nio-8084-exec-19] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() para servlet [servlets.Controller] lanzó excepción
+	javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+Error Code: 1054
+Call: SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet
+Query: ReadAllQuery(referenceClass=Ewallet sql="SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet")
+		at org.eclipse.persistence.internal.jpa.QueryImpl.getDetailedException(QueryImpl.java:391)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:264)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:482)
+		at modelo.GestionEwallet.recuperarwallets(GestionEwallet.java:66)
+		at servlets.RecuperarAction.service(RecuperarAction.java:28)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+		at servlets.Controller.service(Controller.java:36)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+	Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.4.v20190115-ad5b7c6b2a): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+Error Code: 1054
+Call: SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet
+Query: ReadAllQuery(referenceClass=Ewallet sql="SELECT IDWALLET, APELLIDOS, DNI, EMAIL, FECHANACIMENTO, NOMBRE, SALDOEUROS, SALDOPUNTOS FROM ewallet")
+		at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:691)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2096)
+		at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeSelectCall(DatasourceCallQueryMechanism.java:332)
+		at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.selectAllRows(DatasourceCallQueryMechanism.java:728)
+		at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRowsFromTable(ExpressionQueryMechanism.java:2773)
+		at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.selectAllRows(ExpressionQueryMechanism.java:2726)
+		at org.eclipse.persistence.queries.ReadAllQuery.executeObjectLevelReadQuery(ReadAllQuery.java:584)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeDatabaseQuery(ObjectLevelReadQuery.java:1224)
+		at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:914)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1183)
+		at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:485)
+		at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1271)
+		at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2981)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1895)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1877)
+		at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1842)
+		at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:262)
+		... 37 more
+	Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'FECHANACIMENTO' in 'field list'
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeSelect(DatabaseAccessor.java:1015)
+		at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:651)
+		... 57 more
+15-Jan-2021 19:06:06.740 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+15-Jan-2021 19:06:06.740 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

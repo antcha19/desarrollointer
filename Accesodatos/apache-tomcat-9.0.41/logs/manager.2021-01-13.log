@@ -101,3 +101,12 @@
 13-Jan-2021 15:58:20.355 INFO [http-nio-8084-exec-113] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
 13-Jan-2021 15:58:20.373 INFO [http-nio-8084-exec-112] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/var/folders/h0/c85z4t193ql1f1s5fjrnlpb40000gn/T/context16647596499757889674.xml'
 13-Jan-2021 15:58:21.317 INFO [http-nio-8084-exec-114] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/NuevaAgendaWebJPA'
+13-Jan-2021 16:06:17.507 INFO [http-nio-8084-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+13-Jan-2021 16:06:17.507 INFO [http-nio-8084-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+13-Jan-2021 16:06:17.555 INFO [http-nio-8084-exec-9] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+13-Jan-2021 16:06:17.565 INFO [http-nio-8084-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+13-Jan-2021 16:06:17.597 INFO [http-nio-8084-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/NuevaAgendaWebJPA'
+13-Jan-2021 16:06:18.167 INFO [http-nio-8084-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/var/folders/h0/c85z4t193ql1f1s5fjrnlpb40000gn/T/context9831188793179873864.xml'
+13-Jan-2021 16:06:20.499 INFO [http-nio-8084-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/NuevaAgendaWebJPA'
+13-Jan-2021 16:09:03.993 INFO [http-nio-8084-exec-12] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+13-Jan-2021 16:09:04.108 INFO [http-nio-8084-exec-14] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/NuevaAgendaWebJPA'
