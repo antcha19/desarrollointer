@@ -34,6 +34,7 @@
                         <th>Email </th>
                         <th>SAldo punto</th>
                         <th>Saldo euros</th>
+                        <th>Eliminar wallet</th>
                     </tr>
 
                     <c:forEach var="cont" items="${ewallet}">
