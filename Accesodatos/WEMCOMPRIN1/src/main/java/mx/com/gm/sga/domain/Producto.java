@@ -26,7 +26,7 @@ public class Producto {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     
     private int idproducto;
-    private String nombreproduto;
+    private String nombreproducto;
     private int precioproducto;
     private int puntosproducto;
 
@@ -37,15 +37,15 @@ public class Producto {
         this.idproducto = idproducto;
     }
 
-    public Producto(String nombreproduto, int precioproducto, int puntosproducto) {
-        this.nombreproduto = nombreproduto;
+    public Producto(String nombreproducto, int precioproducto, int puntosproducto) {
+        this.nombreproducto = nombreproducto;
         this.precioproducto = precioproducto;
         this.puntosproducto = puntosproducto;
     }
 
-    public Producto(int idproducto, String nombreproduto, int precioproducto, int puntosproducto) {
+    public Producto(int idproducto, String nombreproducto, int precioproducto, int puntosproducto) {
         this.idproducto = idproducto;
-        this.nombreproduto = nombreproduto;
+        this.nombreproducto = nombreproducto;
         this.precioproducto = precioproducto;
         this.puntosproducto = puntosproducto;
     }
@@ -58,8 +58,8 @@ public class Producto {
         return idproducto;
     }
 
-    public String getNombreproduto() {
-        return nombreproduto;
+    public String getNombreproducto() {
+        return nombreproducto;
     }
 
     public int getPrecioproducto() {
@@ -74,8 +74,8 @@ public class Producto {
         this.idproducto = idproducto;
     }
 
-    public void setNombreproduto(String nombreproduto) {
-        this.nombreproduto = nombreproduto;
+    public void setNombreproducto(String nombreproducto) {
+        this.nombreproducto = nombreproducto;
     }
 
     public void setPrecioproducto(int precioproducto) {
@@ -88,8 +88,10 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{" + "idproducto=" + idproducto + ", nombreproduto=" + nombreproduto + ", precioproducto=" + precioproducto + ", puntosproducto=" + puntosproducto + '}';
+        return "Producto{" + "idproducto=" + idproducto + ", nombreproducto=" + nombreproducto + ", precioproducto=" + precioproducto + ", puntosproducto=" + puntosproducto + '}';
     }
+
+   
     
     
     

@@ -12,28 +12,32 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/Controller")
 public class Controller extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String op=request.getParameter("op");
-		String url="";
-		switch(op){
-			case "doAlta":
-				url="AltaAction";
-				break;
-			case "doEliminar":
-				url="EliminarAction";
-				break;
-			case "doRecuperar":
-				url="RecuperarAction";
-				break;
-			
-			
-		}
-		request.getRequestDispatcher(url).forward(request, response);
-	}
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String op = request.getParameter("op");
+        String url = "";
+        switch (op) {
+            case "doAlta":
+                url = "AltaAction";
+                break;
+            case "doEliminar":
+                url = "EliminarAction";
+                break;
+            case "doRecuperar":
+                url = "RecuperarAction";
+                break;
+            case "Recuperarproducto":
+                url = "RecuperarPRO";
+                break;
+
+        }
+        request.getRequestDispatcher(url).forward(request, response);
+    }
 
 }

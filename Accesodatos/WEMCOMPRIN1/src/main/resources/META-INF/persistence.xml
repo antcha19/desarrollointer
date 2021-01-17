@@ -6,7 +6,9 @@
     
     <persistence-unit name="WEBCOM" transaction-type="RESOURCE_LOCAL">
         <class>mx.com.gm.sga.domain.Ewallet</class>
-        <class></class>
+        <class>mx.mx.com.gm.sga.domain.Producto</class>
+        <class>mx.com.gm.sga.domain.Compra</class>
+        <class>mx.com.gm.sga.domain.Devolucion</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
              <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/comprin?useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true"/> 
