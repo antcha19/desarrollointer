@@ -273,3 +273,9 @@
 0:0:0:0:0:0:0:1 - - [17/Jan/2021:13:46:10 +0100] "GET /WEMCOMPRIN1/ HTTP/1.1" 200 388
 0:0:0:0:0:0:0:1 - - [17/Jan/2021:13:46:13 +0100] "GET /WEMCOMPRIN1/Controller?op=Recuperarproducto HTTP/1.1" 200 2103
 0:0:0:0:0:0:0:1 - - [17/Jan/2021:13:46:15 +0100] "GET /WEMCOMPRIN1/Controller?op=toMenu HTTP/1.1" 200 388
+127.0.0.1 - - [17/Jan/2021:13:48:19 +0100] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - root [17/Jan/2021:13:48:19 +0100] "GET /manager/text/ HTTP/1.1" 200 43
+127.0.0.1 - - [17/Jan/2021:13:48:19 +0100] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - root [17/Jan/2021:13:48:19 +0100] "GET /manager/text/ HTTP/1.1" 200 43
+127.0.0.1 - - [17/Jan/2021:13:48:19 +0100] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - root [17/Jan/2021:13:48:19 +0100] "GET /manager/text/ HTTP/1.1" 200 43

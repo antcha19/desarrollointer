@@ -472,3 +472,38 @@
 17-Jan-2021 13:46:00.534 INFO [http-nio-8084-exec-66] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
 17-Jan-2021 13:46:00.539 INFO [http-nio-8084-exec-66] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [851] ms
 17-Jan-2021 13:46:00.550 INFO [http-nio-8084-exec-73] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+17-Jan-2021 13:48:20.095 INFO [main] org.apache.catalina.core.StandardServer.await Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+17-Jan-2021 13:48:20.096 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8084"]
+17-Jan-2021 13:48:20.104 INFO [main] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+17-Jan-2021 13:48:20.126 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [Agendaweb] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+17-Jan-2021 13:48:20.139 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [NuevaAgendaWebJPA] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.net.URI$Parser.scan(URI.java:3063)
+ java.base@11.0.8/java.net.URI$Parser.checkChars(URI.java:3084)
+ java.base@11.0.8/java.net.URI$Parser.parseHierarchical(URI.java:3168)
+ java.base@11.0.8/java.net.URI$Parser.parse(URI.java:3116)
+ java.base@11.0.8/java.net.URI.<init>(URI.java:685)
+ java.base@11.0.8/java.net.URI.<init>(URI.java:786)
+ java.base@11.0.8/java.io.File.toURI(File.java:738)
+ org.apache.catalina.webresources.FileResource.getURL(FileResource.java:261)
+ org.apache.catalina.webresources.CachedResource.getURL(CachedResource.java:363)
+ org.apache.catalina.loader.WebappClassLoaderBase.findResource(WebappClassLoaderBase.java:940)
+ org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+17-Jan-2021 13:48:20.150 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [WEMCOMPRIN1] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+17-Jan-2021 13:48:20.151 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [WEMCOMPRIN1] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+17-Jan-2021 13:48:20.157 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8084"]
+17-Jan-2021 13:48:20.209 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8084"]
