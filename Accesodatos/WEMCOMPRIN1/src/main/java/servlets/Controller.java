@@ -22,6 +22,9 @@ public class Controller extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String op = request.getParameter("op");
         String url = "";
+
+        //case = es la variable para acceder desde el index.html
+        //url es el nombre que ponemos en la respectiva clase de los paquetes servlets
         switch (op) {
             case "doAlta":
                 url = "AltaAction";
@@ -34,6 +37,12 @@ public class Controller extends HttpServlet {
                 break;
             case "Recuperarproducto":
                 url = "RecuperarPRO";
+                break;
+            case "eliminarpro":
+                url = "EliminarPRO";
+                break;
+            case "Recuperarvevolucion":
+                url = "RecuperarDevo";
                 break;
 
         }

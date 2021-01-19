@@ -93,6 +93,9 @@ public class Devolucion {
     public String toString() {
         return "Devolucion{" + "iddevolucion=" + iddevolucion + ", fechadevolucion=" + fechadevolucion + ", idwallet=" + idwallet + ", idproducto=" + idproducto + '}';
     }
+
+   
+    
     
     
     

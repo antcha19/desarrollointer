@@ -6,49 +6,46 @@
 package modelo;
 
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
+import javax.persistence.*;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
-import mx.com.gm.sga.domain.Producto;
-
+import mx.com.gm.sga.domain.Devolucion;
+ 
 /**
  *
  * @author antonio
  */
-public class GestionProducto {
-
-    public List<Producto> recuperarproductos() {
+public class GestionDevolucion {
+    
+    
+    public List<Devolucion> recuperardevoluciones(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction(); 
         
         //Inicamos la transaccion
         tx.begin();
-        String jpql ="Select c from Producto c";
+        String jpql ="Select c from Devolucion c";
         Query qr = em.createQuery(jpql);
-        List<Producto> listaproductos = qr.getResultList();
+        List<Devolucion> listadevo = qr.getResultList();
         tx.commit();
         em.close();
-        return listaproductos;
-
-        
+        return listadevo;
     }
-    public void borrarwallet(int idproducto) {
+    public void borrardevolucion(int iddevolucion) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 
         //Iniciamos la transacción
         tx.begin();
-        Producto pro = em.find(Producto.class,idproducto);
-     
+        Devolucion devo = em.find(Devolucion.class, iddevolucion);
+    
         //Borramos el objeto
-        em.remove(pro);
+        em.remove(devo);
         //Terminamos la transaccion
         tx.commit();
-     //   log.debug("Wallet borrada: " + wallet);
+     
         em.close();
     }
+    
 }
