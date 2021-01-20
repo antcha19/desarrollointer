@@ -41,11 +41,14 @@ public class Controller extends HttpServlet {
             case "eliminarpro":
                 url = "EliminarPRO";
                 break;
-            case "Recuperarvevolucion":
-                url = "RecuperarDevo";
+            case "RecuperarCompra":
+                url = "RecuperarCOM";
                 break;
-
+            case "RecuperarDevolucion":
+                url = "RecuperarDEVO";
+                break;
         }
+
         request.getRequestDispatcher(url).forward(request, response);
     }
 

@@ -18,15 +18,15 @@ import javax.persistence.Table;
  */
 @Entity
 //nombre de la tabla
-@Table(name="devolucion")
+@Table(name = "devolucion")
 public class Devolucion {
-    
-     private static final long SerialVersionUID=1l;
+
+    private static final long SerialVersionUID = 1l;
     //primary key
     @Id
     //id es autoincrementable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
+
     //nombres de las columnas de la tabla
     private int iddevolucion;
     private Date fechadevolucion;
@@ -94,9 +94,4 @@ public class Devolucion {
         return "Devolucion{" + "iddevolucion=" + iddevolucion + ", fechadevolucion=" + fechadevolucion + ", idwallet=" + idwallet + ", idproducto=" + idproducto + '}';
     }
 
-   
-    
-    
-    
-    
 }

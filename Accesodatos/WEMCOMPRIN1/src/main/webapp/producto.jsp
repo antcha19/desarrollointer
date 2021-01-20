@@ -28,8 +28,9 @@
                     <tr>
                         <th>id producto</th>
                         <th>Nombre del producto </th>
-                        <th>Precio del producto</th>
-                        <th>Puntos del producto</th>
+                        <th>Precio  producto</th>
+                        <th>Puntos  producto</th>
+                        <th>Eliminar Producto</th>
 
                     </tr>
 

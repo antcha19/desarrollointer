@@ -6,10 +6,13 @@
 package modelo;
 
 import java.util.List;
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+import modelo.GestionDevolucion;
 import mx.com.gm.sga.domain.Devolucion;
- 
 /**
  *
  * @author antonio
@@ -17,35 +20,21 @@ import mx.com.gm.sga.domain.Devolucion;
 public class GestionDevolucion {
     
     
-    public List<Devolucion> recuperardevoluciones(){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction(); 
-        
-        //Inicamos la transaccion
-        tx.begin();
-        String jpql ="Select c from Devolucion c";
-        Query qr = em.createQuery(jpql);
-        List<Devolucion> listadevo = qr.getResultList();
-        tx.commit();
-        em.close();
-        return listadevo;
-    }
-    public void borrardevolucion(int iddevolucion) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
+    public List<Devolucion> recuperardevolucion(){
+         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 
-        //Iniciamos la transacción
+        //iniciamos la trasaccion
         tx.begin();
-        Devolucion devo = em.find(Devolucion.class, iddevolucion);
-    
-        //Borramos el objeto
-        em.remove(devo);
-        //Terminamos la transaccion
+        String jpql = "Select c from Devolucion c";
+        Query qr = em.createQuery(jpql);
+        List<Devolucion> listadevolucion = (List<Devolucion>) qr.getResultList();
+        //terminamos la trasaccion
         tx.commit();
-     
+      
         em.close();
+        return listadevolucion;
+        
     }
-    
 }
