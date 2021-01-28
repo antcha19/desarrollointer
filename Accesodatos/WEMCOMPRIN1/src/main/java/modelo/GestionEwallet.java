@@ -68,7 +68,7 @@ public class GestionEwallet {
         tx.commit();
         for (int i = 0; i < listawallet.size(); i++) {
             Ewallet aux = listawallet.get(i);
-          //  log.debug("Wallet: " + listawallet);
+          
         }
         em.close();
         return listawallet;

@@ -6,7 +6,7 @@
     
     <persistence-unit name="WEBCOM" transaction-type="RESOURCE_LOCAL">
         <class>mx.com.gm.sga.domain.Ewallet</class>
-        <class>mx.mx.com.gm.sga.domain.Producto</class>
+        <class>mx.com.gm.sga.domain.Producto</class>
         <class>mx.com.gm.sga.domain.Compra</class>
         <class>mx.com.gm.sga.domain.Devolucion</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>

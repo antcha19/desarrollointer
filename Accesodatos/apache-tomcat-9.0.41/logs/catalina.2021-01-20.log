@@ -1,0 +1,994 @@
+20-Jan-2021 15:42:00.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.41
+20-Jan-2021 15:42:00.856 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Dec 3 2020 11:43:00 UTC
+20-Jan-2021 15:42:00.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.41.0
+20-Jan-2021 15:42:00.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Mac OS X
+20-Jan-2021 15:42:00.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.14.6
+20-Jan-2021 15:42:00.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      x86_64
+20-Jan-2021 15:42:00.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         /Library/Java/JavaVirtualMachines/jdk-11.0.8.jdk/Contents/Home
+20-Jan-2021 15:42:00.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       11.0.8+10-LTS
+20-Jan-2021 15:42:00.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+20-Jan-2021 15:42:00.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     /Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 15:42:00.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     /Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 15:42:00.922 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Jan-2021 15:42:00.922 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+20-Jan-2021 15:42:00.922 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Jan-2021 15:42:00.923 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/logging.properties
+20-Jan-2021 15:42:00.923 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Jan-2021 15:42:00.923 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dhttp.nonProxyHosts=localhost|127.0.0.1|MacBook-Pro-de-antonio.local
+20-Jan-2021 15:42:00.923 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+20-Jan-2021 15:42:00.923 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Jan-2021 15:42:00.923 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Jan-2021 15:42:00.924 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+20-Jan-2021 15:42:00.924 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 15:42:00.924 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 15:42:00.924 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/temp
+20-Jan-2021 15:42:00.930 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [/Users/antonio/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+20-Jan-2021 15:42:02.182 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8084"]
+
+20-Jan-2021 15:42:02.323 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [2368] milliseconds
+20-Jan-2021 15:42:02.551 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+20-Jan-2021 15:42:02.551 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.41]
+20-Jan-2021 15:42:02.605 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml]
+20-Jan-2021 15:42:02.669 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEBCOMPRIM] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml] has been ignored
+20-Jan-2021 15:42:02.810 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error durante el despliegue del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:706)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1830)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:118)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@2250b9f2]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4830)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4966)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/Users/antonio/Desktop/netbeans/Accesodatos/WEBCOMPRIM/target/WEBCOMPRIM-1.0] is not valid
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:751)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+20-Jan-2021 15:42:02.828 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml] has finished in [220] ms
+20-Jan-2021 15:42:02.828 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml]
+20-Jan-2021 15:42:02.829 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/Wcom] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml] has been ignored
+20-Jan-2021 15:42:02.836 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error durante el despliegue del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:706)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1830)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:118)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@2e2ff723]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4830)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4966)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/Users/antonio/Desktop/netbeans/Accesodatos/Wcom/target/WebComprin-1.0] is not valid
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:751)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+20-Jan-2021 15:42:02.849 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml] has finished in [20] ms
+20-Jan-2021 15:42:02.849 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 15:42:02.850 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 15:42:06.972 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:42:07.108 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [4.258] ms
+20-Jan-2021 15:42:07.111 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml]
+20-Jan-2021 15:42:07.113 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/Agendaweb] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml] has been ignored
+20-Jan-2021 15:42:08.986 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:42:09.010 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml] has finished in [1.899] ms
+20-Jan-2021 15:42:09.015 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml]
+20-Jan-2021 15:42:09.035 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/NuevaAgendaWebJPA] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml] has been ignored
+20-Jan-2021 15:42:10.848 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:42:10.864 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml] has finished in [1.852] ms
+20-Jan-2021 15:42:10.865 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/docs] de la aplicación web
+20-Jan-2021 15:42:10.900 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/docs] has finished in [34] ms
+20-Jan-2021 15:42:10.900 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/manager] de la aplicación web
+20-Jan-2021 15:42:11.011 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/manager] has finished in [110] ms
+20-Jan-2021 15:42:11.011 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/examples] de la aplicación web
+20-Jan-2021 15:42:11.407 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/examples] has finished in [395] ms
+20-Jan-2021 15:42:11.407 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/ROOT] de la aplicación web
+20-Jan-2021 15:42:11.436 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/ROOT] has finished in [29] ms
+20-Jan-2021 15:42:11.437 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/host-manager] de la aplicación web
+20-Jan-2021 15:42:11.494 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/host-manager] has finished in [57] ms
+20-Jan-2021 15:42:11.548 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 15:42:11.593 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [9267] milliseconds
+20-Jan-2021 15:42:19.471 INFO [http-nio-8084-exec-4] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 15:42:19.522 INFO [http-nio-8084-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 15:42:19.524 WARNING [http-nio-8084-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 15:42:20.851 INFO [http-nio-8084-exec-1] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:42:20.864 INFO [http-nio-8084-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [1.342] ms
+20-Jan-2021 15:42:20.875 INFO [http-nio-8084-exec-6] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 15:45:03.110 INFO [http-nio-8084-exec-18] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/WEMCOMPRIN1]
+20-Jan-2021 15:45:03.120 WARNING [http-nio-8084-exec-18] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [WEMCOMPRIN1] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+20-Jan-2021 15:45:03.122 WARNING [http-nio-8084-exec-18] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [WEMCOMPRIN1] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 15:45:03.402 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 15:45:05.163 INFO [http-nio-8084-exec-18] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:45:05.190 INFO [http-nio-8084-exec-18] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+20-Jan-2021 15:45:48.384 INFO [http-nio-8084-exec-23] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/WEMCOMPRIN1]
+20-Jan-2021 15:45:49.957 INFO [http-nio-8084-exec-23] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:45:50.010 INFO [http-nio-8084-exec-23] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+20-Jan-2021 15:46:12.874 INFO [http-nio-8084-exec-12] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/WEMCOMPRIN1]
+20-Jan-2021 15:46:15.086 INFO [http-nio-8084-exec-12] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:46:15.107 INFO [http-nio-8084-exec-12] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+20-Jan-2021 15:46:15.531 INFO [http-nio-8084-exec-22] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/WEMCOMPRIN1]
+20-Jan-2021 15:46:17.577 INFO [http-nio-8084-exec-22] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:46:17.587 INFO [http-nio-8084-exec-22] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+20-Jan-2021 15:52:34.360 INFO [http-nio-8084-exec-29] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/WEMCOMPRIN1]
+20-Jan-2021 15:52:35.917 INFO [http-nio-8084-exec-29] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:52:35.926 INFO [http-nio-8084-exec-29] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+20-Jan-2021 15:53:36.458 INFO [http-nio-8084-exec-32] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/WEMCOMPRIN1]
+20-Jan-2021 15:53:37.853 INFO [http-nio-8084-exec-32] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:53:37.866 INFO [http-nio-8084-exec-32] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+20-Jan-2021 15:54:49.471 INFO [http-nio-8084-exec-34] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/WEMCOMPRIN1]
+20-Jan-2021 15:54:51.022 INFO [http-nio-8084-exec-34] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:54:51.031 INFO [http-nio-8084-exec-34] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+20-Jan-2021 15:54:51.391 INFO [http-nio-8084-exec-27] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/WEMCOMPRIN1]
+20-Jan-2021 15:54:52.302 INFO [http-nio-8084-exec-27] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 15:54:52.311 INFO [http-nio-8084-exec-27] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+20-Jan-2021 16:04:08.011 INFO [http-nio-8084-exec-51] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:04:08.987 INFO [http-nio-8084-exec-51] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:04:08.992 INFO [http-nio-8084-exec-51] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+20-Jan-2021 16:04:18.933 INFO [http-nio-8084-exec-48] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:04:39.065 INFO [http-nio-8084-exec-47] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:04:39.067 WARNING [http-nio-8084-exec-47] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:04:39.861 INFO [http-nio-8084-exec-47] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:04:39.872 INFO [http-nio-8084-exec-47] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [807] ms
+20-Jan-2021 16:04:39.880 INFO [http-nio-8084-exec-48] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 16:08:32.961 WARNING [http-nio-8084-exec-48] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [WEMCOMPRIN1] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+20-Jan-2021 16:08:32.962 WARNING [http-nio-8084-exec-48] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [WEMCOMPRIN1] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:08:33.467 INFO [http-nio-8084-exec-48] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:08:37.630 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:10:25.048 INFO [http-nio-8084-exec-48] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:10:25.049 WARNING [http-nio-8084-exec-48] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:10:25.800 INFO [http-nio-8084-exec-48] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:10:25.813 INFO [http-nio-8084-exec-48] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [765] ms
+20-Jan-2021 16:10:25.819 INFO [http-nio-8084-exec-71] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 16:11:43.287 INFO [main] org.apache.catalina.core.StandardServer.await Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+20-Jan-2021 16:11:43.287 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:11:43.294 INFO [main] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+20-Jan-2021 16:11:43.343 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [Agendaweb] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.io.UnixFileSystem.getBooleanAttributes0(Native Method)
+ java.base@11.0.8/java.io.UnixFileSystem.getBooleanAttributes(UnixFileSystem.java:248)
+ java.base@11.0.8/java.io.File.isDirectory(File.java:852)
+ org.apache.catalina.webresources.FileResource.isDirectory(FileResource.java:110)
+ org.apache.catalina.webresources.FileResource.getContentLengthInternal(FileResource.java:146)
+ org.apache.catalina.webresources.FileResource.getContentLength(FileResource.java:133)
+ org.apache.catalina.webresources.CachedResource.getContentLength(CachedResource.java:266)
+ org.apache.catalina.webresources.CachedResource.validateResource(CachedResource.java:108)
+ org.apache.catalina.webresources.Cache.getResource(Cache.java:87)
+ org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:216)
+ org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:225)
+ org.apache.catalina.loader.WebappClassLoaderBase.findResource(WebappClassLoaderBase.java:938)
+ org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:11:43.371 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [NuevaAgendaWebJPA] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:11:43.391 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [WEMCOMPRIN1] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+20-Jan-2021 16:11:43.392 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [WEMCOMPRIN1] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:11:43.402 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:11:43.450 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:14:46.451 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.41
+20-Jan-2021 16:14:46.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Dec 3 2020 11:43:00 UTC
+20-Jan-2021 16:14:46.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.41.0
+20-Jan-2021 16:14:46.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Mac OS X
+20-Jan-2021 16:14:46.474 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.14.6
+20-Jan-2021 16:14:46.474 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      x86_64
+20-Jan-2021 16:14:46.474 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         /Library/Java/JavaVirtualMachines/jdk-11.0.8.jdk/Contents/Home
+20-Jan-2021 16:14:46.475 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       11.0.8+10-LTS
+20-Jan-2021 16:14:46.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+20-Jan-2021 16:14:46.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     /Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:14:46.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     /Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:14:46.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Jan-2021 16:14:46.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+20-Jan-2021 16:14:46.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Jan-2021 16:14:46.502 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/logging.properties
+20-Jan-2021 16:14:46.502 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Jan-2021 16:14:46.502 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dhttp.nonProxyHosts=localhost|127.0.0.1|MacBook-Pro-de-antonio.local
+20-Jan-2021 16:14:46.502 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+20-Jan-2021 16:14:46.502 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Jan-2021 16:14:46.502 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Jan-2021 16:14:46.503 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+20-Jan-2021 16:14:46.503 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:14:46.503 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:14:46.504 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/temp
+20-Jan-2021 16:14:46.507 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [/Users/antonio/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+20-Jan-2021 16:14:47.803 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8084"]
+
+20-Jan-2021 16:14:47.946 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [2348] milliseconds
+20-Jan-2021 16:14:48.229 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+20-Jan-2021 16:14:48.229 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.41]
+20-Jan-2021 16:14:48.256 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml]
+20-Jan-2021 16:14:48.320 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEBCOMPRIM] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml] has been ignored
+20-Jan-2021 16:14:48.431 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error durante el despliegue del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:706)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1830)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:118)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@2250b9f2]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4830)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4966)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/Users/antonio/Desktop/netbeans/Accesodatos/WEBCOMPRIM/target/WEBCOMPRIM-1.0] is not valid
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:751)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+20-Jan-2021 16:14:48.444 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml] has finished in [183] ms
+20-Jan-2021 16:14:48.444 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml]
+20-Jan-2021 16:14:48.450 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/Wcom] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml] has been ignored
+20-Jan-2021 16:14:48.456 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error durante el despliegue del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:706)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1830)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:118)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@324a0017]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4830)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4966)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/Users/antonio/Desktop/netbeans/Accesodatos/Wcom/target/WebComprin-1.0] is not valid
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:751)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+20-Jan-2021 16:14:48.461 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml] has finished in [16] ms
+20-Jan-2021 16:14:48.465 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:14:48.467 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:14:51.728 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:14:51.806 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [3.344] ms
+20-Jan-2021 16:14:51.806 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml]
+20-Jan-2021 16:14:51.807 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/Agendaweb] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml] has been ignored
+20-Jan-2021 16:14:53.567 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:14:53.583 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml] has finished in [1.777] ms
+20-Jan-2021 16:14:53.583 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml]
+20-Jan-2021 16:14:53.584 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/NuevaAgendaWebJPA] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml] has been ignored
+20-Jan-2021 16:14:55.133 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:14:55.152 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml] has finished in [1.568] ms
+20-Jan-2021 16:14:55.153 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/docs] de la aplicación web
+20-Jan-2021 16:14:55.197 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/docs] has finished in [44] ms
+20-Jan-2021 16:14:55.197 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/manager] de la aplicación web
+20-Jan-2021 16:14:55.290 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/manager] has finished in [93] ms
+20-Jan-2021 16:14:55.290 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/examples] de la aplicación web
+20-Jan-2021 16:14:55.652 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/examples] has finished in [362] ms
+20-Jan-2021 16:14:55.653 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/ROOT] de la aplicación web
+20-Jan-2021 16:14:55.679 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/ROOT] has finished in [25] ms
+20-Jan-2021 16:14:55.679 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/host-manager] de la aplicación web
+20-Jan-2021 16:14:55.754 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/host-manager] has finished in [75] ms
+20-Jan-2021 16:14:55.761 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:14:55.832 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [7885] milliseconds
+20-Jan-2021 16:14:59.671 INFO [http-nio-8084-exec-1] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:14:59.714 INFO [http-nio-8084-exec-7] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:14:59.717 WARNING [http-nio-8084-exec-7] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:15:00.926 INFO [http-nio-8084-exec-7] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:15:00.938 INFO [http-nio-8084-exec-7] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [1.225] ms
+20-Jan-2021 16:15:00.948 INFO [http-nio-8084-exec-2] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 16:15:40.706 WARNING [http-nio-8084-exec-13] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [WEMCOMPRIN1] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+20-Jan-2021 16:15:40.709 WARNING [http-nio-8084-exec-13] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [WEMCOMPRIN1] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:15:41.223 INFO [http-nio-8084-exec-13] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:15:41.246 INFO [http-nio-8084-exec-12] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:15:41.247 WARNING [http-nio-8084-exec-12] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:15:41.931 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:15:42.806 INFO [http-nio-8084-exec-12] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:15:42.818 INFO [http-nio-8084-exec-12] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [1.573] ms
+20-Jan-2021 16:15:42.828 INFO [http-nio-8084-exec-15] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 16:16:22.545 INFO [main] org.apache.catalina.core.StandardServer.await Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+20-Jan-2021 16:16:22.545 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:16:22.553 INFO [main] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+20-Jan-2021 16:16:22.593 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [Agendaweb] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:16:22.611 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [NuevaAgendaWebJPA] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:16:22.650 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [WEMCOMPRIN1] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+20-Jan-2021 16:16:22.651 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [WEMCOMPRIN1] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:16:22.662 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:16:22.707 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:17:10.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.41
+20-Jan-2021 16:17:10.058 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Dec 3 2020 11:43:00 UTC
+20-Jan-2021 16:17:10.058 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.41.0
+20-Jan-2021 16:17:10.058 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Mac OS X
+20-Jan-2021 16:17:10.059 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.14.6
+20-Jan-2021 16:17:10.059 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      x86_64
+20-Jan-2021 16:17:10.059 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         /Library/Java/JavaVirtualMachines/jdk-11.0.8.jdk/Contents/Home
+20-Jan-2021 16:17:10.059 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       11.0.8+10-LTS
+20-Jan-2021 16:17:10.059 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+20-Jan-2021 16:17:10.059 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     /Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:17:10.059 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     /Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:17:10.092 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Jan-2021 16:17:10.092 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+20-Jan-2021 16:17:10.092 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Jan-2021 16:17:10.092 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/logging.properties
+20-Jan-2021 16:17:10.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Jan-2021 16:17:10.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dhttp.nonProxyHosts=localhost|127.0.0.1|MacBook-Pro-de-antonio.local
+20-Jan-2021 16:17:10.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+20-Jan-2021 16:17:10.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Jan-2021 16:17:10.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Jan-2021 16:17:10.095 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+20-Jan-2021 16:17:10.096 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:17:10.096 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:17:10.096 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/temp
+20-Jan-2021 16:17:10.105 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [/Users/antonio/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+20-Jan-2021 16:17:10.963 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8084"]
+
+20-Jan-2021 16:17:11.041 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1967] milliseconds
+20-Jan-2021 16:17:11.172 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+20-Jan-2021 16:17:11.172 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.41]
+20-Jan-2021 16:17:11.183 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml]
+20-Jan-2021 16:17:11.202 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEBCOMPRIM] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml] has been ignored
+20-Jan-2021 16:17:11.254 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error durante el despliegue del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:706)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1830)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:118)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@70f59913]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4830)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4966)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/Users/antonio/Desktop/netbeans/Accesodatos/WEBCOMPRIM/target/WEBCOMPRIM-1.0] is not valid
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:751)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+20-Jan-2021 16:17:11.262 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml] has finished in [75] ms
+20-Jan-2021 16:17:11.262 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml]
+20-Jan-2021 16:17:11.266 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/Wcom] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml] has been ignored
+20-Jan-2021 16:17:11.278 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error durante el despliegue del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:706)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1830)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:118)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@59b38691]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4830)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4966)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/Users/antonio/Desktop/netbeans/Accesodatos/Wcom/target/WebComprin-1.0] is not valid
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:751)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+20-Jan-2021 16:17:11.293 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml] has finished in [30] ms
+20-Jan-2021 16:17:11.295 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:17:11.302 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:17:13.718 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:17:13.830 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [2.537] ms
+20-Jan-2021 16:17:13.830 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml]
+20-Jan-2021 16:17:13.831 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/Agendaweb] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml] has been ignored
+20-Jan-2021 16:17:15.342 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:17:15.386 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml] has finished in [1.556] ms
+20-Jan-2021 16:17:15.387 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml]
+20-Jan-2021 16:17:15.401 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/NuevaAgendaWebJPA] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml] has been ignored
+20-Jan-2021 16:17:18.131 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:17:18.147 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml] has finished in [2.760] ms
+20-Jan-2021 16:17:18.151 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/docs] de la aplicación web
+20-Jan-2021 16:17:18.204 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/docs] has finished in [52] ms
+20-Jan-2021 16:17:18.204 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/manager] de la aplicación web
+20-Jan-2021 16:17:18.338 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/manager] has finished in [134] ms
+20-Jan-2021 16:17:18.339 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/examples] de la aplicación web
+20-Jan-2021 16:17:18.708 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/examples] has finished in [368] ms
+20-Jan-2021 16:17:18.708 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/ROOT] de la aplicación web
+20-Jan-2021 16:17:18.754 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/ROOT] has finished in [46] ms
+20-Jan-2021 16:17:18.754 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/host-manager] de la aplicación web
+20-Jan-2021 16:17:18.807 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/host-manager] has finished in [52] ms
+20-Jan-2021 16:17:18.819 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:17:18.915 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [7873] milliseconds
+20-Jan-2021 16:17:19.674 INFO [http-nio-8084-exec-9] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:17:19.700 INFO [http-nio-8084-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:17:19.701 WARNING [http-nio-8084-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:17:20.735 INFO [http-nio-8084-exec-4] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:17:20.753 INFO [http-nio-8084-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [1.052] ms
+20-Jan-2021 16:17:20.762 INFO [http-nio-8084-exec-10] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 16:17:22.629 INFO [http-nio-8084-exec-8] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:17:24.176 INFO [http-nio-8084-exec-8] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:17:24.192 INFO [http-nio-8084-exec-8] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+20-Jan-2021 16:17:29.297 INFO [main] org.apache.catalina.core.StandardServer.await Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+20-Jan-2021 16:17:29.298 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:17:29.307 INFO [main] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+20-Jan-2021 16:17:29.368 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:17:29.411 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:33:39.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.41
+20-Jan-2021 16:33:39.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Dec 3 2020 11:43:00 UTC
+20-Jan-2021 16:33:39.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.41.0
+20-Jan-2021 16:33:39.055 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Mac OS X
+20-Jan-2021 16:33:39.056 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.14.6
+20-Jan-2021 16:33:39.058 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      x86_64
+20-Jan-2021 16:33:39.058 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         /Library/Java/JavaVirtualMachines/jdk-11.0.8.jdk/Contents/Home
+20-Jan-2021 16:33:39.058 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       11.0.8+10-LTS
+20-Jan-2021 16:33:39.058 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+20-Jan-2021 16:33:39.058 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     /Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:33:39.058 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     /Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:33:39.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Jan-2021 16:33:39.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+20-Jan-2021 16:33:39.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Jan-2021 16:33:39.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/logging.properties
+20-Jan-2021 16:33:39.086 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Jan-2021 16:33:39.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dhttp.nonProxyHosts=localhost|127.0.0.1|MacBook-Pro-de-antonio.local
+20-Jan-2021 16:33:39.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+20-Jan-2021 16:33:39.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Jan-2021 16:33:39.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+20-Jan-2021 16:33:39.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+20-Jan-2021 16:33:39.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:33:39.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41
+20-Jan-2021 16:33:39.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/temp
+20-Jan-2021 16:33:39.096 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [/Users/antonio/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+20-Jan-2021 16:33:39.989 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8084"]
+
+20-Jan-2021 16:33:40.152 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1662] milliseconds
+20-Jan-2021 16:33:40.312 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+20-Jan-2021 16:33:40.312 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.41]
+20-Jan-2021 16:33:40.355 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml]
+20-Jan-2021 16:33:40.408 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEBCOMPRIM] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml] has been ignored
+20-Jan-2021 16:33:40.493 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error durante el despliegue del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:706)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1830)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:118)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@2250b9f2]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4830)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4966)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/Users/antonio/Desktop/netbeans/Accesodatos/WEBCOMPRIM/target/WEBCOMPRIM-1.0] is not valid
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:751)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+20-Jan-2021 16:33:40.504 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEBCOMPRIM.xml] has finished in [146] ms
+20-Jan-2021 16:33:40.505 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml]
+20-Jan-2021 16:33:40.506 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/Wcom] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml] has been ignored
+20-Jan-2021 16:33:40.511 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error durante el despliegue del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:706)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1830)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:118)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@17aad511]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4830)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4966)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/Users/antonio/Desktop/netbeans/Accesodatos/Wcom/target/WebComprin-1.0] is not valid
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:751)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+20-Jan-2021 16:33:40.520 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Wcom.xml] has finished in [15] ms
+20-Jan-2021 16:33:40.521 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:33:40.524 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:33:42.635 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:33:42.706 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [2.185] ms
+20-Jan-2021 16:33:42.706 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml]
+20-Jan-2021 16:33:42.708 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/Agendaweb] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml] has been ignored
+20-Jan-2021 16:33:44.161 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:33:44.176 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/Agendaweb.xml] has finished in [1.470] ms
+20-Jan-2021 16:33:44.176 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml]
+20-Jan-2021 16:33:44.178 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/NuevaAgendaWebJPA] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml] has been ignored
+20-Jan-2021 16:33:45.648 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:33:45.670 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/NuevaAgendaWebJPA.xml] has finished in [1.494] ms
+20-Jan-2021 16:33:45.672 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/docs] de la aplicación web
+20-Jan-2021 16:33:45.719 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/docs] has finished in [48] ms
+20-Jan-2021 16:33:45.720 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/manager] de la aplicación web
+20-Jan-2021 16:33:45.790 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/manager] has finished in [71] ms
+20-Jan-2021 16:33:45.791 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/examples] de la aplicación web
+20-Jan-2021 16:33:46.135 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/examples] has finished in [344] ms
+20-Jan-2021 16:33:46.136 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/ROOT] de la aplicación web
+20-Jan-2021 16:33:46.180 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/ROOT] has finished in [40] ms
+20-Jan-2021 16:33:46.181 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/host-manager] de la aplicación web
+20-Jan-2021 16:33:46.234 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/webapps/host-manager] has finished in [53] ms
+20-Jan-2021 16:33:46.244 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 16:33:46.269 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [6115] milliseconds
+20-Jan-2021 16:33:47.500 INFO [http-nio-8084-exec-2] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:33:47.588 INFO [http-nio-8084-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:33:47.590 WARNING [http-nio-8084-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:33:48.716 INFO [http-nio-8084-exec-8] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:33:48.727 INFO [http-nio-8084-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [1.138] ms
+20-Jan-2021 16:33:48.744 INFO [http-nio-8084-exec-11] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 16:33:55.531 INFO [http-nio-8084-exec-4] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:33:55.542 INFO [http-nio-8084-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:33:55.543 WARNING [http-nio-8084-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:33:56.549 INFO [http-nio-8084-exec-10] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:33:56.558 INFO [http-nio-8084-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [1.015] ms
+20-Jan-2021 16:33:56.565 INFO [http-nio-8084-exec-5] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 16:36:16.515 WARNING [http-nio-8084-exec-17] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [WEMCOMPRIN1] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+20-Jan-2021 16:36:16.516 WARNING [http-nio-8084-exec-17] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [WEMCOMPRIN1] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:36:17.026 INFO [http-nio-8084-exec-17] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:36:20.233 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:36:44.316 INFO [http-nio-8084-exec-24] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:36:44.318 WARNING [http-nio-8084-exec-24] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:36:45.373 INFO [http-nio-8084-exec-24] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:36:45.388 INFO [http-nio-8084-exec-24] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [1.071] ms
+20-Jan-2021 16:36:45.443 INFO [http-nio-8084-exec-15] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 16:39:06.124 WARNING [http-nio-8084-exec-31] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [WEMCOMPRIN1] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+20-Jan-2021 16:39:06.125 WARNING [http-nio-8084-exec-31] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [WEMCOMPRIN1] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:39:06.632 INFO [http-nio-8084-exec-31] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:39:07.140 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:39:07.142 INFO [http-nio-8084-exec-24] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:39:07.143 WARNING [http-nio-8084-exec-24] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:39:07.899 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:39:08.053 INFO [http-nio-8084-exec-24] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:39:08.063 INFO [http-nio-8084-exec-24] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [921] ms
+20-Jan-2021 16:39:08.587 INFO [http-nio-8084-exec-32] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:39:21.240 INFO [http-nio-8084-exec-30] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:39:21.241 WARNING [http-nio-8084-exec-30] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:39:22.159 INFO [http-nio-8084-exec-30] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:39:22.166 INFO [http-nio-8084-exec-30] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [925] ms
+20-Jan-2021 16:39:22.174 INFO [http-nio-8084-exec-29] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 16:40:59.938 WARNING [http-nio-8084-exec-41] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [WEMCOMPRIN1] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+20-Jan-2021 16:40:59.939 WARNING [http-nio-8084-exec-41] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [WEMCOMPRIN1] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:41:00.103 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 16:41:00.447 INFO [http-nio-8084-exec-41] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 16:41:00.475 INFO [http-nio-8084-exec-40] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 16:41:00.478 WARNING [http-nio-8084-exec-40] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 16:41:01.670 INFO [http-nio-8084-exec-40] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 16:41:01.692 INFO [http-nio-8084-exec-40] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [1.215] ms
+20-Jan-2021 16:41:01.702 INFO [http-nio-8084-exec-42] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 20:44:58.303 WARNING [http-nio-8084-exec-44] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [WEMCOMPRIN1] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+20-Jan-2021 20:44:58.305 WARNING [http-nio-8084-exec-44] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [WEMCOMPRIN1] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 20:44:58.751 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 20:44:58.815 INFO [http-nio-8084-exec-44] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/WEMCOMPRIN1]
+20-Jan-2021 20:44:58.832 INFO [http-nio-8084-exec-52] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml]
+20-Jan-2021 20:44:58.836 WARNING [http-nio-8084-exec-52] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/WEMCOMPRIN1] in deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has been ignored
+20-Jan-2021 20:45:00.172 INFO [http-nio-8084-exec-52] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+20-Jan-2021 20:45:00.188 INFO [http-nio-8084-exec-52] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/antonio/Desktop/netbeans/Accesodatos/apache-tomcat-9.0.41/conf/Catalina/localhost/WEMCOMPRIN1.xml] has finished in [1.356] ms
+20-Jan-2021 20:45:00.216 INFO [http-nio-8084-exec-47] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WEMCOMPRIN1]] after start() had already been called. The second call will be ignored.
+20-Jan-2021 20:49:40.759 INFO [main] org.apache.catalina.core.StandardServer.await Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+20-Jan-2021 20:49:40.759 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 20:49:40.767 INFO [main] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+20-Jan-2021 20:49:40.811 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [Agendaweb] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ org.apache.catalina.loader.WebappClassLoaderBase.trackLastModified(WebappClassLoaderBase.java:964)
+ org.apache.catalina.loader.WebappClassLoaderBase.findResource(WebappClassLoaderBase.java:941)
+ org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 20:49:40.836 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [NuevaAgendaWebJPA] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.net.URL.toExternalForm(URL.java:1019)
+ org.apache.catalina.webresources.CachedResource.getURL(CachedResource.java:370)
+ org.apache.catalina.loader.WebappClassLoaderBase.findResource(WebappClassLoaderBase.java:940)
+ org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 20:49:40.867 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [WEMCOMPRIN1] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+20-Jan-2021 20:49:40.869 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [WEMCOMPRIN1] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.8/java.lang.Object.wait(Native Method)
+ java.base@11.0.8/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+ java.base@11.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.8/java.lang.Thread.run(Thread.java:834)
+20-Jan-2021 20:49:40.879 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8084"]
+20-Jan-2021 20:49:40.921 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8084"]

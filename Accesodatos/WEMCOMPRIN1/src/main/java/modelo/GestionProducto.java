@@ -35,4 +35,20 @@ public class GestionProducto {
 
         
     }
+    public void borrarwallet(int idproducto) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+
+        //Iniciamos la transacción
+        tx.begin();
+        Producto pro = em.find(Producto.class,idproducto);
+     
+        //Borramos el objeto
+        em.remove(pro);
+        //Terminamos la transaccion
+        tx.commit();
+     //   log.debug("Wallet borrada: " + wallet);
+        em.close();
+    }
 }
