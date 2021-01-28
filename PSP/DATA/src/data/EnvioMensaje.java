@@ -27,14 +27,14 @@ public class EnvioMensaje {
         Scanner teclado = new Scanner(System.in);
         //variables
         String mensajeintroducido = "";
-           System.out.println("Introduce el mensaje a enviar");
+        System.out.println("Introduce el mensaje a enviar");
         mensajeintroducido = teclado.nextLine();
-        
+
         byte[] mensaje = mensajeintroducido.getBytes();
 
         //ip de destino
         InetAddress ipdestino = InetAddress.getByName("localhost");
-      //  InetAddress ipdestino = InetAddress.getByName("192.168.26.110");
+        //  InetAddress ipdestino = InetAddress.getByName("192.168.26.110");
         //puerto destino
         int portdestino = 5555;
         try {
@@ -44,16 +44,15 @@ public class EnvioMensaje {
             DatagramSocket socket = new DatagramSocket();
             //enviar mensaje
             socket.send(packet);
-         } catch (UnknownHostException ex) {
+        } catch (UnknownHostException ex) {
             System.out.println("error ex");
-        }catch(SocketException soc){
-             System.out.println("error del socket");
-        }catch(IOException io){
+        } catch (SocketException soc) {
+            System.out.println("error del socket");
+        } catch (IOException io) {
             System.out.println("error del io");
         }
-       // String str1 = new String(mensaje);
-      //  System.out.println("mensaje enviado desde servidor "+str1);
-
+        // String str1 = new String(mensaje);
+        //  System.out.println("mensaje enviado desde servidor "+str1);
 
     }
 

@@ -22,23 +22,23 @@ public class RecepcionMensaje {
         //puerto que escucha el servicio
         try {
             int puertoescucha = 5555;
-        //vector de bytes en el cual recibir el mensaje con capacidad de 1.024 bytes
+            //vector de bytes en el cual recibir el mensaje con capacidad de 1.024 bytes
             byte[] mensaje = new byte[1024];
-        //creacion del paquete en el qual rebre les dades de 1.024 bytes 
+            //creacion del paquete en el qual rebre les dades de 1.024 bytes 
             DatagramPacket packet = new DatagramPacket(mensaje, mensaje.length);
-       //creació d’un socket que escolti el port passat per paràmetre
+            //creació d’un socket que escolti el port passat per paràmetre
             DatagramSocket socket = new DatagramSocket(puertoescucha);
-       //recibe el paquete
+            //recibe el paquete
             socket.receive(packet);
-            
+
             //mensaje traducido
-              String traducido = new String(packet.getData(), 0, packet.getLength());
-              System.out.println("Mensaje recibido  "+traducido);
+            String traducido = new String(packet.getData(), 0, packet.getLength());
+            System.out.println("Mensaje recibido  " + traducido);
         } catch (UnknownHostException ex) {
             System.out.println("error ex");
-        }catch(SocketException soc){
-             System.out.println("error del socket");
-        }catch(IOException io){
+        } catch (SocketException soc) {
+            System.out.println("error del socket");
+        } catch (IOException io) {
             System.out.println("error del io");
         }
 
