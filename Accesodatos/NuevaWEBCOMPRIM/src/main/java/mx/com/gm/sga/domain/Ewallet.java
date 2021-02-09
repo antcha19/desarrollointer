@@ -6,10 +6,17 @@
 package mx.com.gm.sga.domain;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import static javax.persistence.CascadeType.ALL;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -25,8 +32,8 @@ public class Ewallet {
     @Id
     //id es autoincrementable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
-    //nombres de las columnas de la tabla
+   //nombres de las columnas de la tabla
+    @Column(name="idwallet")
     private int idwallet;
     private String nombre;
     private String apellidos;
@@ -35,6 +42,9 @@ public class Ewallet {
     private String email;
     private int saldopuntos;
     private int saldoeuros;
+    
+     @OneToMany(mappedBy="ewallet")
+    private List<Compra> compra =  new ArrayList<Compra>();
 
     public Ewallet() {
     }
@@ -136,12 +146,6 @@ public class Ewallet {
     public String toString() {
         return "Ewallet{" + "idwallet=" + idwallet + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", fechanacimiento=" + fechanacimiento + ", email=" + email + ", saldopuntos=" + saldopuntos + ", saldoeuros=" + saldoeuros + '}';
     }
-
-    
-    
-    
-
-    
 
     
 }

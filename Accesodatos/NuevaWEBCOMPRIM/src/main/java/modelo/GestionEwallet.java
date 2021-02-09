@@ -61,15 +61,11 @@ public class GestionEwallet {
 
         //Iniciamos la transacción
         tx.begin();
-        String jpql = "Select c from Ewallet c";
-        Query qr = em.createQuery(jpql);
+        String select = "Select c from Ewallet c";
+        Query qr = em.createQuery(select);
         List<Ewallet> listawallet = (List<Ewallet>) qr.getResultList();
         //Terminamos la transaccion
         tx.commit();
-        for (int i = 0; i < listawallet.size(); i++) {
-            Ewallet aux = listawallet.get(i);
-          
-        }
         em.close();
         return listawallet;
     }
@@ -81,8 +77,8 @@ public class GestionEwallet {
         EntityTransaction tx = em.getTransaction();
 
         tx.begin();
-        String jpql = "Select c from Ewallet c where c.email=:email";
-        TypedQuery<Ewallet> tq = em.createQuery(jpql, Ewallet.class);
+        String select = "Select c from Ewallet c where c.email=:email";
+        TypedQuery<Ewallet> tq = em.createQuery(select, Ewallet.class);
         Ewallet wallet = new Ewallet();
         wallet = tq.getSingleResult();
         //Termicontactosnamos la transaccion

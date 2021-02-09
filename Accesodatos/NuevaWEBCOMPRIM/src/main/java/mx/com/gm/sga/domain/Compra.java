@@ -6,10 +6,14 @@
 package mx.com.gm.sga.domain;
 
 import java.sql.Date;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -26,10 +30,16 @@ public class Compra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     //nombre de las columnas de la tabla
+    @Column(name="idcompra")
     private int idcompra;
     private Date fechacompra;
     private int idwallet;
     private int idproducto;
+    
+    
+    @JoinColumn(name="idwallet", referencedColumnName="idwallet")
+    @ManyToOne
+    private Ewallet ewallet;
 
     public Compra() {
     }

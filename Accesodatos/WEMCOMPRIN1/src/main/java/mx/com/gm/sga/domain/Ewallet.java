@@ -6,11 +6,16 @@
 package mx.com.gm.sga.domain;
 
 import java.sql.Date;
+import java.util.List;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import mx.com.gm.sga.domain.Compra;
 
 /**
  *
@@ -35,6 +40,8 @@ public class Ewallet {
     private String email;
     private int saldopuntos;
     private int saldoeuros;
+    
+   
 
     public Ewallet() {
     }
