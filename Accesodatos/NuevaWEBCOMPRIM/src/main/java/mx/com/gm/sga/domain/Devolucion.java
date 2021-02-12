@@ -5,6 +5,7 @@
  */
 package mx.com.gm.sga.domain;
 
+import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ import javax.persistence.Table;
 @Entity
 //nombre de la tabla
 @Table(name = "devolucion")
-public class Devolucion {
+public class Devolucion  implements Serializable{
 
     private static final long SerialVersionUID = 1l;
     //primary key

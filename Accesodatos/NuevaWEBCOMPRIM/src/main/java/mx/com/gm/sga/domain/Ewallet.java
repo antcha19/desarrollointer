@@ -5,6 +5,7 @@
  */
 package mx.com.gm.sga.domain;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ import javax.persistence.Table;
 @Entity
 //nombre de la tabla
 @Table(name="ewallet")
-public class Ewallet {
+public class Ewallet implements Serializable {
     private static final long SerialVersionUID=1l;
     //primary key
     @Id
@@ -43,7 +44,7 @@ public class Ewallet {
     private int saldopuntos;
     private int saldoeuros;
     
-     @OneToMany(mappedBy="ewallet")
+    @OneToMany(mappedBy="ewallet")
     private List<Compra> compra =  new ArrayList<Compra>();
 
     public Ewallet() {
@@ -53,7 +54,7 @@ public class Ewallet {
         this.idwallet = idwallet;
     }
 
-    public Ewallet(String nombre, String apellidos, String dni, Date fechanacimiento, String email, int saldopuntos, int saldoeuros) {
+    public Ewallet(String nombre, String apellidos, String dni, java.sql.Date fechanacimiento, String email, int saldopuntos, int saldoeuros) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.dni = dni;
@@ -63,7 +64,7 @@ public class Ewallet {
         this.saldoeuros = saldoeuros;
     }
 
-    public Ewallet(int idwallet, String nombre, String apellidos, String dni, Date fechanacimiento, String email, int saldopuntos, int saldoeuros) {
+    public Ewallet(int idwallet, String nombre, String apellidos, String dni, java.sql.Date fechanacimiento, String email, int saldopuntos, int saldoeuros) {
         this.idwallet = idwallet;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -126,7 +127,7 @@ public class Ewallet {
         this.dni = dni;
     }
 
-    public void setFechanacimiento(Date fechanacimiento) {
+    public void setFechanacimiento(java.sql.Date fechanacimiento) {
         this.fechanacimiento = fechanacimiento;
     }
 
@@ -144,8 +145,10 @@ public class Ewallet {
 
     @Override
     public String toString() {
-        return "Ewallet{" + "idwallet=" + idwallet + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", fechanacimiento=" + fechanacimiento + ", email=" + email + ", saldopuntos=" + saldopuntos + ", saldoeuros=" + saldoeuros + '}';
+        return " " +idwallet;
     }
+
+    
 
     
 }

@@ -21,7 +21,7 @@ public class RecepcionMensaje {
     public static void main(String[] args) throws UnknownHostException, SocketException, IOException {
         //puerto que escucha el servicio
         try {
-            int puertoescucha = 5555;
+            int puertoescucha = 2222;
             //vector de bytes en el cual recibir el mensaje con capacidad de 1.024 bytes
             byte[] mensaje = new byte[1024];
             //creacion del paquete en el qual rebre les dades de 1.024 bytes 

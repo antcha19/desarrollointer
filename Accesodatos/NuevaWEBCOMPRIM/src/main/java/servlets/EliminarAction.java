@@ -22,6 +22,7 @@ public class EliminarAction extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id=Integer.parseInt(request.getParameter("idwallet"));
+                System.out.println(id +"errrrororororor");
 		GestionEwallet gwallet=new GestionEwallet();
 		gwallet.borrarwallet(id);
 		request.getRequestDispatcher("RecuperarAction").forward(request, response);

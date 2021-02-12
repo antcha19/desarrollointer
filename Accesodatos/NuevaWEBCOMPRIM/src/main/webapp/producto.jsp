@@ -31,7 +31,6 @@
                         <th>Precio  producto</th>
                         <th>Puntos  producto</th>
                         <th>Eliminar Producto</th>
-
                     </tr>
 
                     <c:forEach var="cont" items="${pro}">
@@ -40,15 +39,8 @@
                             <td>${cont.precioproducto}</td>
                             <td>${cont.puntosproducto}</td>
                             <td><a href="Controller?op=eliminarpro&idproducto=${cont.idproducto}">Eliminar</a></td></tr>
-
-
                     </tr>
-
-
                 </c:forEach>
-
-
-
             </table>
         </c:when>
         <c:otherwise>

@@ -36,7 +36,7 @@
                     <c:forEach var="cont" items="${compra}">
                         <tr><td>${cont.idcompra}</td>
                             <td>${cont.fechacompra}</td>
-                            <td>${cont.idwallet}</td>
+                            <td>${cont.ewallet}</td>
                             <td>${cont.idproducto}</td>
                     </c:forEach>
 

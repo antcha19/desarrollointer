@@ -14,10 +14,10 @@ import modelo.GestionEwallet;
 import mx.com.gm.sga.domain.Ewallet;
 
 /**
- * Servlet implementation class RecuperarAction
+ * Servlet implementation class RecuperadorWallet
  */
-@WebServlet("/RecuperarAction")
-public class RecuperarAction extends HttpServlet {
+@WebServlet("/RecuperadorWallet")
+public class RecuperadorWallet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**

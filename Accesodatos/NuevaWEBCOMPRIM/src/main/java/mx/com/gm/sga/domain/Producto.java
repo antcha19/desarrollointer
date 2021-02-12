@@ -5,6 +5,7 @@
  */
 package mx.com.gm.sga.domain;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,7 @@ import javax.persistence.Table;
 @Entity
 // de que tabla se llama contactos
 @Table (name="producto")
-public class Producto {
+public class Producto  implements Serializable {
     private static final long SerialVersionUID=1l;
     //lprimary key
     @Id

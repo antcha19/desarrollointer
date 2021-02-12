@@ -26,14 +26,26 @@ public class Controller extends HttpServlet {
         //case = es la variable para acceder desde el index.html
         //url es el nombre que ponemos en la respectiva clase de los paquetes servlets
         switch (op) {
-            case "doAlta":
-                url = "AltaAction";
+            case "doAltaEwallet":
+                url = "AltaEwallet";
                 break;
+            case "toNuevoEwallet":
+                url = "nuevoEwallet.html";
+                break;
+            //hacer link que apunta index.html
+            case "HacerCompra":
+                url = "CompraNueva.html";
+                break;
+
+            case "AltaCompra":
+                url = "AltaCompra";
+                break;
+
             case "doEliminar":
                 url = "EliminarAction";
                 break;
             case "doRecuperar":
-                url = "RecuperarAction";
+                url = "RecuperadorWallet";
                 break;
             case "Recuperarproducto":
                 url = "RecuperarPRO";
@@ -47,6 +59,9 @@ public class Controller extends HttpServlet {
             case "RecuperarDevolucion":
                 url = "RecuperarDEVO";
                 break;
+            
+            //realizamo una nueva wallet   
+
         }
 
         request.getRequestDispatcher(url).forward(request, response);

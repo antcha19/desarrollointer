@@ -5,6 +5,7 @@
  */
 package mx.com.gm.sga.domain;
 
+import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -22,7 +23,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "compra")
-public class Compra {
+public class Compra implements Serializable {
      private static final long SerialVersionUID=1l;
     //primary key
     @Id
@@ -32,12 +33,12 @@ public class Compra {
     //nombre de las columnas de la tabla
     @Column(name="idcompra")
     private int idcompra;
-    private Date fechacompra;
-    private int idwallet;
+    private  Date fechacompra;
+//    private int idwallet;
     private int idproducto;
     
     
-    @JoinColumn(name="idwallet", referencedColumnName="idwallet")
+   @JoinColumn(name="idwallet")
     @ManyToOne
     private Ewallet ewallet;
 
@@ -48,16 +49,16 @@ public class Compra {
         this.idcompra = idcompra;
     }
 
-    public Compra(Date fechacompra, int idwallet, int idproducto) {
+    public Compra(Date fechacompra, Ewallet ewallet, int idproducto) {
         this.fechacompra = fechacompra;
-        this.idwallet = idwallet;
+        this.ewallet = ewallet;
         this.idproducto = idproducto;
     }
 
-    public Compra(int idcompra, Date fechacompra, int idwallet, int idproducto) {
+    public Compra(int idcompra, Date fechacompra, Ewallet ewallet, int idproducto) {
         this.idcompra = idcompra;
         this.fechacompra = fechacompra;
-        this.idwallet = idwallet;
+        this.ewallet = ewallet;
         this.idproducto = idproducto;
     }
 
@@ -73,9 +74,9 @@ public class Compra {
         return fechacompra;
     }
 
-    public int getIdwallet() {
+ /*   public int getIdwallet() {
         return idwallet;
-    }
+    }*/
 
     public int getIdproducto() {
         return idproducto;
@@ -89,18 +90,23 @@ public class Compra {
         this.fechacompra = fechacompra;
     }
 
-    public void setIdwallet(int idwallet) {
+ /*   public void setIdwallet(int idwallet) {
         this.idwallet = idwallet;
-    }
+    }*/
 
     public void setIdproducto(int idproducto) {
         this.idproducto = idproducto;
     }
 
-    @Override
-    public String toString() {
-        return "Compra{" + "idcompra=" + idcompra + ", fechacompra=" + fechacompra + ", idwallet=" + idwallet + ", idproducto=" + idproducto + '}';
+    public Ewallet getEwallet() {
+        return ewallet;
     }
+
+    public void setEwallet(Ewallet ewallet) {
+        this.ewallet = ewallet;
+    }
+
+   
     
     
     

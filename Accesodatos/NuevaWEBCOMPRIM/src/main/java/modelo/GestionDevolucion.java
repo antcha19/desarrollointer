@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import java.sql.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,6 +14,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 import modelo.GestionDevolucion;
 import mx.com.gm.sga.domain.Devolucion;
+import mx.com.gm.sga.domain.Producto;
 /**
  *
  * @author antonio
@@ -27,8 +29,8 @@ public class GestionDevolucion {
 
         //iniciamos la trasaccion
         tx.begin();
-        String jpql = "Select c from Devolucion c";
-        Query qr = em.createQuery(jpql);
+        String select = "Select c from Devolucion c";
+        Query qr = em.createQuery(select);
         List<Devolucion> listadevolucion = (List<Devolucion>) qr.getResultList();
         //terminamos la trasaccion
         tx.commit();
@@ -37,4 +39,18 @@ public class GestionDevolucion {
         return listadevolucion;
         
     }
+    
+    public void eliminardevolucion(Date Fechadevolucion, int idwallet , int idproducto){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        Devolucion eliminar = new Devolucion(Fechadevolucion, idwallet, idproducto);
+        tx.begin();
+        em.persist(eliminar);
+        tx.commit();
+        em.clear();
+        em.close();
+        
+    }
+     
 }

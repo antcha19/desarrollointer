@@ -32,7 +32,7 @@
                         <th>DNI</th>
                         <th>Fecha de Nacimiento</th>
                         <th>Email </th>
-                        <th>SAldo punto</th>
+                        <th>Saldo punto</th>
                         <th>Saldo euros</th>
                         <th>Eliminar wallet</th>
                     </tr>
@@ -46,7 +46,7 @@
                             <td>${cont.email}</td>
                             <td>${cont.saldopuntos}</td>
                              <td>${cont.saldoeuros}</td>
-                            <td><a href="Controller?op=doEliminar&idContacto=${cont.idwallet}">Eliminar</a></td></tr>
+                            <td><a href="Controller?op=doEliminar&idwallet=${cont.idwallet}">Eliminar</a></td></tr>
 
 
                     </c:forEach>

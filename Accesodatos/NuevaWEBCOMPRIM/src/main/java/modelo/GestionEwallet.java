@@ -20,22 +20,34 @@ public class GestionEwallet {
     
   //  static Logger log = LogManager.getFormatterLogger();
 
-    public static void altawallet(String nombre, String apellidos, String DNI, Date fecha_nacimiento, String email, int saldo_puntos, int saldo_euros) {
+   /* public  void altawallet(String nombre, String apellidos, String DNI, Date fecha_nacimiento, String email, int saldo_puntos, int saldo_euros) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         //Iniciamos la transacción
         tx.begin();
         Ewallet wallet = new Ewallet(nombre, apellidos, DNI, fecha_nacimiento, email, saldo_puntos, saldo_euros);
-    //    log.debug("Wallet a insertar: " + wallet);
-        //Persistimos el objeto
         em.persist(wallet);
-        //Terminamos la transaccion
         tx.commit();
-       // log.debug("Wallet insertada: " + wallet);
         em.close();
     }
-
+    
+    
+*/
+    //Alta de Ewallet
+    public void altawallet(String Nombre, String Apellidos, String Dni, java.sql.Date FechaNacimiento, String Email, int SaldoPuntos, int SaldoEuros) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        Ewallet ewallet = new Ewallet(Nombre, Apellidos, Dni, FechaNacimiento, Email, SaldoPuntos, SaldoEuros);
+     
+        tx.begin();
+        em.persist(ewallet);
+        tx.commit();
+        em.clear();
+    }
+    
+    
     public void borrarwallet(int idwallet) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
         EntityManager em = emf.createEntityManager();
@@ -44,12 +56,8 @@ public class GestionEwallet {
         //Iniciamos la transacción
         tx.begin();
         Ewallet wallet = em.find(Ewallet.class, idwallet);
-     //   log.debug("Wallet a borrar: " + wallet);
-        //Borramos el objeto
         em.remove(wallet);
-        //Terminamos la transaccion
         tx.commit();
-     //   log.debug("Wallet borrada: " + wallet);
         em.close();
     }
 

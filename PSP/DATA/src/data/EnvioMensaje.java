@@ -17,6 +17,7 @@ import java.util.Scanner;
  *
  * @author antcha
  */
+
 public class EnvioMensaje {
 
     /**
@@ -36,7 +37,7 @@ public class EnvioMensaje {
         InetAddress ipdestino = InetAddress.getByName("localhost");
         //  InetAddress ipdestino = InetAddress.getByName("192.168.26.110");
         //puerto destino
-        int portdestino = 5555;
+        int portdestino = 2222;
         try {
             //creacion del paquete a enviar
             DatagramPacket packet = new DatagramPacket(mensaje, mensaje.length, ipdestino, portdestino);
