@@ -16,9 +16,14 @@ public class Controller extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
+     * @param request
+     * @param response
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
      * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
      * response)
      */
+    @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String op = request.getParameter("op");
         String url = "";
@@ -40,27 +45,25 @@ public class Controller extends HttpServlet {
             case "AltaCompra":
                 url = "AltaCompra";
                 break;
-
-            case "doEliminar":
-                url = "EliminarAction";
-                break;
             case "doRecuperar":
                 url = "RecuperadorWallet";
                 break;
             case "Recuperarproducto":
                 url = "RecuperarPRO";
                 break;
-            case "eliminarpro":
-                url = "EliminarPRO";
-                break;
+            
             case "RecuperarCompra":
                 url = "RecuperarCOM";
                 break;
             case "RecuperarDevolucion":
                 url = "RecuperarDEVO";
                 break;
-            
-            //realizamo una nueva wallet   
+            case "doHacerDevolucion":
+                url = "RealizarDevolucion";
+                break;
+                case "doEliminarWallet":
+                url = "EliminarEwallet";
+                break;
 
         }
 

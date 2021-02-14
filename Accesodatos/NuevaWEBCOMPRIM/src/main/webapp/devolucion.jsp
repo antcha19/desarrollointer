@@ -30,14 +30,15 @@
                         <th>Fecha devolucion </th>
                         <th>Id Wallet</th>
                         <th>Id Producto</th>
-                        <th>Eliminar devolucion</th>
+                       
                     </tr>
 
                     <c:forEach var="cont" items="${devolucion}">
                         <tr><td>${cont.iddevolucion}</td>
                             <td>${cont.fechadevolucion}</td>
                             <td>${cont.idwallet}</td>
-                            <td>${cont.idproducto}</td>
+                            <td>${cont.idproducto}</td>                       
+
                          
                            
 

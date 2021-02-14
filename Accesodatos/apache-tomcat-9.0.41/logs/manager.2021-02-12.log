@@ -718,3 +718,8 @@
 12-Feb-2021 18:28:15.830 INFO [http-nio-8084-exec-98] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/var/folders/h0/c85z4t193ql1f1s5fjrnlpb40000gn/T/context10932861465598447516.xml'
 12-Feb-2021 18:28:17.203 INFO [http-nio-8084-exec-109] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/WEMCOMPRIN1'
 12-Feb-2021 18:29:48.493 INFO [http-nio-8084-exec-107] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+12-Feb-2021 21:23:22.779 INFO [http-nio-8084-exec-115] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+12-Feb-2021 21:23:22.808 INFO [http-nio-8084-exec-111] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+12-Feb-2021 21:23:22.899 INFO [http-nio-8084-exec-109] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/WEMCOMPRIN1'
+12-Feb-2021 21:23:23.475 INFO [http-nio-8084-exec-112] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/var/folders/h0/c85z4t193ql1f1s5fjrnlpb40000gn/T/context8878385026797747270.xml'
+12-Feb-2021 21:23:28.002 INFO [http-nio-8084-exec-115] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/WEMCOMPRIN1'

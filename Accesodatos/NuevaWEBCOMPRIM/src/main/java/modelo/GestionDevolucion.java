@@ -40,17 +40,29 @@ public class GestionDevolucion {
         
     }
     
-    public void eliminardevolucion(Date Fechadevolucion, int idwallet , int idproducto){
+    public void Realizardevolucion(java.sql.Date Fechadevolucion, int idwallet , int idproducto){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
-        Devolucion eliminar = new Devolucion(Fechadevolucion, idwallet, idproducto);
+        Devolucion sw = new Devolucion(Fechadevolucion, idwallet, idproducto);
         tx.begin();
-        em.persist(eliminar);
+        em.persist(sw);
         tx.commit();
         em.clear();
-        em.close();
+       
         
+    }
+    
+    public void borrarDevolucion(int iddevolucion){
+         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        Devolucion devo =new Devolucion();
+        tx.begin();
+        devo=em.find(Devolucion.class, iddevolucion);
+        em.remove(devo);
+        tx.commit();
+        em.clear();
     }
      
 }

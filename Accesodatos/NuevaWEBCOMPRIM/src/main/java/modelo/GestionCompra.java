@@ -50,10 +50,11 @@ public class GestionCompra {
     
     
     public void eliminarcompra( int idcompra){
-         Compra eliminar = new Compra();
+         
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
+        Compra eliminar = new Compra();
         tx.begin();
         eliminar=em.find(Compra.class, idcompra);
         em.remove(eliminar);
@@ -61,6 +62,20 @@ public class GestionCompra {
         em.clear();
         
         
+    }
+    
+    public Compra buscarcompra( int idcompra){
+         
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        Compra buscar = new Compra();
+       
+        buscar=em.find(Compra.class, idcompra);
+     //    tx.begin();
+       // tx.commit();
+        em.clear();   
+        return buscar;
     }
 
 }

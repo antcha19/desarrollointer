@@ -60,6 +60,18 @@ public class GestionEwallet {
         tx.commit();
         em.close();
     }
+    
+    public void actualizarwallet(Ewallet ewallet){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+         tx.begin();
+        
+         em.merge(ewallet);
+         tx.commit();
+         em.clear();
+       
+    }
 
     public List<Ewallet> recuperarwallets() {
 
@@ -77,22 +89,24 @@ public class GestionEwallet {
         em.close();
         return listawallet;
     }
-
-    public Ewallet buscarwallet(String email) {
-
+    
+    
+   
+     public Ewallet buscaEwallet( int idwallet){
+         
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
-
-        tx.begin();
-        String select = "Select c from Ewallet c where c.email=:email";
-        TypedQuery<Ewallet> tq = em.createQuery(select, Ewallet.class);
-        Ewallet wallet = new Ewallet();
-        wallet = tq.getSingleResult();
-        //Termicontactosnamos la transaccion
-        tx.commit();
-        em.close();
-
-        return wallet;
+      
+        Ewallet busca= new Ewallet();
+       
+        busca=em.find(Ewallet.class, idwallet);
+    
+        em.clear();   
+        return busca;
     }
+
+   
+
+    
 }

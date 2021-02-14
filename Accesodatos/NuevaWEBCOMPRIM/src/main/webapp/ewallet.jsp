@@ -46,7 +46,7 @@
                             <td>${cont.email}</td>
                             <td>${cont.saldopuntos}</td>
                              <td>${cont.saldoeuros}</td>
-                            <td><a href="Controller?op=doEliminar&idwallet=${cont.idwallet}">Eliminar</a></td></tr>
+                            <td><a href="Controller?op=doEliminarWallet&idwallet=${cont.idwallet}">Eliminar</a></td></tr>
 
 
                     </c:forEach>

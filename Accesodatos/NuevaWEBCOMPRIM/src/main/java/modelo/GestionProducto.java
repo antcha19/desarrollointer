@@ -45,4 +45,20 @@ public class GestionProducto {
         tx.commit();
         em.close();
     }
+    
+  
+    public Producto buscarproducto( int idproducto){
+         
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WEBCOM");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        Producto buscarproducto = new Producto();
+       
+        buscarproducto=em.find(Producto.class, idproducto);
+     //   tx.begin();
+     //   tx.commit();
+        em.clear();   
+        return buscarproducto;
+    }
+
 }

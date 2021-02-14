@@ -8,11 +8,7 @@ package servlets;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -50,7 +46,7 @@ public class AltaEwallet extends HttpServlet {
         try {
             fecha = sdf.parse(fechanacimiento);
         } catch (ParseException ex) {
-            Logger.getLogger(AltaEwallet.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex + " Error parseException");
         }
         java.sql.Date fechabuena = new java.sql.Date(fecha.getTime());
         GestionEwallet gewallet = new GestionEwallet();

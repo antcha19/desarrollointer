@@ -38,6 +38,7 @@
                             <td>${cont.fechacompra}</td>
                             <td>${cont.ewallet}</td>
                             <td>${cont.idproducto}</td>
+                            <td><a href="Controller?op=doHacerDevolucion&idcompra=${cont.idcompra}">reliazar devolucion</a></td></tr>
                     </c:forEach>
 
 
