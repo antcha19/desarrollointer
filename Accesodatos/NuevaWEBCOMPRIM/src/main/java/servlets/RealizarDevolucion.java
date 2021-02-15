@@ -43,29 +43,25 @@ public class RealizarDevolucion extends HttpServlet {
         int idwallet = ewallet.getIdwallet();
         int idproducto = compra.getIdproducto();
         gcompra.eliminarcompra(idcompra);
-
-        //Devolvemos el dinero y restamos los puntos al ewallet
+        
         GestionProducto gproducto = new GestionProducto();
         GestionEwallet gewallet = new GestionEwallet();
 
         Producto producto = gproducto.buscarproducto(idproducto);
-   //operaciones para devolver
+        //operaciones para devolver
         int saldoeuros = ewallet.getSaldoeuros();
         int saldopuntos = ewallet.getSaldopuntos();
         int precio = producto.getPrecioproducto();
         int puntospro = producto.getPuntosproducto();
-
         saldoeuros = saldoeuros + precio;
         saldopuntos = saldopuntos - puntospro;
-
         ewallet.setSaldoeuros(saldoeuros);
         ewallet.setSaldopuntos(saldopuntos);
 
         //Actulizamos el ewallet
         gewallet.actualizarwallet(ewallet);
 
-        //creamos un objeto de la capa de lgica de negocio
-        //y llamamos al método encargado de hacer el alta
+       //gestionamos la devolucion
         GestionDevolucion gdevolucion = new GestionDevolucion();
         java.util.Date fecha = new java.util.Date();
         long lo = fecha.getTime();
